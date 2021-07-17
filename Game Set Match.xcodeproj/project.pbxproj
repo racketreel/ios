@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
+		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
+		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
+		E2FF734026A33711002209CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733F26A33711002209CA /* Preview Assets.xcassets */; };
+		E2FF734526A33711002209CA /* Game Set Match WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E2FF734426A33711002209CA /* Game Set Match WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E2FF734A26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF734926A33711002209CA /* Assets.xcassets */; };
+		E2FF735126A33711002209CA /* Game Set Match WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2FF735026A33711002209CA /* Game Set Match WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E2FF735626A33711002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF735526A33711002209CA /* ContentView.swift */; };
+		E2FF735826A33711002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF735726A33711002209CA /* Game_Set_MatchApp.swift */; };
+		E2FF735A26A33711002209CA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF735926A33711002209CA /* ComplicationController.swift */; };
+		E2FF735C26A33712002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF735B26A33712002209CA /* Assets.xcassets */; };
+		E2FF735F26A33712002209CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF735E26A33712002209CA /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2FF734626A33711002209CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2FF732D26A33710002209CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2FF734326A33711002209CA;
+			remoteInfo = "Game Set Match WatchKit App";
+		};
+		E2FF735226A33711002209CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2FF732D26A33710002209CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2FF734F26A33711002209CA;
+			remoteInfo = "Game Set Match WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2FF736626A33712002209CA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E2FF735126A33711002209CA /* Game Set Match WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FF736A26A33712002209CA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E2FF734526A33711002209CA /* Game Set Match WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
+		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2FF733C26A33711002209CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2FF733F26A33711002209CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E2FF734126A33711002209CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FF734426A33711002209CA /* Game Set Match WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2FF734926A33711002209CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2FF734B26A33711002209CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FF735026A33711002209CA /* Game Set Match WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Game Set Match WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2FF735526A33711002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2FF735726A33711002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
+		E2FF735926A33711002209CA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		E2FF735B26A33712002209CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2FF735E26A33712002209CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E2FF736026A33712002209CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2FF733226A33710002209CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FF734D26A33711002209CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2FF732C26A33710002209CA = {
+			isa = PBXGroup;
+			children = (
+				E2FF733726A33710002209CA /* Game Set Match */,
+				E2FF734826A33711002209CA /* Game Set Match WatchKit App */,
+				E2FF735426A33711002209CA /* Game Set Match WatchKit Extension */,
+				E2FF733626A33710002209CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2FF733626A33710002209CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF733526A33710002209CA /* Game Set Match.app */,
+				E2FF734426A33711002209CA /* Game Set Match WatchKit App.app */,
+				E2FF735026A33711002209CA /* Game Set Match WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2FF733726A33710002209CA /* Game Set Match */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */,
+				E2FF733A26A33710002209CA /* ContentView.swift */,
+				E2FF733C26A33711002209CA /* Assets.xcassets */,
+				E2FF734126A33711002209CA /* Info.plist */,
+				E2FF733E26A33711002209CA /* Preview Content */,
+			);
+			path = "Game Set Match";
+			sourceTree = "<group>";
+		};
+		E2FF733E26A33711002209CA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF733F26A33711002209CA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E2FF734826A33711002209CA /* Game Set Match WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF734926A33711002209CA /* Assets.xcassets */,
+				E2FF734B26A33711002209CA /* Info.plist */,
+			);
+			path = "Game Set Match WatchKit App";
+			sourceTree = "<group>";
+		};
+		E2FF735426A33711002209CA /* Game Set Match WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF735526A33711002209CA /* ContentView.swift */,
+				E2FF735726A33711002209CA /* Game_Set_MatchApp.swift */,
+				E2FF735926A33711002209CA /* ComplicationController.swift */,
+				E2FF735B26A33712002209CA /* Assets.xcassets */,
+				E2FF736026A33712002209CA /* Info.plist */,
+				E2FF735D26A33712002209CA /* Preview Content */,
+			);
+			path = "Game Set Match WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		E2FF735D26A33712002209CA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF735E26A33712002209CA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2FF733426A33710002209CA /* Game Set Match */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2FF736B26A33712002209CA /* Build configuration list for PBXNativeTarget "Game Set Match" */;
+			buildPhases = (
+				E2FF733126A33710002209CA /* Sources */,
+				E2FF733226A33710002209CA /* Frameworks */,
+				E2FF733326A33710002209CA /* Resources */,
+				E2FF736A26A33712002209CA /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2FF734726A33711002209CA /* PBXTargetDependency */,
+			);
+			name = "Game Set Match";
+			productName = "Game Set Match";
+			productReference = E2FF733526A33710002209CA /* Game Set Match.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2FF734326A33711002209CA /* Game Set Match WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2FF736726A33712002209CA /* Build configuration list for PBXNativeTarget "Game Set Match WatchKit App" */;
+			buildPhases = (
+				E2FF734226A33711002209CA /* Resources */,
+				E2FF736626A33712002209CA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2FF735326A33711002209CA /* PBXTargetDependency */,
+			);
+			name = "Game Set Match WatchKit App";
+			productName = "Game Set Match WatchKit App";
+			productReference = E2FF734426A33711002209CA /* Game Set Match WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E2FF734F26A33711002209CA /* Game Set Match WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2FF736326A33712002209CA /* Build configuration list for PBXNativeTarget "Game Set Match WatchKit Extension" */;
+			buildPhases = (
+				E2FF734C26A33711002209CA /* Sources */,
+				E2FF734D26A33711002209CA /* Frameworks */,
+				E2FF734E26A33711002209CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Game Set Match WatchKit Extension";
+			productName = "Game Set Match WatchKit Extension";
+			productReference = E2FF735026A33711002209CA /* Game Set Match WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2FF732D26A33710002209CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					E2FF733426A33710002209CA = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					E2FF734326A33711002209CA = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					E2FF734F26A33711002209CA = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = E2FF733026A33710002209CA /* Build configuration list for PBXProject "Game Set Match" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2FF732C26A33710002209CA;
+			productRefGroup = E2FF733626A33710002209CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2FF733426A33710002209CA /* Game Set Match */,
+				E2FF734326A33711002209CA /* Game Set Match WatchKit App */,
+				E2FF734F26A33711002209CA /* Game Set Match WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2FF733326A33710002209CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FF734026A33711002209CA /* Preview Assets.xcassets in Resources */,
+				E2FF733D26A33711002209CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FF734226A33711002209CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FF734A26A33711002209CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FF734E26A33711002209CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FF735F26A33712002209CA /* Preview Assets.xcassets in Resources */,
+				E2FF735C26A33712002209CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2FF733126A33710002209CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FF733B26A33710002209CA /* ContentView.swift in Sources */,
+				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2FF734C26A33711002209CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FF735826A33711002209CA /* Game_Set_MatchApp.swift in Sources */,
+				E2FF735626A33711002209CA /* ContentView.swift in Sources */,
+				E2FF735A26A33711002209CA /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2FF734726A33711002209CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2FF734326A33711002209CA /* Game Set Match WatchKit App */;
+			targetProxy = E2FF734626A33711002209CA /* PBXContainerItemProxy */;
+		};
+		E2FF735326A33711002209CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2FF734F26A33711002209CA /* Game Set Match WatchKit Extension */;
+			targetProxy = E2FF735226A33711002209CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E2FF736126A33712002209CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E2FF736226A33712002209CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E2FF736426A33712002209CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Game Set Match WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Game Set Match WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomelvidge.com.Game-Set-Match.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		E2FF736526A33712002209CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Game Set Match WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Game Set Match WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomelvidge.com.Game-Set-Match.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		E2FF736826A33712002209CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = Game_Set_Match_WatchKit_Extension;
+				INFOPLIST_FILE = "Game Set Match WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomelvidge.com.Game-Set-Match.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		E2FF736926A33712002209CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = Game_Set_Match_WatchKit_Extension;
+				INFOPLIST_FILE = "Game Set Match WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomelvidge.com.Game-Set-Match.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		E2FF736C26A33712002209CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Game Set Match/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Game Set Match/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomelvidge.com.Game-Set-Match";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2FF736D26A33712002209CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Game Set Match/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Game Set Match/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomelvidge.com.Game-Set-Match";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2FF733026A33710002209CA /* Build configuration list for PBXProject "Game Set Match" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2FF736126A33712002209CA /* Debug */,
+				E2FF736226A33712002209CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2FF736326A33712002209CA /* Build configuration list for PBXNativeTarget "Game Set Match WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2FF736426A33712002209CA /* Debug */,
+				E2FF736526A33712002209CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2FF736726A33712002209CA /* Build configuration list for PBXNativeTarget "Game Set Match WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2FF736826A33712002209CA /* Debug */,
+				E2FF736926A33712002209CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2FF736B26A33712002209CA /* Build configuration list for PBXNativeTarget "Game Set Match" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2FF736C26A33712002209CA /* Debug */,
+				E2FF736D26A33712002209CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2FF732D26A33710002209CA /* Project object */;
+}
