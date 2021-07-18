@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E263E6A426A4432F00173F1D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6A326A4432F00173F1D /* Game.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
@@ -14,7 +15,7 @@
 		E2FF734526A33711002209CA /* Game Set Match WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E2FF734426A33711002209CA /* Game Set Match WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E2FF734A26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF734926A33711002209CA /* Assets.xcassets */; };
 		E2FF735126A33711002209CA /* Game Set Match WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2FF735026A33711002209CA /* Game Set Match WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E2FF735626A33711002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF735526A33711002209CA /* ContentView.swift */; };
+		E2FF735626A33711002209CA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF735526A33711002209CA /* GameView.swift */; };
 		E2FF735826A33711002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF735726A33711002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF735A26A33711002209CA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF735926A33711002209CA /* ComplicationController.swift */; };
 		E2FF735C26A33712002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF735B26A33712002209CA /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E263E6A326A4432F00173F1D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 		E2FF734926A33711002209CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2FF734B26A33711002209CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FF735026A33711002209CA /* Game Set Match WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Game Set Match WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2FF735526A33711002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2FF735526A33711002209CA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		E2FF735726A33711002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF735926A33711002209CA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		E2FF735B26A33712002209CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,12 +154,13 @@
 		E2FF735426A33711002209CA /* Game Set Match WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E2FF735526A33711002209CA /* ContentView.swift */,
+				E2FF735526A33711002209CA /* GameView.swift */,
 				E2FF735726A33711002209CA /* Game_Set_MatchApp.swift */,
 				E2FF735926A33711002209CA /* ComplicationController.swift */,
 				E2FF735B26A33712002209CA /* Assets.xcassets */,
 				E2FF736026A33712002209CA /* Info.plist */,
 				E2FF735D26A33712002209CA /* Preview Content */,
+				E263E6A326A4432F00173F1D /* Game.swift */,
 			);
 			path = "Game Set Match WatchKit Extension";
 			sourceTree = "<group>";
@@ -310,8 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FF735826A33711002209CA /* Game_Set_MatchApp.swift in Sources */,
-				E2FF735626A33711002209CA /* ContentView.swift in Sources */,
+				E2FF735626A33711002209CA /* GameView.swift in Sources */,
 				E2FF735A26A33711002209CA /* ComplicationController.swift in Sources */,
+				E263E6A426A4432F00173F1D /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

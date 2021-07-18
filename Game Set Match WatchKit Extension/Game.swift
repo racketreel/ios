@@ -1,79 +1,18 @@
 //
-//  ContentView.swift
+//  Game.swift
 //  Game Set Match WatchKit Extension
 //
-//  Created by Tom Elvidge on 17/07/2021.
+//  Created by Tom Elvidge on 18/07/2021.
 //
 
-import SwiftUI
 import Foundation
 
-struct ContentView: View {
-    
-    @StateObject var game = Game()
-    
-    var body: some View {
-        if (game.winner == "user") {
-            VStack {
-                Text("Congratulations!")
-                Button("New game", action: {
-                    game.reset()
-                })
-            }
-        } else if (game.winner == "opponent") {
-            VStack {
-                Text("Better luck next time...")
-                Button("New game", action: {
-                    game.reset()
-                })
-            }
-        } else {
-            VStack {
-                // Score
-                HStack {
-                    // Sets
-                    VStack {
-                        Text(String(game.setsUser))
-                        Text(String(game.setsOpponent))
-                    }
-                    // Games
-                    VStack {
-                        Text(String(game.gamesUser))
-                        Text(String(game.gamesOpponent))
-                    }
-                    // Points
-                    VStack {
-                        // Just use 0, 1, 2, etc during tie breaks
-                        // Use score "NA" if unknown point value looked up in game.points
-                        Text(game.setTieBreak ? String(game.pointsUser) : game.points[game.pointsUser] ?? "NA")
-                        Text(game.setTieBreak ? String(game.pointsOpponent) : game.points[game.pointsOpponent] ?? "NA")
-                    }
-                }
-                // Buttons for updating the score
-                Button("Point won", action: {
-                        game.updateScore(pointWon: true)
-                    }
-                )
-                Button("Point lost", action: {
-                        game.updateScore(pointWon: false)
-                    }
-                )
-            }
-        }
-    }
-    
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ContentView()
-            ContentView()
-        }
-    }
-}
-
 class Game: ObservableObject {
+    
+    private var setsToWin: Int
+    private var gamesForSet: Int
+    // 0=user, 1=opponent
+    private var toServe: Int
     
     // Use alternate point scoring when set in a tie break
     @Published var setTieBreak: Bool = false
@@ -97,8 +36,13 @@ class Game: ObservableObject {
         4: "AD"
     ]
     
-    init () {
-        self.reset()
+    init (setsToWin: Int, gamesForSet: Int, toServe: Int) {
+        self.setsToWin = setsToWin
+        self.gamesForSet = gamesForSet
+        self.toServe = toServe
+        
+        print(gamesForSet)
+        print(setsToWin)
     }
     
     func updateScore(pointWon: Bool) {
@@ -189,7 +133,7 @@ class Game: ObservableObject {
             
             // Check if set is won by user
             // 8 games is a win by tie break
-            if ((self.gamesUser >= 6 && self.gamesUser >= (self.gamesOpponent + 2)) || self.gamesUser == 8) {
+            if ((self.gamesUser >= self.gamesForSet && self.gamesUser >= (self.gamesOpponent + 2)) || self.gamesUser == self.gamesForSet + 2) {
                 // Add set to user
                 self.setsUser += 1
                 // Set flag to clean up set score
@@ -198,7 +142,7 @@ class Game: ObservableObject {
             
             // Todo: Tidy repeated code for each player
             // Check if set is won by opponent
-            if ((self.gamesOpponent >= 6 && self.gamesOpponent >= (self.gamesUser + 2)) || self.gamesOpponent == 8) {
+            if ((self.gamesOpponent >= self.gamesForSet && self.gamesOpponent >= (self.gamesUser + 2)) || self.gamesOpponent == self.gamesForSet + 2) {
                 // Add set to opponent
                 self.setsOpponent += 1
                 // Set flag to clean up set score
@@ -206,7 +150,7 @@ class Game: ObservableObject {
             }
             
             // Check if this set is in a tie break
-            if (self.gamesUser  == 7 && self.gamesOpponent == 7) {
+            if (self.gamesUser  == self.gamesForSet + 1 && self.gamesOpponent == self.gamesForSet + 1) {
                 // Set setTieBreak flag for alternate scoring
                 setTieBreak = true
             }
@@ -218,31 +162,17 @@ class Game: ObservableObject {
             self.gamesOpponent = 0
             
             // Check if match is won by user
-            if (self.setsUser == 2) {
+            if (self.setsUser == self.setsToWin) {
                 // Match win for user
                 self.winner = "user"
             }
             
             // Check if match is won by opponent
-            if (self.setsOpponent == 2) {
+            if (self.setsOpponent == self.setsToWin) {
                 // Match loss for user
                 self.winner = "opponent"
             }
         }
-    }
-    
-    func reset() {
-        // No winner i.e. game in progress
-        self.winner = ""
-        // No tie break at game start
-        self.setTieBreak = false
-        // Clear score
-        self.pointsUser = 0
-        self.pointsOpponent = 0
-        self.gamesUser = 0
-        self.gamesOpponent = 0
-        self.setsUser = 0
-        self.setsOpponent = 0
     }
     
 }
