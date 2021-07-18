@@ -40,9 +40,6 @@ class Game: ObservableObject {
         self.setsToWin = setsToWin
         self.gamesForSet = gamesForSet
         self.toServe = toServe
-        
-        print(gamesForSet)
-        print(setsToWin)
     }
     
     func updateScore(pointWon: Bool) {
@@ -132,8 +129,10 @@ class Game: ObservableObject {
             self.pointsOpponent = 0
             
             // Check if set is won by user
-            // 8 games is a win by tie break
-            if ((self.gamesUser >= self.gamesForSet && self.gamesUser >= (self.gamesOpponent + 2)) || self.gamesUser == self.gamesForSet + 2) {
+            // Win the number of games for the set and at least 2 more than the opponent
+            if ((self.gamesUser == self.gamesForSet && self.gamesUser >= (self.gamesOpponent + 2))
+                    // Win by tie break when one more than the games for set
+                    || self.gamesUser == self.gamesForSet + 1) {
                 // Add set to user
                 self.setsUser += 1
                 // Set flag to clean up set score
@@ -142,7 +141,8 @@ class Game: ObservableObject {
             
             // Todo: Tidy repeated code for each player
             // Check if set is won by opponent
-            if ((self.gamesOpponent >= self.gamesForSet && self.gamesOpponent >= (self.gamesUser + 2)) || self.gamesOpponent == self.gamesForSet + 2) {
+            if ((self.gamesOpponent == self.gamesForSet && self.gamesOpponent >= (self.gamesUser + 2))
+                    || self.gamesOpponent == self.gamesForSet + 1) {
                 // Add set to opponent
                 self.setsOpponent += 1
                 // Set flag to clean up set score
@@ -150,7 +150,7 @@ class Game: ObservableObject {
             }
             
             // Check if this set is in a tie break
-            if (self.gamesUser  == self.gamesForSet + 1 && self.gamesOpponent == self.gamesForSet + 1) {
+            if (self.gamesUser  == self.gamesForSet && self.gamesOpponent == self.gamesForSet) {
                 // Set setTieBreak flag for alternate scoring
                 setTieBreak = true
             }
