@@ -14,7 +14,7 @@ struct Game_Set_MatchApp: App {
     
     @State private var setsToWin: Int = 2
     @State private var gamesForSet: Int = 6
-    @State private var toServe: Int = 0
+    @State private var toServe: Bool = true
     
     var body: some Scene {
         WindowGroup {
@@ -45,11 +45,11 @@ struct Game_Set_MatchApp: App {
             } else if (step == 3) {
                 Text("Who is serving first?")
                 Button("Me", action: {
-                    toServe = 0
+                    toServe = true
                     step += 1
                 })
                 Button("Opponent", action: {
-                    toServe = 1
+                    toServe = false
                     step += 1
                 })
             } else {

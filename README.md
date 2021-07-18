@@ -3,7 +3,6 @@
 Cut dead time from tennis match videos by keeping score on an Apple Watch.
 
 V1 Todo:
-- Add dot to track whose serve it is and display next to score
 - Add buttons for checkpointing first and second serves (no logic), with visual cue
 - Add undo button for most recent checkpoint
 - Add intuitive gesture alternatives for each button (or replace)

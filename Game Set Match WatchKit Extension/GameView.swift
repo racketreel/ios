@@ -20,6 +20,22 @@ struct GameView: View {
         VStack {
             // Score
             HStack {
+                // Player
+                VStack {
+                    HStack {
+                        Text("ME")
+                        // Conditional service indicator
+                        if (game.winner == "") {
+                            Image(systemName: "circle.fill").font(.system(size: 6)).opacity(game.toServe ? 1 : 0)
+                        }
+                    }
+                    HStack {
+                        Text("OP")
+                        if (game.winner == "") {
+                            Image(systemName: "circle.fill").font(.system(size: 6)).opacity(game.toServe ? 0 : 1)
+                        }
+                    }
+                }
                 // Sets
                 VStack {
                     Text(String(game.setsUser))
@@ -56,6 +72,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(game: Game(setsToWin: 2, gamesForSet: 6, toServe: 0))
+        GameView(game: Game(setsToWin: 2, gamesForSet: 6, toServe: true))
     }
 }

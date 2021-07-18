@@ -12,10 +12,13 @@ class Game: ObservableObject {
     private var setsToWin: Int
     private var gamesForSet: Int
     // 0=user, 1=opponent
-    private var toServe: Int
+    @Published var toServe: Bool
     
     // Use alternate point scoring when set in a tie break
     @Published var setTieBreak: Bool = false
+    // Used to track serves in tie breaks
+    private var tieBreakPointCounter: Int = 0
+    private var toServePostTieBreak: Bool = false
     
     @Published var setsUser: Int = 0
     @Published var setsOpponent: Int = 0
@@ -36,7 +39,7 @@ class Game: ObservableObject {
         4: "AD"
     ]
     
-    init (setsToWin: Int, gamesForSet: Int, toServe: Int) {
+    init (setsToWin: Int, gamesForSet: Int, toServe: Bool) {
         self.setsToWin = setsToWin
         self.gamesForSet = gamesForSet
         self.toServe = toServe
@@ -53,6 +56,12 @@ class Game: ObservableObject {
         
         // Score points
         if setTieBreak {
+            tieBreakPointCounter += 1
+            // Switch serve after first point and then after every other point (i.e. odd points)
+            if (tieBreakPointCounter % 2 != 0) {
+                self.toServe = !self.toServe
+            }
+            
             // Score differently when in a tie break
             if pointWon {
                 self.pointsUser += 1
@@ -92,6 +101,8 @@ class Game: ObservableObject {
                 gameOver = true
                 // End tie break
                 self.setTieBreak = false
+                self.tieBreakPointCounter = 0
+                self.toServe = self.toServePostTieBreak
             }
             
             // Todo: Tidy repeated code for each player
@@ -103,6 +114,8 @@ class Game: ObservableObject {
                 gameOver = true
                 // End tie break
                 self.setTieBreak = false
+                self.tieBreakPointCounter = 0
+                self.toServe = self.toServePostTieBreak
             }
         } else {
             // Check if the game is won by user
@@ -127,6 +140,9 @@ class Game: ObservableObject {
             // Reset score of game
             self.pointsUser = 0
             self.pointsOpponent = 0
+            
+            // Swap service
+            self.toServe = !self.toServe
             
             // Check if set is won by user
             // Win the number of games for the set and at least 2 more than the opponent
@@ -153,6 +169,8 @@ class Game: ObservableObject {
             if (self.gamesUser  == self.gamesForSet && self.gamesOpponent == self.gamesForSet) {
                 // Set setTieBreak flag for alternate scoring
                 setTieBreak = true
+                // Keep track of who will serve in first game of next set
+                toServePostTieBreak = toServe
             }
         }
         
