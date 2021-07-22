@@ -66,6 +66,10 @@ struct GameView: View {
                         game.newEvent(event: TennisEventType.firstServe)
                     }
                 )
+                Button("Undo", action: {
+                        game.undoLastEvent()
+                    }
+                )
             }
         }
     }
