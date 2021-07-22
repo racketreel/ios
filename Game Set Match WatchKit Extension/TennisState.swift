@@ -10,9 +10,9 @@ import Foundation
 class TennisState {
     
     // The event type which caused this state to be generated
-    private var generationEventType: TennisEventType
+    var generationEventType: TennisEventType
     // The timestamp of the generation event
-    private var generationEventTimestamp: TimeInterval
+     var generationEventTimestamp: TimeInterval
     
     // Used to export the state to a ScoreBoard
     private let pointMapping = [
@@ -92,6 +92,120 @@ class TennisState {
         }
         // Use scoring 0, 1, 2, etc when in a tie break
         return ScoreBoard(toServe: self.toServe, setsUser: self.setsUser, setsOpponent: self.setsOpponent, gamesUser: self.gamesUser, gamesOpponent: self.gamesOpponent, pointsUser: String(self.pointsUser), pointsOpponent: String(self.pointsOpponent))
+    }
+    
+    func getGamePointTo() -> PlayerType {
+        if self.setTieBreak {
+            // User on 6 or more points
+            // and at least one point ahead
+            if (self.pointsUser >= 6 && self.pointsUser >= (self.pointsOpponent + 1)) {
+                return PlayerType.user
+            }
+
+            // Vice versa for opponent
+            if (self.pointsOpponent >= 6 && self.pointsOpponent >= (self.pointsUser + 1)) {
+                return PlayerType.opponent
+            }
+        } else {
+            // User on 40 or advantage and opponent at least one point behind
+            if (self.pointsUser >= 3
+                    && (self.pointsUser - self.pointsOpponent) >= 1) {
+                return PlayerType.user
+            }
+            
+            // Vice versa for opponent
+            if (self.pointsOpponent >= 3
+                    && (self.pointsOpponent - self.pointsUser) >= 1) {
+                return PlayerType.opponent
+            }
+        }
+        
+        return PlayerType.neither
+    }
+    
+    func getSetPointTo(gamesForSet: Int) -> PlayerType {
+        // Different condition when in tie break
+        if setTieBreak {
+            // Just comes down to the tie break (game)
+            return self.getGamePointTo()
+        } else {
+            // User has game point condition
+            // and has at least one game less than the amount to win the set
+            // and opponent at least one game behind
+            if (self.getGamePointTo() == PlayerType.user
+                    &&  self.gamesUser >= (gamesForSet - 1)
+                    && (self.gamesUser - self.gamesOpponent) >= 1) {
+                return PlayerType.user
+            }
+            
+            // Vice versa for opponent
+            if (self.getGamePointTo() == PlayerType.opponent
+                    && self.gamesOpponent >= (gamesForSet - 1)
+                    && (self.gamesOpponent - self.gamesUser) >= 1) {
+                return PlayerType.opponent
+            }
+        }
+        
+        return PlayerType.neither
+    }
+    
+    func getMatchPointTo(gamesForSet: Int, setsToWin: Int) -> PlayerType {
+        // User has set point condition and is one off the sets required for the match
+        if (self.getSetPointTo(gamesForSet: gamesForSet) == PlayerType.user
+                && self.setsUser == (setsToWin - 1)) {
+            return PlayerType.user
+        }
+        
+        // Vice versa for opponent
+        if (self.getSetPointTo(gamesForSet: gamesForSet) == PlayerType.opponent
+                && self.setsOpponent == (setsToWin - 1)) {
+            return PlayerType.opponent
+        }
+        
+        return PlayerType.neither
+    }
+    
+    func getBreakPointTo() -> PlayerType {
+        // User on game point and not serving
+        if (getGamePointTo() == PlayerType.user && self.toServe == false) {
+            return PlayerType.user
+        }
+        
+        if (getGamePointTo() == PlayerType.opponent && self.toServe == true) {
+            return PlayerType.opponent
+        }
+        
+        return PlayerType.neither
+    }
+    
+    func isTieBreak(gamesForSet: Int) -> Bool {
+        if (self.gamesUser == gamesForSet && self.gamesOpponent == gamesForSet) {
+            return true
+        }
+        return false
+    }
+    
+    func gameReset() {
+        // Swap serve
+        self.toServe = !self.toServe
+        
+        // Additional reset steps if was a tie break
+        if self.setTieBreak {
+            // Restore next serve from var
+            self.toServe = self.toServePostTieBreak
+            // Reset point counter
+            self.tieBreakPointCounter = 0
+            self.setTieBreak = false
+        }
+        
+        // Points reset
+        self.pointsUser = 0
+        self.pointsOpponent = 0
+    }
+    
+    func setReset() {
+        self.gamesUser = 0
+        self.gamesOpponent = 0
     }
     
 }

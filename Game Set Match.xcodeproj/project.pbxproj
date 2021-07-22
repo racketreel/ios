@@ -11,6 +11,7 @@
 		E263E6A826A8B12F00173F1D /* TennisState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6A726A8B12F00173F1D /* TennisState.swift */; };
 		E263E6AA26A8B26200173F1D /* TennisEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6A926A8B26200173F1D /* TennisEventType.swift */; };
 		E263E6AC26A8B44C00173F1D /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AB26A8B44C00173F1D /* ScoreBoard.swift */; };
+		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		E263E6A726A8B12F00173F1D /* TennisState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisState.swift; sourceTree = "<group>"; };
 		E263E6A926A8B26200173F1D /* TennisEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisEventType.swift; sourceTree = "<group>"; };
 		E263E6AB26A8B44C00173F1D /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
+		E263E6AF26A9F88400173F1D /* PlayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerType.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				E2FF736026A33712002209CA /* Info.plist */,
 				E2FF735D26A33712002209CA /* Preview Content */,
 				E263E6A326A4432F00173F1D /* Game.swift */,
+				E263E6AF26A9F88400173F1D /* PlayerType.swift */,
 				E263E6A726A8B12F00173F1D /* TennisState.swift */,
 				E263E6A926A8B26200173F1D /* TennisEventType.swift */,
 				E263E6AB26A8B44C00173F1D /* ScoreBoard.swift */,
@@ -323,6 +326,7 @@
 			files = (
 				E263E6AC26A8B44C00173F1D /* ScoreBoard.swift in Sources */,
 				E263E6A826A8B12F00173F1D /* TennisState.swift in Sources */,
+				E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */,
 				E2FF735826A33711002209CA /* Game_Set_MatchApp.swift in Sources */,
 				E2FF735626A33711002209CA /* GameView.swift in Sources */,
 				E2FF735A26A33711002209CA /* ComplicationController.swift in Sources */,
