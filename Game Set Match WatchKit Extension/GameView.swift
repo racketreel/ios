@@ -62,6 +62,10 @@ struct GameView: View {
                         game.newEvent(event: TennisEventType.loss)
                     }
                 )
+                Button("Serve", action: {
+                        game.newEvent(event: TennisEventType.firstServe)
+                    }
+                )
             }
         }
     }

@@ -13,5 +13,14 @@ enum TennisEventType {
     case firstServe
     case secondServe
     case start
-    case end
+    
+//    var description : String {
+//        switch self {
+//            case .win: return "win"
+//            case .loss: return "loss"
+//            case .firstServe: return "firstServe"
+//            case .secondServe: return "secondServe"
+//            case .start: return "start"
+//        }
+//    }
 }

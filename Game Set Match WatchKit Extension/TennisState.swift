@@ -12,7 +12,7 @@ class TennisState {
     // The event type which caused this state to be generated
     var generationEventType: TennisEventType
     // The timestamp of the generation event
-     var generationEventTimestamp: TimeInterval
+    var generationEventTimestamp: TimeInterval
     
     // Used to export the state to a ScoreBoard
     private let pointMapping = [
@@ -206,6 +206,10 @@ class TennisState {
     func setReset() {
         self.gamesUser = 0
         self.gamesOpponent = 0
+    }
+    
+    func describe() -> String {
+        return "\(self.generationEventType) - \(self.generationEventTimestamp)"
     }
     
 }
