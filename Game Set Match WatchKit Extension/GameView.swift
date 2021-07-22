@@ -26,42 +26,40 @@ struct GameView: View {
                         Text("ME")
                         // Conditional service indicator
                         if (game.winner == "") {
-                            Image(systemName: "circle.fill").font(.system(size: 6)).opacity(game.toServe ? 1 : 0)
+                            Image(systemName: "circle.fill").font(.system(size: 6)).opacity(game.scoreBoard.toServe ? 1 : 0)
                         }
                     }
                     HStack {
                         Text("OP")
                         if (game.winner == "") {
-                            Image(systemName: "circle.fill").font(.system(size: 6)).opacity(game.toServe ? 0 : 1)
+                            Image(systemName: "circle.fill").font(.system(size: 6)).opacity(game.scoreBoard.toServe ? 0 : 1)
                         }
                     }
                 }
                 // Sets
                 VStack {
-                    Text(String(game.setsUser))
-                    Text(String(game.setsOpponent))
+                    Text(String(game.scoreBoard.setsUser))
+                    Text(String(game.scoreBoard.setsOpponent))
                 }
                 // Games
                 VStack {
-                    Text(String(game.gamesUser))
-                    Text(String(game.gamesOpponent))
+                    Text(String(game.scoreBoard.gamesUser))
+                    Text(String(game.scoreBoard.gamesOpponent))
                 }
                 // Points
                 VStack {
-                    // Just use 0, 1, 2, etc during tie breaks
-                    // Use score "NA" if unknown point value looked up in game.points
-                    Text(game.setTieBreak ? String(game.pointsUser) : game.points[game.pointsUser] ?? "NA")
-                    Text(game.setTieBreak ? String(game.pointsOpponent) : game.points[game.pointsOpponent] ?? "NA")
+                    Text(game.scoreBoard.pointsUser)
+                    Text(game.scoreBoard.pointsOpponent)
                 }
             }
             if (game.winner == "") {
                 // Buttons for updating the score
                 Button("Point won", action: {
-                        game.updateScore(pointWon: true)
+                        game.newEvent(event: TennisEventType.win)
                     }
                 )
                 Button("Point lost", action: {
-                        game.updateScore(pointWon: false)
+                        game.newEvent(event: TennisEventType.loss)
                     }
                 )
             }
@@ -72,6 +70,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(game: Game(setsToWin: 2, gamesForSet: 6, toServe: true))
+        GameView(game: Game(setsToWin: 2, gamesForSet: 6, firstServe: true))
     }
 }

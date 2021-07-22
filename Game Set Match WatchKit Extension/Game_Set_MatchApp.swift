@@ -14,7 +14,7 @@ struct Game_Set_MatchApp: App {
     
     @State private var setsToWin: Int = 2
     @State private var gamesForSet: Int = 6
-    @State private var toServe: Bool = true
+    @State private var firstServe: Bool = true
     
     var body: some Scene {
         WindowGroup {
@@ -45,11 +45,11 @@ struct Game_Set_MatchApp: App {
             } else if (step == 3) {
                 Text("Who is serving first?")
                 Button("Me", action: {
-                    toServe = true
+                    firstServe = true
                     step += 1
                 })
                 Button("Opponent", action: {
-                    toServe = false
+                    firstServe = false
                     step += 1
                 })
             } else {
@@ -58,7 +58,7 @@ struct Game_Set_MatchApp: App {
                     step = 0
                 })
                 // Create Game with chosen options and display GameView of Game
-                GameView(game: Game(setsToWin: setsToWin, gamesForSet: gamesForSet, toServe: toServe))
+                GameView(game: Game(setsToWin: setsToWin, gamesForSet: gamesForSet, firstServe: firstServe))
             }
         }
     }
