@@ -11,6 +11,7 @@ import Foundation
 struct GameView: View {
     
     @ObservedObject var game: Game
+    var model = ViewModelWatch()
     
     init(game: Game) {
         self.game = game
@@ -71,7 +72,7 @@ struct GameView: View {
                     }
                 )
             } else {
-                Button("Export", action: {
+                Button("Send to phone", action: {
                     let match = game.export()
                     
                     let encoder = JSONEncoder()
@@ -80,6 +81,12 @@ struct GameView: View {
                     do {
                         let data = try encoder.encode(match)
                         print(String(data: data, encoding: .utf8)!)
+                        // message match
+                        do {
+                            try self.model.session?.updateApplicationContext(["match": data])
+                        } catch {
+                            print("something went wrong sending data")
+                        }
                     } catch {
                         print("something went wrong encoding")
                     }

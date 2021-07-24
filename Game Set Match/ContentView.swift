@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var model = ViewModelPhone()
+    
     var body: some View {
-        Text("Please use the Apple Watch app.")
-            .padding()
+        ForEach (model.matches, id: \.self) { match in
+            Text(match.id)
+        }
     }
 }
 

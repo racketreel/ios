@@ -17,6 +17,8 @@
 		E273A0AF26AC16B000259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
 		E273A0B026AC16B000259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
 		E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
+		E2B11E4B26AC23A00049A48F /* ViewModelWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4A26AC23A00049A48F /* ViewModelWatch.swift */; };
+		E2B11E4D26AC23C00049A48F /* ViewModelPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		E273A0A926AC144D00259066 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		E273A0AB26AC14C500259066 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
 		E273A0AD26AC150100259066 /* MatchEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEventType.swift; sourceTree = "<group>"; };
+		E2B11E4A26AC23A00049A48F /* ViewModelWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelWatch.swift; sourceTree = "<group>"; };
+		E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelPhone.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 		E2FF733726A33710002209CA /* Game Set Match */ = {
 			isa = PBXGroup;
 			children = (
+				E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */,
 				E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */,
 				E2FF733A26A33710002209CA /* ContentView.swift */,
 				E2FF733C26A33711002209CA /* Assets.xcassets */,
@@ -180,6 +185,7 @@
 		E2FF735426A33711002209CA /* Game Set Match WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E2B11E4A26AC23A00049A48F /* ViewModelWatch.swift */,
 				E2FF735526A33711002209CA /* GameView.swift */,
 				E2FF735726A33711002209CA /* Game_Set_MatchApp.swift */,
 				E2FF735926A33711002209CA /* ComplicationController.swift */,
@@ -335,6 +341,7 @@
 				E2FF733B26A33710002209CA /* ContentView.swift in Sources */,
 				E273A0AC26AC14C500259066 /* MatchState.swift in Sources */,
 				E273A0AE26AC150100259066 /* MatchEventType.swift in Sources */,
+				E2B11E4D26AC23C00049A48F /* ViewModelPhone.swift in Sources */,
 				E273A0AA26AC144D00259066 /* Match.swift in Sources */,
 				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
 			);
@@ -347,6 +354,7 @@
 				E273A0AF26AC16B000259066 /* Match.swift in Sources */,
 				E273A0B026AC16B000259066 /* MatchState.swift in Sources */,
 				E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */,
+				E2B11E4B26AC23A00049A48F /* ViewModelWatch.swift in Sources */,
 				E263E6AC26A8B44C00173F1D /* ScoreBoard.swift in Sources */,
 				E263E6A826A8B12F00173F1D /* TennisState.swift in Sources */,
 				E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */,
