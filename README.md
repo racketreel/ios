@@ -12,3 +12,5 @@ V1 Todo:
 
 Other Todo:
 - Point names in score board (break, game, set, match)
+- Remove uuid id from match and hash it properly
+- Refactor watch app to use common match classes

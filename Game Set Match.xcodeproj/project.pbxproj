@@ -19,6 +19,7 @@
 		E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
 		E2B11E4B26AC23A00049A48F /* ViewModelWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4A26AC23A00049A48F /* ViewModelWatch.swift */; };
 		E2B11E4D26AC23C00049A48F /* ViewModelPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */; };
+		E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		E273A0AD26AC150100259066 /* MatchEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEventType.swift; sourceTree = "<group>"; };
 		E2B11E4A26AC23A00049A48F /* ViewModelWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelWatch.swift; sourceTree = "<group>"; };
 		E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelPhone.swift; sourceTree = "<group>"; };
+		E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListItemView.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */,
 				E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */,
 				E2FF733A26A33710002209CA /* ContentView.swift */,
+				E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */,
 				E2FF733C26A33711002209CA /* Assets.xcassets */,
 				E2FF734126A33711002209CA /* Info.plist */,
 				E2FF733E26A33711002209CA /* Preview Content */,
@@ -344,6 +347,7 @@
 				E2B11E4D26AC23C00049A48F /* ViewModelPhone.swift in Sources */,
 				E273A0AA26AC144D00259066 /* Match.swift in Sources */,
 				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
+				E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
