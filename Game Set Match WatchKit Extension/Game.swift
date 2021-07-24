@@ -8,7 +8,7 @@
 import Foundation
 
 class Game: ObservableObject {
-    
+        
     // Game preferences
     private let setsToWin: Int
     private let gamesForSet: Int
@@ -52,7 +52,7 @@ class Game: ObservableObject {
         }
     }
     
-    func newEvent(event: TennisEventType) {
+    func newEvent(event: MatchEventType) {
         // Get current state from end of history
         // Use bang as there will alsways be at least the initial state
         let currentState = self.stateHistory.last!
@@ -65,12 +65,12 @@ class Game: ObservableObject {
         // Update newState using currentState and event
         
         // firstServe always passed by Button, check not actually secondServe
-        if (event == TennisEventType.firstServe
-                && currentState.generationEventType == TennisEventType.firstServe) {
-            newState.generationEventType = TennisEventType.secondServe
+        if (event == MatchEventType.firstServe
+                && currentState.generationEventType == MatchEventType.firstServe) {
+            newState.generationEventType = MatchEventType.secondServe
         }
         
-        if (event == TennisEventType.win || event == TennisEventType.loss) {
+        if (event == MatchEventType.win || event == MatchEventType.loss) {
             // Different scoring when in a tie break
             if currentState.setTieBreak {
                 newState.tieBreakPointCounter += 1
@@ -80,16 +80,16 @@ class Game: ObservableObject {
                     newState.toServe = !newState.toServe
                 }
 
-                if (event == TennisEventType.win) {
+                if (event == MatchEventType.win) {
                     newState.pointsUser += 1
                 }
                 
-                if (event == TennisEventType.loss) {
+                if (event == MatchEventType.loss) {
                     newState.pointsOpponent += 1
                 }
             } else {
                 // No tie break so score normally
-                if (event == TennisEventType.win) {
+                if (event == MatchEventType.win) {
                     // If opponent was on advantage put it back to duece
                     if (currentState.pointsOpponent == 4) {
                         newState.pointsOpponent -= 1
@@ -98,7 +98,7 @@ class Game: ObservableObject {
                         newState.pointsUser += 1
                     }
                 }
-                if (event == TennisEventType.loss) {
+                if (event == MatchEventType.loss) {
                     // If user was on advantage put it back to duece
                     if (currentState.pointsUser == 4) {
                         newState.pointsUser -= 1
@@ -113,13 +113,13 @@ class Game: ObservableObject {
             // Resolve game
             let gamePointTo: PlayerType = currentState.getGamePointTo()
             // Game win
-            if (gamePointTo == PlayerType.user && event == TennisEventType.win) {
+            if (gamePointTo == PlayerType.user && event == MatchEventType.win) {
                 newState.gamesUser += 1
                 newState.gameReset()
                 
             }
             // Game loss
-            if (gamePointTo == PlayerType.opponent && event == TennisEventType.loss) {
+            if (gamePointTo == PlayerType.opponent && event == MatchEventType.loss) {
                 newState.gamesOpponent += 1
                 newState.gameReset()
             }
@@ -127,12 +127,12 @@ class Game: ObservableObject {
             // Resolve set
             let setPointTo: PlayerType = currentState.getSetPointTo(gamesForSet: self.gamesForSet)
             // Set win
-            if (setPointTo == PlayerType.user && event == TennisEventType.win) {
+            if (setPointTo == PlayerType.user && event == MatchEventType.win) {
                 newState.setsUser += 1
                 newState.setReset()
             }
             // Set loss
-            if (setPointTo == PlayerType.opponent && event == TennisEventType.loss) {
+            if (setPointTo == PlayerType.opponent && event == MatchEventType.loss) {
                 newState.setsOpponent += 1
                 newState.setReset()
             }
@@ -140,11 +140,11 @@ class Game: ObservableObject {
             // Resolve match
             let matchPointTo: PlayerType = currentState.getMatchPointTo(gamesForSet: self.gamesForSet, setsToWin: self.setsToWin)
             // Match win!
-            if (matchPointTo == PlayerType.user && event == TennisEventType.win) {
+            if (matchPointTo == PlayerType.user && event == MatchEventType.win) {
                 self.winner = "user"
             }
             // Match loss...
-            if (matchPointTo == PlayerType.opponent && event == TennisEventType.loss) {
+            if (matchPointTo == PlayerType.opponent && event == MatchEventType.loss) {
                 self.winner = "opponent"
             }
             
@@ -163,6 +163,14 @@ class Game: ObservableObject {
         
         // Add the fully updated new state to history
         self.stateHistory.append(newState)
+    }
+    
+    func export() -> Match {
+        var history = [MatchState]()
+        for state in stateHistory {
+            history.append(state.export())
+        }
+        return Match(setsToWin: self.setsToWin, gamesForSet: self.gamesForSet, firstServe: self.firstServe, history: history)
     }
     
 }

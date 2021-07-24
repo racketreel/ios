@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		E263E6A426A4432F00173F1D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6A326A4432F00173F1D /* Game.swift */; };
 		E263E6A826A8B12F00173F1D /* TennisState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6A726A8B12F00173F1D /* TennisState.swift */; };
-		E263E6AA26A8B26200173F1D /* TennisEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6A926A8B26200173F1D /* TennisEventType.swift */; };
 		E263E6AC26A8B44C00173F1D /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AB26A8B44C00173F1D /* ScoreBoard.swift */; };
 		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
+		E273A0AA26AC144D00259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
+		E273A0AC26AC14C500259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
+		E273A0AE26AC150100259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
+		E273A0AF26AC16B000259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
+		E273A0B026AC16B000259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
+		E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
@@ -71,9 +76,11 @@
 /* Begin PBXFileReference section */
 		E263E6A326A4432F00173F1D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E263E6A726A8B12F00173F1D /* TennisState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisState.swift; sourceTree = "<group>"; };
-		E263E6A926A8B26200173F1D /* TennisEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisEventType.swift; sourceTree = "<group>"; };
 		E263E6AB26A8B44C00173F1D /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		E263E6AF26A9F88400173F1D /* PlayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerType.swift; sourceTree = "<group>"; };
+		E273A0A926AC144D00259066 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		E273A0AB26AC14C500259066 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
+		E273A0AD26AC150100259066 /* MatchEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEventType.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,9 +117,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E273A0A826AC143B00259066 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E273A0A926AC144D00259066 /* Match.swift */,
+				E273A0AB26AC14C500259066 /* MatchState.swift */,
+				E273A0AD26AC150100259066 /* MatchEventType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E2FF732C26A33710002209CA = {
 			isa = PBXGroup;
 			children = (
+				E273A0A826AC143B00259066 /* Common */,
 				E2FF733726A33710002209CA /* Game Set Match */,
 				E2FF734826A33711002209CA /* Game Set Match WatchKit App */,
 				E2FF735426A33711002209CA /* Game Set Match WatchKit Extension */,
@@ -171,7 +189,6 @@
 				E263E6A326A4432F00173F1D /* Game.swift */,
 				E263E6AF26A9F88400173F1D /* PlayerType.swift */,
 				E263E6A726A8B12F00173F1D /* TennisState.swift */,
-				E263E6A926A8B26200173F1D /* TennisEventType.swift */,
 				E263E6AB26A8B44C00173F1D /* ScoreBoard.swift */,
 			);
 			path = "Game Set Match WatchKit Extension";
@@ -316,6 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FF733B26A33710002209CA /* ContentView.swift in Sources */,
+				E273A0AC26AC14C500259066 /* MatchState.swift in Sources */,
+				E273A0AE26AC150100259066 /* MatchEventType.swift in Sources */,
+				E273A0AA26AC144D00259066 /* Match.swift in Sources */,
 				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,13 +344,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E273A0AF26AC16B000259066 /* Match.swift in Sources */,
+				E273A0B026AC16B000259066 /* MatchState.swift in Sources */,
+				E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */,
 				E263E6AC26A8B44C00173F1D /* ScoreBoard.swift in Sources */,
 				E263E6A826A8B12F00173F1D /* TennisState.swift in Sources */,
 				E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */,
 				E2FF735826A33711002209CA /* Game_Set_MatchApp.swift in Sources */,
 				E2FF735626A33711002209CA /* GameView.swift in Sources */,
 				E2FF735A26A33711002209CA /* ComplicationController.swift in Sources */,
-				E263E6AA26A8B26200173F1D /* TennisEventType.swift in Sources */,
 				E263E6A426A4432F00173F1D /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

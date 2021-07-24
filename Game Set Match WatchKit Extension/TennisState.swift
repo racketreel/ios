@@ -7,14 +7,15 @@
 
 import Foundation
 
-class TennisState {
+class TennisState: Codable {
     
     // The event type which caused this state to be generated
-    var generationEventType: TennisEventType
+    var generationEventType: MatchEventType
     // The timestamp of the generation event
     var generationEventTimestamp: TimeInterval
     
     // Used to export the state to a ScoreBoard
+    // Don't decode/encode by default as immutable
     private let pointMapping = [
         0: "0",
         1: "15",
@@ -46,7 +47,7 @@ class TennisState {
 
     // Called to create the TennisState for game start
     init(toServe: Bool) {
-        self.generationEventType = TennisEventType.start
+        self.generationEventType = MatchEventType.start
         self.generationEventTimestamp = NSDate().timeIntervalSince1970
         self.toServe = toServe
         self.setTieBreak = false
@@ -210,6 +211,11 @@ class TennisState {
     
     func describe() -> String {
         return "\(self.generationEventType) - \(self.generationEventTimestamp)"
+    }
+    
+    func export() -> MatchState {
+        let scoreBoard = exportScoreBoard()
+        return MatchState(generationEventType: self.generationEventType, generationEventTimestamp: self.generationEventTimestamp, toServe: self.toServe, setsUser: self.setsUser, setsOpponent: self.setsOpponent, gamesUser: self.gamesUser, gamesOpponent: self.gamesOpponent, pointsUser: scoreBoard.pointsUser, pointsOpponent: scoreBoard.pointsOpponent)
     }
     
 }

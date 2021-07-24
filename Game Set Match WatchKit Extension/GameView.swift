@@ -55,21 +55,35 @@ struct GameView: View {
             if (game.winner == "") {
                 // Buttons for updating the score
                 Button("Point won", action: {
-                        game.newEvent(event: TennisEventType.win)
+                        game.newEvent(event: MatchEventType.win)
                     }
                 )
                 Button("Point lost", action: {
-                        game.newEvent(event: TennisEventType.loss)
+                        game.newEvent(event: MatchEventType.loss)
                     }
                 )
                 Button("Serve", action: {
-                        game.newEvent(event: TennisEventType.firstServe)
+                        game.newEvent(event: MatchEventType.firstServe)
                     }
                 )
                 Button("Undo", action: {
                         game.undoLastEvent()
                     }
                 )
+            } else {
+                Button("Export", action: {
+                    let match = game.export()
+                    
+                    let encoder = JSONEncoder()
+                    encoder.outputFormatting = .prettyPrinted
+                    
+                    do {
+                        let data = try encoder.encode(match)
+                        print(String(data: data, encoding: .utf8)!)
+                    } catch {
+                        print("something went wrong encoding")
+                    }
+                })
             }
         }
     }
