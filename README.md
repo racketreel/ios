@@ -7,10 +7,9 @@ V1 Todo:
 - Disable undo button when only the initial state
 - Add intuitive gesture alternatives for each button (or replace)
 - Add logic for saving checkpoints (serves and points) with times and metadata to persistent storage
-- Add list view to iOS app for matches with access to raw checkpoints
 - Add video cutting functionality to iOS app
 
 Other Todo:
-- Point names in score board (break, game, set, match)
 - Remove uuid id from match and hash it properly
-- Refactor watch app to use common match classes
+- Tidy end of game on watch
+- Proper error handling and user feedback for sending match to phone

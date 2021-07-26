@@ -7,24 +7,22 @@
 
 import Foundation
 
-struct Match: Codable, Identifiable, Hashable {
+class Match: Codable, Identifiable, Hashable {
         
-    let id: String
+    let id: String 
+    let matchPreferences: MatchPreferences
+    var history: [MatchState]
     
-    // Match preferences
-    let setsToWin: Int
-    let gamesForSet: Int
-    let firstServe: Bool
-    
-    // State history of match
-    let history: [MatchState]
-    
-    init(setsToWin: Int, gamesForSet: Int, firstServe: Bool, history: [MatchState]) {
+    init(matchPreferences: MatchPreferences, history: [MatchState]) {
         self.id = UUID().uuidString
-        self.setsToWin = setsToWin
-        self.gamesForSet = gamesForSet
-        self.firstServe = firstServe
+        self.matchPreferences = matchPreferences
         self.history = history
+    }
+    
+    init(matchPreferences: MatchPreferences) {
+        self.id = UUID().uuidString
+        self.matchPreferences = matchPreferences
+        self.history = [MatchState(toServe: matchPreferences.firstServe)]
     }
     
     static func == (lhs: Match, rhs: Match) -> Bool {

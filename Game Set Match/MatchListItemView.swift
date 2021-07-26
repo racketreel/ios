@@ -26,6 +26,6 @@ struct MatchListItemView: View {
 
 struct MatchListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListItemView(match: Match(setsToWin: 2, gamesForSet: 6, firstServe: true, history: []))
+        MatchListItemView(match: Match(matchPreferences: MatchPreferences(setsToWin: 2, gamesForSet: 6, firstServe: true), history: []))
     }
 }
