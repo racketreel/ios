@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var model = ViewModelWatch()
+    @ObservedObject var model = ViewModel()
     
     var body: some View {
         if (model.currentView == ViewType.welcome) {

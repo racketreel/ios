@@ -7,7 +7,21 @@
 
 import Foundation
 
-class MatchState: Codable {
+class MatchState: Encodable {
+    
+    enum CodingKeys: String, CodingKey {
+        case breakPoint
+        case gamesOpponent
+        case gamesUser
+        case generationEventTimestamp
+        case generationEventType
+        case pointsOpponent
+        case pointsUser
+        case pointType
+        case setsOpponent
+        case setsUser
+        case toServe
+    }
     
     // The match event which caused this new state to be generated
     var generationEventType: MatchEventType
@@ -29,8 +43,19 @@ class MatchState: Codable {
     var breakPoint: Bool
     var pointType: PointType
     
+    // Use alternate point scoring when set in a tie break
+    var setTieBreak: Bool
+    // Used to track serves in tie breaks
+    var tieBreakPointCounter: Int
+    // Keep track of who is due to serve after the tie break
+    var toServePostTieBreak: Bool
     
-    init(generationEventType: MatchEventType, generationEventTimestamp: TimeInterval, toServe: Bool, setsUser: Int, setsOpponent: Int, gamesUser: Int, gamesOpponent: Int, pointsUser: String, pointsOpponent: String, breakPoint: Bool, pointType: PointType) {
+    // 0=0, 1=15, 2=30, 3=40, 4=adv when not in a tie break
+    // using Int makes scoring easier
+    var pointsUserInt: Int
+    var pointsOpponentInt: Int
+    
+    init(generationEventType: MatchEventType, generationEventTimestamp: TimeInterval, toServe: Bool, setsUser: Int, setsOpponent: Int, gamesUser: Int, gamesOpponent: Int, pointsUser: String, pointsOpponent: String, setTieBreak: Bool, tieBreakPointCounter: Int, toServePostTieBreak: Bool, pointsUserInt: Int, pointsOpponentInt: Int, breakPoint: Bool, pointType: PointType) {
         self.generationEventType = generationEventType
         self.generationEventTimestamp = generationEventTimestamp
         self.toServe = toServe
@@ -42,6 +67,11 @@ class MatchState: Codable {
         self.pointsOpponent = pointsOpponent
         self.breakPoint = breakPoint
         self.pointType = pointType
+        self.setTieBreak = setTieBreak
+        self.tieBreakPointCounter = tieBreakPointCounter
+        self.toServePostTieBreak = toServePostTieBreak
+        self.pointsUserInt = pointsUserInt
+        self.pointsOpponentInt = pointsOpponentInt
     }
 
     // Used to initialise the first MatchState for a game
@@ -57,6 +87,31 @@ class MatchState: Codable {
         self.pointsOpponent = "0"
         self.breakPoint = false
         self.pointType = PointType.none
+        self.setTieBreak = false
+        self.tieBreakPointCounter = 0
+        self.toServePostTieBreak = false
+        self.pointsUserInt = 0
+        self.pointsOpponentInt = 0
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = MatchState(generationEventType: generationEventType, generationEventTimestamp: generationEventTimestamp, toServe: toServe, setsUser: setsUser, setsOpponent: setsOpponent, gamesUser: gamesUser, gamesOpponent: gamesOpponent, pointsUser: pointsUser, pointsOpponent: pointsOpponent, setTieBreak: setTieBreak, tieBreakPointCounter: tieBreakPointCounter, toServePostTieBreak: toServePostTieBreak, pointsUserInt: pointsUserInt, pointsOpponentInt: pointsOpponentInt,  breakPoint: breakPoint, pointType: pointType)
+        return copy
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(breakPoint, forKey: .breakPoint)
+        try container.encode(gamesOpponent, forKey: .gamesOpponent)
+        try container.encode(gamesUser, forKey: .gamesUser)
+        try container.encode(generationEventTimestamp, forKey: .generationEventTimestamp)
+        try container.encode(generationEventType, forKey: .generationEventType)
+        try container.encode(pointsOpponent, forKey: .pointsOpponent)
+        try container.encode(pointsUser, forKey: .pointsUser)
+        try container.encode(pointType, forKey: .pointType)
+        try container.encode(setsOpponent, forKey: .setsOpponent)
+        try container.encode(setsUser, forKey: .setsUser)
+        try container.encode(toServe, forKey: .toServe)
     }
     
 }

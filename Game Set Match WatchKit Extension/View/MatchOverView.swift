@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MatchOverView: View {
     
-    @ObservedObject var model: ViewModelWatch
+    @ObservedObject var model: ViewModel
     
     var body: some View {
         VStack {
@@ -25,6 +25,6 @@ struct MatchOverView: View {
 
 struct MatchOverView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchOverView(model: ViewModelWatch())
+        MatchOverView(model: ViewModel())
     }
 }

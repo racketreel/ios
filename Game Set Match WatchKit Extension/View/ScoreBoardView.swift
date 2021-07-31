@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ScoreBoardView: View {
     
-//    var matchState: MatchState
-    @ObservedObject var model: ViewModelWatch
+    let state: MatchState
     
     var body: some View {
         HStack {
@@ -20,31 +19,29 @@ struct ScoreBoardView: View {
                     Text("ME")
                     Image(systemName: "circle.fill")
                         .font(.system(size: 6))
-//                        .opacity(matchState.toServe ? 1 : 0)
-                        .opacity(model.match!.currentState.toServe ? 1 : 0)
+                        .opacity(state.toServe ? 1 : 0)
                 }
                 HStack {
                     Text("OP")
                     Image(systemName: "circle.fill")
                         .font(.system(size: 6))
-//                        .opacity(matchState.toServe ? 0 : 1)
-                        .opacity(model.match!.currentState.toServe ? 0 : 1)
+                        .opacity(state.toServe ? 0 : 1)
                 }
             }
             // Sets
             VStack {
-                Text(String(model.match!.currentState.setsUser))
-                Text(String(model.match!.currentState.setsOpponent))
+                Text(String(state.setsUser))
+                Text(String(state.setsOpponent))
             }
             // Games
             VStack {
-                Text(String(model.match!.currentState.gamesUser))
-                Text(String(model.match!.currentState.gamesOpponent))
+                Text(String(state.gamesUser))
+                Text(String(state.gamesOpponent))
             }
             // Points
             VStack {
-                Text(model.match!.currentState.pointsUser)
-                Text(model.match!.currentState.pointsOpponent)
+                Text(state.pointsUser)
+                Text(state.pointsOpponent)
             }
         }
     }
@@ -52,7 +49,6 @@ struct ScoreBoardView: View {
 
 struct ScoreBoardView_Previews: PreviewProvider {
     static var previews: some View {
-//        ScoreBoardView(matchState: MatchState(toServe: true))
-        ScoreBoardView(model: ViewModelWatch())
+        ScoreBoardView(state: MatchState(toServe: true))
     }
 }

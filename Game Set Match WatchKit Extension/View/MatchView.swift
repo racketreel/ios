@@ -9,17 +9,12 @@ import SwiftUI
 
 struct MatchView: View {
     
-    @ObservedObject var model: ViewModelWatch
+    @ObservedObject var model: ViewModel
     
     var body: some View {
         ScrollView {
             VStack {
-                Button("Quit", action: {
-                    model.changeView(view: ViewType.welcome)
-                })
-                // Force unwrap as match must have been set if displaying MatchView
-//                ScoreBoardView(matchState: model.match!.currentState)
-                ScoreBoardView(model: model)
+                ScoreBoardView(state: model.match!.currentState)
                 Button("Serve", action: {
                     model.applyServe()
                 })
@@ -32,6 +27,9 @@ struct MatchView: View {
                 Button("Undo", action: {
                     model.undo()
                 })
+                Button("Quit", action: {
+                    model.changeView(view: ViewType.welcome)
+                })
             }
         }
     }
@@ -39,6 +37,6 @@ struct MatchView: View {
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView(model: ViewModelWatch())
+        MatchView(model: ViewModel())
     }
 }

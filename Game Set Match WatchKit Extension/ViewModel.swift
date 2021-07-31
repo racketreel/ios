@@ -1,5 +1,5 @@
 //
-//  ViewModelWatch.swift
+//  ViewModel.swift
 //  Game Set Match WatchKit Extension
 //
 //  Created by Tom Elvidge on 23/07/2021.
@@ -8,13 +8,13 @@
 import Foundation
 import WatchConnectivity
 
-class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
+class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     
+    // WatchConnectivity for send match data to iPhone
     var session: WCSession?
     
     @Published var currentView = ViewType.welcome
-    
-    @Published var match: MatchWatch?
+    @Published var match: Match?
     
     private let pointMapping = [
         0: "0",
@@ -41,30 +41,29 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
     }
     
     func newMatch(matchPreferences: MatchPreferences) {
-        self.match = MatchWatch(matchPreferences: matchPreferences)
+        self.match = Match(matchPreferences: matchPreferences)
     }
     
     func saveMatch() {
-        // Upcast historyWatch to MatchState and set history
-        match!.history = [MatchState](match!.historyWatch)
-        // Encode match into json
+        // Encode match into JSON
         let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
         do {
             let data = try encoder.encode(match)
-            print(String(data: data, encoding: .utf8)!)
+            encoder.outputFormatting = .prettyPrinted
+            NSLog(String(data: data, encoding: .utf8)!)
+            // Send match JSON to iPhone
             do {
                 try self.session?.updateApplicationContext(["match": data])
             } catch {
-                print("Something went wrong sending data")
+                print("Unable to send data to iPhone")
             }
         } catch {
-            print("Something went wrong encoding match")
+            print("Unable to encode match JSON")
         }
     }
     
     func applyServe() {
-        let nextState = self.match!.currentState.copy() as! MatchStateWatch
+        let nextState = self.match!.currentState.copy() as! MatchState
         nextState.generationEventTimestamp = NSDate().timeIntervalSince1970
         
         // Set state as second serve if previous state was a first serve
@@ -73,13 +72,13 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         }
         
         objectWillChange.send()
-        self.match!.historyWatch.append(nextState)
+        self.match!.history.append(nextState)
         self.match!.currentState = nextState
     }
     
     func applyWin() {
         let currentState = self.match!.currentState
-        let newState = currentState.copy() as! MatchStateWatch
+        let newState = currentState.copy() as! MatchState
         newState.generationEventTimestamp = NSDate().timeIntervalSince1970
         newState.generationEventType = MatchEventType.win
         
@@ -125,7 +124,7 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         
         // ViewModelWatch cannot tell that match has changed so manually notify observers that there is about to be a change in self
         objectWillChange.send()
-        match!.historyWatch.append(newState)
+        match!.history.append(newState)
         match!.currentState = newState
         
         // If won on match point then change to MatchOverView
@@ -136,7 +135,7 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
     
     func applyLoss() {
         let currentState = self.match!.currentState
-        let newState = currentState.copy() as! MatchStateWatch
+        let newState = currentState.copy() as! MatchState
         newState.generationEventTimestamp = NSDate().timeIntervalSince1970
         newState.generationEventType = MatchEventType.loss
         
@@ -182,7 +181,7 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         
         // ViewModelWatch cannot tell that match has changed so manually notify observers that there is about to be a change in self
         objectWillChange.send()
-        match!.historyWatch.append(newState)
+        match!.history.append(newState)
         match!.currentState = newState
         
         // If opponent won on match point then change to MatchOverView
@@ -192,14 +191,14 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
     }
     
     func undo() {
-        if (match!.historyWatch.count > 1) {
+        if (match!.history.count > 1) {
             objectWillChange.send()
-            match!.historyWatch.removeLast()
-            match!.currentState = match!.historyWatch.last!
+            match!.history.removeLast()
+            match!.currentState = match!.history.last!
         }
     }
     
-    private func updatePointType(state: MatchStateWatch) {
+    private func updatePointType(state: MatchState) {
         state.pointType = PointType.none
         state.breakPoint = false
         
@@ -233,12 +232,12 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         }
     }
     
-    private func isTieBreak(state: MatchStateWatch) -> Bool {
+    private func isTieBreak(state: MatchState) -> Bool {
         let gamesForSet = match?.matchPreferences.gamesForSet
         return (state.gamesUser == gamesForSet && state.gamesOpponent == gamesForSet)
     }
     
-    private func isBreakPoint(state: MatchStateWatch, gamePointTo: PlayerType) -> Bool {
+    private func isBreakPoint(state: MatchState, gamePointTo: PlayerType) -> Bool {
         // User or opponent on game point but not serving
         if ((gamePointTo == PlayerType.user && state.toServe == false)
                 || (gamePointTo == PlayerType.opponent && state.toServe == true)) {
@@ -247,7 +246,7 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         return false
     }
     
-    private func gamePointTo(state: MatchStateWatch) -> PlayerType {
+    private func gamePointTo(state: MatchState) -> PlayerType {
         if state.setTieBreak {
             // User on 6 or more points
             // and at least one point ahead
@@ -273,7 +272,7 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         return PlayerType.neither
     }
     
-    private func setPointTo(state: MatchStateWatch, gamePointTo: PlayerType) -> PlayerType {
+    private func setPointTo(state: MatchState, gamePointTo: PlayerType) -> PlayerType {
         // Different condition when in tie break
         if state.setTieBreak {
             // Just comes down to the tie break (game)
@@ -297,7 +296,7 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         return PlayerType.neither
     }
     
-    private func matchPointTo(state: MatchStateWatch, setPointTo: PlayerType) -> PlayerType {
+    private func matchPointTo(state: MatchState, setPointTo: PlayerType) -> PlayerType {
         let setsToWin = match!.matchPreferences.setsToWin
         // User has set point condition and is one off the sets required for the match
         if (setPointTo == PlayerType.user && state.setsUser == (setsToWin - 1)) {
@@ -310,7 +309,7 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         return PlayerType.neither
     }
     
-    func gameReset(state: MatchStateWatch) {
+    func gameReset(state: MatchState) {
         // Swap serve
         state.toServe = !state.toServe
         
@@ -330,7 +329,7 @@ class ViewModelWatch : NSObject, ObservableObject, WCSessionDelegate {
         state.pointsOpponentInt = 0
     }
     
-    func setReset(state: MatchStateWatch) {
+    func setReset(state: MatchState) {
         state.gamesUser = 0
         state.gamesOpponent = 0
         gameReset(state: state)

@@ -7,6 +7,8 @@ V1 Todo
     - Only enable win/loss buttons/actions after a serve event
     - Disable undo button/action when only the initial state exists
     - Improve match user experience with gestures and better button placement
+    - Fix bug of no serve generation events
+    - Fix bug of multiple start generation events
 - iOS
     - Add MatchView with a list of all the match events
     - Add "Cut Video" button to MatchView and video cutting functionality using AVFoundation

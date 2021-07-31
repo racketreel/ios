@@ -7,22 +7,28 @@
 
 import Foundation
 
-class Match: Codable, Identifiable, Hashable {
+class Match: Encodable, Identifiable, Hashable {
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case matchPreferences
+        case history
+    }
         
     let id: String 
     let matchPreferences: MatchPreferences
     var history: [MatchState]
     
-    init(matchPreferences: MatchPreferences, history: [MatchState]) {
-        self.id = UUID().uuidString
-        self.matchPreferences = matchPreferences
-        self.history = history
-    }
+    // Nested published does not cause view to reload
+    @Published var currentState: MatchState
     
     init(matchPreferences: MatchPreferences) {
         self.id = UUID().uuidString
         self.matchPreferences = matchPreferences
-        self.history = [MatchState(toServe: matchPreferences.firstServe)]
+        
+        let initialState = MatchState(toServe: true)
+        self.currentState = initialState
+        self.history = [initialState]
     }
     
     static func == (lhs: Match, rhs: Match) -> Bool {
@@ -31,6 +37,13 @@ class Match: Codable, Identifiable, Hashable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.id)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(matchPreferences, forKey: .matchPreferences)
+        try container.encode(history, forKey: .history)
     }
     
 }

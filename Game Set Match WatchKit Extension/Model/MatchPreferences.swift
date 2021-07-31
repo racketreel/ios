@@ -8,6 +8,12 @@
 import Foundation
 
 struct MatchPreferences: Codable {
+    
+    enum CodingKeys: String, CodingKey {
+        case setsToWin
+        case gamesForSet
+        case firstServe
+    }
 
     var setsToWin: Int = 3
     var gamesForSet: Int = 6

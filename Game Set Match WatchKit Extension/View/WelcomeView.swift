@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     
-    @ObservedObject var model: ViewModelWatch
+    @ObservedObject var model: ViewModel
     
     var body: some View {
         VStack {
@@ -22,6 +22,6 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView(model: ViewModelWatch())
+        WelcomeView(model: ViewModel())
     }
 }

@@ -18,7 +18,7 @@ struct MatchSetUpView: View {
     @State private var setUpStage = SetUpStage.setsToWin
     @State private var matchPreferences = MatchPreferences()
     
-    @ObservedObject var model: ViewModelWatch
+    @ObservedObject var model: ViewModel
     
     var body: some View {
         VStack {
@@ -66,6 +66,6 @@ struct MatchSetUpView: View {
 
 struct MatchSetUpView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchSetUpView(model: ViewModelWatch())
+        MatchSetUpView(model: ViewModel())
     }
 }
