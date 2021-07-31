@@ -12,12 +12,14 @@ struct ContentView: View {
     @ObservedObject var model = ViewModelPhone()
     
     var body: some View {
-        ScrollView {
-            VStack {
+        NavigationView {
+            List {
                 ForEach (model.matches, id: \.self) { match in
                     MatchListItemView(model: model, match: match)
                 }
+                .onDelete(perform: self.model.deleteMatches)
             }
+            .navigationTitle("Matches")
         }
     }
 }

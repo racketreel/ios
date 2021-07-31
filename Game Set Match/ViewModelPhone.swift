@@ -49,13 +49,18 @@ class ViewModelPhone : NSObject, ObservableObject, WCSessionDelegate {
         }
     }
     
-    func deleteMatch(match: Match) {
-        self.persistentContainer.viewContext.delete(match)
-        // Save core data
-        do {
-            try self.persistentContainer.viewContext.save()
-        } catch {
-            print("could not save delete")
+    func deleteMatches(at indexSet: IndexSet) {
+        indexSet.forEach { i in
+            // Delete match
+            let match = matches[i]
+            self.persistentContainer.viewContext.delete(match)
+            
+            // Save changes in CoreData
+            do {
+                try self.persistentContainer.viewContext.save()
+            } catch {
+                print("Could not delete match...")
+            }
         }
         // Reload matches
         getExistingMatches()

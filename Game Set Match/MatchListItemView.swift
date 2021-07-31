@@ -18,13 +18,16 @@ struct MatchListItemView: View {
     }
     
     var body: some View {
-        VStack {
-            Text(self.match.id ?? "ehh")
-            Text("\(self.match.history?.count ?? 0) events in match")
-            Button("Delete", action: {
-                model.deleteMatch(match: self.match)
-            })
+        NavigationLink(destination: MatchView(match: match)) {
+            HStack {
+                Text(time())
+            }
         }
+    }
+    
+    func time() -> String {
+        let optTimestamp = (self.match.history?.array[0] as? MatchState)?.generationEventTimestamp
+        return optTimestamp == nil ? "" : String(optTimestamp!)
     }
 }
 
