@@ -7,11 +7,21 @@
 
 import Foundation
 import WatchConnectivity
+import CoreData
 
 class ViewModelPhone : NSObject, ObservableObject, WCSessionDelegate {
     
     var session: WCSession?
-    @Published var matches: [Match] = []
+    
+    var persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "Model")
+            container.loadPersistentStores { description, error in
+                if let error = error {
+                    fatalError("Unable to load persistent stores: \(error)")
+                }
+            }
+            return container
+        }()
     
     override init() {
         super.init()
@@ -28,15 +38,20 @@ class ViewModelPhone : NSObject, ObservableObject, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         NSLog("didReceiveApplicationContext : %@", applicationContext)
         let match_json = applicationContext["match"] as! Data
+        print(match_json)
         let decoder = JSONDecoder()
+        decoder.userInfo[CodingUserInfoKey.managedObjectContext] = persistentContainer.viewContext
         do {
+            
             let match = try decoder.decode(Match.self, from: match_json)
-            // Publish changes to view from main thread
-            DispatchQueue.main.async {
-                self.matches.append(match)
-            }
-        } catch {
-            print("cannot decode")
+            print(match.id!)
+//            // Publish changes to view from main thread
+//            DispatchQueue.main.async {
+//                self.matches.append(match)
+//                print("done")
+//            }
+        } catch{
+            print(error)
         }
     }
     

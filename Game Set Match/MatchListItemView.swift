@@ -17,15 +17,14 @@ struct MatchListItemView: View {
     
     var body: some View {
         VStack {
-            Text(self.match.id)
-            Text(String(self.match.history.first!.generationEventTimestamp))
-            Text("\(self.match.history.count) events in match")
+            Text(self.match.id!)
+            Text("\(self.match.history!.count) events in match")
         }
     }
 }
 
 struct MatchListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListItemView(match: Match(matchPreferences: MatchPreferences(setsToWin: 2, gamesForSet: 6, firstServe: true), history: []))
+        MatchListItemView(match: Match())
     }
 }

@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
-		E273A0AA26AC144D00259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
-		E273A0AC26AC14C500259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
-		E273A0AE26AC150100259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
 		E273A0AF26AC16B000259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
 		E273A0B026AC16B000259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
 		E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
@@ -21,15 +18,20 @@
 		E2B11E5526AC453B0049A48F /* MatchSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5426AC453B0049A48F /* MatchSetUpView.swift */; };
 		E2B11E5726AC45AA0049A48F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5626AC45AA0049A48F /* WelcomeView.swift */; };
 		E2B11E5926AC46370049A48F /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5826AC46370049A48F /* ViewType.swift */; };
-		E2B9264926AC50C50075CBF6 /* MatchPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */; };
 		E2B9264A26AC50C50075CBF6 /* MatchPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */; };
 		E2B9265226AC61750075CBF6 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9265126AC61750075CBF6 /* MatchView.swift */; };
 		E2B9265626AC62B10075CBF6 /* ScoreBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9265526AC62B00075CBF6 /* ScoreBoardView.swift */; };
 		E2B9265D26AC95350075CBF6 /* MatchWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9265C26AC95350075CBF6 /* MatchWatch.swift */; };
 		E2B9265F26AC95420075CBF6 /* MatchStateWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9265E26AC95420075CBF6 /* MatchStateWatch.swift */; };
 		E2B9266126ACA48C0075CBF6 /* PointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9266026ACA48C0075CBF6 /* PointType.swift */; };
-		E2B9266226ACA52E0075CBF6 /* PointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9266026ACA48C0075CBF6 /* PointType.swift */; };
 		E2B9266426ACABE10075CBF6 /* MatchOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9266326ACABE10075CBF6 /* MatchOverView.swift */; };
+		E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */; };
+		E2B926E326B59BB60075CBF6 /* MatchState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */; };
+		E2B926E526B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */; };
+		E2B926E626B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926E026B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift */; };
+		E2B926E726B59BB60075CBF6 /* Match+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */; };
+		E2B926E826B59BB60075CBF6 /* Match+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926E226B59BB60075CBF6 /* Match+CoreDataProperties.swift */; };
+		E2B926F426B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926F226B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
@@ -104,6 +106,13 @@
 		E2B9265E26AC95420075CBF6 /* MatchStateWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStateWatch.swift; sourceTree = "<group>"; };
 		E2B9266026ACA48C0075CBF6 /* PointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointType.swift; sourceTree = "<group>"; };
 		E2B9266326ACABE10075CBF6 /* MatchOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverView.swift; sourceTree = "<group>"; };
+		E2B9269E26B350630075CBF6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2B926E026B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2B926E226B59BB60075CBF6 /* Match+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2B926F226B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,18 +148,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E273A0A826AC143B00259066 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				E273A0A926AC144D00259066 /* Match.swift */,
-				E273A0AB26AC14C500259066 /* MatchState.swift */,
-				E2B9266026ACA48C0075CBF6 /* PointType.swift */,
-				E273A0AD26AC150100259066 /* MatchEventType.swift */,
-				E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		E2B9264626AC4FF50075CBF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +164,11 @@
 		E2B9265926AC93280075CBF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E273A0A926AC144D00259066 /* Match.swift */,
+				E273A0AB26AC14C500259066 /* MatchState.swift */,
+				E2B9266026ACA48C0075CBF6 /* PointType.swift */,
+				E273A0AD26AC150100259066 /* MatchEventType.swift */,
+				E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */,
 				E2B9265C26AC95350075CBF6 /* MatchWatch.swift */,
 				E2B9265E26AC95420075CBF6 /* MatchStateWatch.swift */,
 				E263E6AF26A9F88400173F1D /* PlayerType.swift */,
@@ -183,10 +185,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E2B926AC26B350D30075CBF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */,
+				E2B926F226B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift */,
+				E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */,
+				E2B926E026B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift */,
+				E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */,
+				E2B926E226B59BB60075CBF6 /* Match+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E2FF732C26A33710002209CA = {
 			isa = PBXGroup;
 			children = (
-				E273A0A826AC143B00259066 /* Common */,
 				E2FF733726A33710002209CA /* Game Set Match */,
 				E2FF734826A33711002209CA /* Game Set Match WatchKit App */,
 				E2FF735426A33711002209CA /* Game Set Match WatchKit Extension */,
@@ -207,10 +221,12 @@
 		E2FF733726A33710002209CA /* Game Set Match */ = {
 			isa = PBXGroup;
 			children = (
+				E2B926AC26B350D30075CBF6 /* Model */,
 				E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */,
 				E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */,
 				E2FF733A26A33710002209CA /* ContentView.swift */,
 				E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */,
+				E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */,
 				E2FF733C26A33711002209CA /* Assets.xcassets */,
 				E2FF734126A33711002209CA /* Info.plist */,
 				E2FF733E26A33711002209CA /* Preview Content */,
@@ -388,15 +404,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2B9266226ACA52E0075CBF6 /* PointType.swift in Sources */,
-				E2B9264926AC50C50075CBF6 /* MatchPreferences.swift in Sources */,
+				E2B926E526B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift in Sources */,
 				E2FF733B26A33710002209CA /* ContentView.swift in Sources */,
-				E273A0AC26AC14C500259066 /* MatchState.swift in Sources */,
-				E273A0AE26AC150100259066 /* MatchEventType.swift in Sources */,
+				E2B926E726B59BB60075CBF6 /* Match+CoreDataClass.swift in Sources */,
 				E2B11E4D26AC23C00049A48F /* ViewModelPhone.swift in Sources */,
-				E273A0AA26AC144D00259066 /* Match.swift in Sources */,
+				E2B926E626B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */,
+				E2B926E826B59BB60075CBF6 /* Match+CoreDataProperties.swift in Sources */,
+				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
 				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
 				E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */,
+				E2B926E326B59BB60075CBF6 /* MatchState+CoreDataClass.swift in Sources */,
+				E2B926F426B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +745,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2B9269E26B350630075CBF6 /* Model.xcdatamodel */,
+			);
+			currentVersion = E2B9269E26B350630075CBF6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E2FF732D26A33710002209CA /* Project object */;
 }

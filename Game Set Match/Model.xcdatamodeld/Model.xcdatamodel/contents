@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Match" representedClassName=".Match" syncable="YES">
+        <attribute name="id" attributeType="String"/>
+        <relationship name="history" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MatchState"/>
+        <relationship name="matchPreferences" maxCount="1" deletionRule="Nullify" destinationEntity="MatchPreferences"/>
+    </entity>
+    <entity name="MatchPreferences" representedClassName=".MatchPreferences" syncable="YES">
+        <attribute name="firstServe" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="gamesForSet" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="setsToWin" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="MatchState" representedClassName=".MatchState" syncable="YES">
+        <attribute name="breakPoint" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="gamesOpponent" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gamesUser" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="generationEventTimestamp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" customClassName="TimeInterval"/>
+        <attribute name="generationEventType" attributeType="String" customClassName="MatchEventType"/>
+        <attribute name="pointsOpponent" attributeType="String"/>
+        <attribute name="pointsUser" attributeType="String"/>
+        <attribute name="pointType" attributeType="String" customClassName="PointType"/>
+        <attribute name="setsOpponent" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="setsUser" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="toServe" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Match" positionX="-54" positionY="72" width="128" height="74"/>
+        <element name="MatchPreferences" positionX="-36" positionY="81" width="128" height="74"/>
+        <element name="MatchState" positionX="-63" positionY="-18" width="128" height="194"/>
+    </elements>
+</model>
