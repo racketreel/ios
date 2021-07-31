@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var model = ViewModelPhone()
+    @ObservedObject var model = ViewModel()
     
     var body: some View {
         NavigationView {

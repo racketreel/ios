@@ -2,13 +2,14 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Match" representedClassName=".Match" syncable="YES">
         <attribute name="id" attributeType="String"/>
-        <relationship name="history" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MatchState"/>
-        <relationship name="matchPreferences" maxCount="1" deletionRule="Nullify" destinationEntity="MatchPreferences"/>
+        <relationship name="history" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MatchState" inverseName="match" inverseEntity="MatchState"/>
+        <relationship name="matchPreferences" maxCount="1" deletionRule="Nullify" destinationEntity="MatchPreferences" inverseName="match" inverseEntity="MatchPreferences"/>
     </entity>
     <entity name="MatchPreferences" representedClassName=".MatchPreferences" syncable="YES">
         <attribute name="firstServe" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="gamesForSet" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setsToWin" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="match" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Match" inverseName="matchPreferences" inverseEntity="Match"/>
     </entity>
     <entity name="MatchState" representedClassName=".MatchState" syncable="YES">
         <attribute name="breakPoint" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -22,10 +23,11 @@
         <attribute name="setsOpponent" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setsUser" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="toServe" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="match" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Match" inverseName="history" inverseEntity="Match"/>
     </entity>
     <elements>
         <element name="Match" positionX="-54" positionY="72" width="128" height="74"/>
-        <element name="MatchPreferences" positionX="-36" positionY="81" width="128" height="74"/>
-        <element name="MatchState" positionX="-63" positionY="-18" width="128" height="194"/>
+        <element name="MatchPreferences" positionX="-36" positionY="81" width="128" height="89"/>
+        <element name="MatchState" positionX="-63" positionY="-18" width="128" height="209"/>
     </elements>
 </model>

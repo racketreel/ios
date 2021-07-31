@@ -19,6 +19,7 @@ extension MatchPreferences {
     @NSManaged public var firstServe: Bool
     @NSManaged public var gamesForSet: Int64
     @NSManaged public var setsToWin: Int64
+    @NSManaged public var match: Match?
 
 }
 

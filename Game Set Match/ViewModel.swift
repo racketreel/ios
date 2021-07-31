@@ -1,5 +1,5 @@
 //
-//  ViewModelPhone.swift
+//  ViewModel.swift
 //  Game Set Match
 //
 //  Created by Tom Elvidge on 23/07/2021.
@@ -9,11 +9,14 @@ import Foundation
 import WatchConnectivity
 import CoreData
 
-class ViewModelPhone : NSObject, ObservableObject, WCSessionDelegate {
+class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     
+    // WatchConnectivity for recording match data on watchOS
     var session: WCSession?
+    
     @Published var matches: [Match] = []
     
+    // CoreData
     var persistentContainer: NSPersistentContainer = {
             let container = NSPersistentContainer(name: "Model")
             container.loadPersistentStores { description, error in
@@ -33,67 +36,63 @@ class ViewModelPhone : NSObject, ObservableObject, WCSessionDelegate {
             self.session!.activate()
         }
         
-        // Get saved matches from core data
-        getExistingMatches()
+        fetchMatches()
     }
     
-    func getExistingMatches() {
-        // Fetch matches from core data
+    func fetchMatches() {
         do {
+            // Fetch all Match objects from CoreData
             let matches: [Match] = try persistentContainer.viewContext.fetch(Match.fetchRequest())
+            // Update published matches var on main thread to alert views
             DispatchQueue.main.async {
                 self.matches = matches
             }
         } catch {
-            print("cannot fetch matches from core data")
+            NSLog("Unable to fetch Match objects from CoreData")
         }
     }
     
     func deleteMatches(at indexSet: IndexSet) {
         indexSet.forEach { i in
-            // Delete match
+            // Delete match from CoreData
             let match = matches[i]
             self.persistentContainer.viewContext.delete(match)
-            
-            // Save changes in CoreData
+            // Save changes
             do {
                 try self.persistentContainer.viewContext.save()
             } catch {
-                print("Could not delete match...")
+                NSLog("Unable to save changes to CoreData")
             }
         }
-        // Reload matches
-        getExistingMatches()
+        fetchMatches()
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        // Get match from Apple Watch as json
-        NSLog("didReceiveApplicationContext : %@", applicationContext)
-        let match_json = applicationContext["match"] as! Data
-        print(match_json)
+        NSLog("didReceiveApplicationContext : \(applicationContext)")
         
-        // Decode match json into Match class
+        // Extract match from context
+        let matchJSON = applicationContext["match"] as! Data
+        
         let decoder = JSONDecoder()
-        // Add context to allow it to be saved in core data
+        // Once decoded add Match to CoreData
         decoder.userInfo[CodingUserInfoKey.managedObjectContext] = persistentContainer.viewContext
-        // Decode
+        
         do {
-            let match = try decoder.decode(Match.self, from: match_json)
-            print("decode worked: \(match.id!)")
+            let match = try decoder.decode(Match.self, from: matchJSON)
+            NSLog("Match with id \(match.id!) decoded")
         } catch{
-            print(error)
+            NSLog("Unable to decode match JSON")
         }
-        // Save to core data
+        
         do {
             try persistentContainer.viewContext.save()
-            print("saved!")
         } catch {
-            print("save data error")
+            NSLog("Unable to save changes to CoreData")
         }
-        // Update matches from core data
-        getExistingMatches()
+        
+        fetchMatches()
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) { }

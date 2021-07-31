@@ -12,7 +12,7 @@
 		E273A0B026AC16B000259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
 		E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
 		E2B11E4B26AC23A00049A48F /* ViewModelWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4A26AC23A00049A48F /* ViewModelWatch.swift */; };
-		E2B11E4D26AC23C00049A48F /* ViewModelPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */; };
+		E2B11E4D26AC23C00049A48F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4C26AC23C00049A48F /* ViewModel.swift */; };
 		E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */; };
 		E2B11E5126AC435C0049A48F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5026AC435C0049A48F /* ContentView.swift */; };
 		E2B11E5526AC453B0049A48F /* MatchSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5426AC453B0049A48F /* MatchSetUpView.swift */; };
@@ -28,11 +28,11 @@
 		E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */; };
 		E2B926E326B59BB60075CBF6 /* MatchState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */; };
 		E2B926E526B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */; };
-		E2B926E626B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926E026B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift */; };
 		E2B926E726B59BB60075CBF6 /* Match+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */; };
-		E2B926E826B59BB60075CBF6 /* Match+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926E226B59BB60075CBF6 /* Match+CoreDataProperties.swift */; };
-		E2B926F426B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926F226B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift */; };
 		E2B926F826B5D2130075CBF6 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926F726B5D2130075CBF6 /* MatchView.swift */; };
+		E2B926FD26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FA26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift */; };
+		E2B926FE26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FB26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift */; };
+		E2B926FF26B5E4210075CBF6 /* Match+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FC26B5E4210075CBF6 /* Match+CoreDataProperties.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
@@ -94,7 +94,7 @@
 		E273A0AB26AC14C500259066 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
 		E273A0AD26AC150100259066 /* MatchEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEventType.swift; sourceTree = "<group>"; };
 		E2B11E4A26AC23A00049A48F /* ViewModelWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelWatch.swift; sourceTree = "<group>"; };
-		E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelPhone.swift; sourceTree = "<group>"; };
+		E2B11E4C26AC23C00049A48F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListItemView.swift; sourceTree = "<group>"; };
 		E2B11E5026AC435C0049A48F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E2B11E5426AC453B0049A48F /* MatchSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSetUpView.swift; sourceTree = "<group>"; };
@@ -110,11 +110,11 @@
 		E2B9269E26B350630075CBF6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E2B926E026B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E2B926E226B59BB60075CBF6 /* Match+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E2B926F226B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2B926F726B5D2130075CBF6 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		E2B926FA26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2B926FB26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2B926FC26B5E4210075CBF6 /* Match+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -190,14 +190,24 @@
 		E2B926AC26B350D30075CBF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2B926FA26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift */,
+				E2B926FB26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift */,
+				E2B926FC26B5E4210075CBF6 /* Match+CoreDataProperties.swift */,
 				E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */,
-				E2B926F226B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift */,
 				E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */,
-				E2B926E026B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift */,
 				E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */,
-				E2B926E226B59BB60075CBF6 /* Match+CoreDataProperties.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E2B926F926B5DD200075CBF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF733A26A33710002209CA /* ContentView.swift */,
+				E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */,
+				E2B926F726B5D2130075CBF6 /* MatchView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E2FF732C26A33710002209CA = {
@@ -223,12 +233,10 @@
 		E2FF733726A33710002209CA /* Game Set Match */ = {
 			isa = PBXGroup;
 			children = (
+				E2B926F926B5DD200075CBF6 /* View */,
 				E2B926AC26B350D30075CBF6 /* Model */,
-				E2B11E4C26AC23C00049A48F /* ViewModelPhone.swift */,
+				E2B11E4C26AC23C00049A48F /* ViewModel.swift */,
 				E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */,
-				E2FF733A26A33710002209CA /* ContentView.swift */,
-				E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */,
-				E2B926F726B5D2130075CBF6 /* MatchView.swift */,
 				E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */,
 				E2FF733C26A33711002209CA /* Assets.xcassets */,
 				E2FF734126A33711002209CA /* Info.plist */,
@@ -410,15 +418,15 @@
 				E2B926E526B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift in Sources */,
 				E2FF733B26A33710002209CA /* ContentView.swift in Sources */,
 				E2B926E726B59BB60075CBF6 /* Match+CoreDataClass.swift in Sources */,
-				E2B11E4D26AC23C00049A48F /* ViewModelPhone.swift in Sources */,
-				E2B926E626B59BB60075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */,
-				E2B926E826B59BB60075CBF6 /* Match+CoreDataProperties.swift in Sources */,
+				E2B11E4D26AC23C00049A48F /* ViewModel.swift in Sources */,
+				E2B926FE26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
 				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
+				E2B926FD26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */,
 				E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */,
+				E2B926FF26B5E4210075CBF6 /* Match+CoreDataProperties.swift in Sources */,
 				E2B926E326B59BB60075CBF6 /* MatchState+CoreDataClass.swift in Sources */,
 				E2B926F826B5D2130075CBF6 /* MatchView.swift in Sources */,
-				E2B926F426B5A03D0075CBF6 /* MatchState+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

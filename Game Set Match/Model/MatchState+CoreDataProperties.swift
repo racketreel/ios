@@ -27,6 +27,7 @@ extension MatchState {
     @NSManaged public var setsOpponent: Int64
     @NSManaged public var setsUser: Int64
     @NSManaged public var toServe: Bool
+    @NSManaged public var match: Match?
 
 }
 

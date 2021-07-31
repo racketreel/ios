@@ -17,8 +17,8 @@ extension Match {
     }
 
     @NSManaged public var id: String?
-    @NSManaged public var matchPreferences: MatchPreferences?
     @NSManaged public var history: NSOrderedSet?
+    @NSManaged public var matchPreferences: MatchPreferences?
 
 }
 

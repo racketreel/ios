@@ -11,10 +11,6 @@ struct MatchView: View {
     
     let match: Match
     
-    init(match: Match) {
-        self.match = match
-    }
-    
     var body: some View {
         List {
             ForEach ((match.history!.array as! [MatchState]), id: \.self) { matchState in
