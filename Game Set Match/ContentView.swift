@@ -12,14 +12,13 @@ struct ContentView: View {
     @ObservedObject var model = ViewModelPhone()
     
     var body: some View {
-        Text("Hello")
-//        ScrollView{
-//            VStack {
-//                ForEach (model.matches, id: \.self) { match in
-//                    MatchListItemView(match: match)
-//                }
-//            }
-//        }
+        ScrollView {
+            VStack {
+                ForEach (model.matches, id: \.self) { match in
+                    MatchListItemView(match: match)
+                }
+            }
+        }
     }
 }
 
