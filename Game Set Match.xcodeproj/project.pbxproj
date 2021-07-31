@@ -31,6 +31,7 @@
 		E2B926FD26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FA26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift */; };
 		E2B926FE26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FB26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift */; };
 		E2B926FF26B5E4210075CBF6 /* Match+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FC26B5E4210075CBF6 /* Match+CoreDataProperties.swift */; };
+		E2B9270426B5EE670075CBF6 /* ScoreBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9270326B5EE670075CBF6 /* ScoreBoardView.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 		E2B926FA26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2B926FB26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2B926FC26B5E4210075CBF6 /* Match+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2B9270326B5EE670075CBF6 /* ScoreBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardView.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,7 +156,6 @@
 				E2B11E5026AC435C0049A48F /* ContentView.swift */,
 				E2B11E5626AC45AA0049A48F /* WelcomeView.swift */,
 				E2B9265126AC61750075CBF6 /* MatchView.swift */,
-				E2B9265526AC62B00075CBF6 /* ScoreBoardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +170,7 @@
 				E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */,
 				E263E6AF26A9F88400173F1D /* PlayerType.swift */,
 				E2B11E5826AC46370049A48F /* ViewType.swift */,
+				E2B9265526AC62B00075CBF6 /* ScoreBoardView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 				E2FF733A26A33710002209CA /* ContentView.swift */,
 				E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */,
 				E2B926F726B5D2130075CBF6 /* MatchView.swift */,
+				E2B9270326B5EE670075CBF6 /* ScoreBoardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				E2B11E4D26AC23C00049A48F /* ViewModel.swift in Sources */,
 				E2B926FE26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
+				E2B9270426B5EE670075CBF6 /* ScoreBoardView.swift in Sources */,
 				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
 				E2B926FD26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */,
 				E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */,

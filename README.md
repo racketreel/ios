@@ -3,6 +3,7 @@
 Cut dead time from tennis match videos by keeping score on an Apple Watch.
 
 V1 Todo
+- Fix previews
 - watchOS
     - Only enable win/loss buttons/actions after a serve event
     - Disable undo button/action when only the initial state exists
@@ -16,6 +17,7 @@ V1 Todo
     - Add header
 
 Other Todo
+- Design overhaul
 - Automatically send match to iOS at the end of the game
 - Improve error handling for WatchConnectivity and CoreData
 - App icon

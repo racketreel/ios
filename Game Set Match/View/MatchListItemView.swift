@@ -15,7 +15,7 @@ struct MatchListItemView: View {
     var body: some View {
         NavigationLink(destination: MatchView(match: match)) {
             HStack {
-                Text(String((match.history!.array[0] as! MatchState).generationEventTimestamp))
+                Text(String((match.history?.array[0] as? MatchState)?.generationEventTimestamp ?? 0))
             }
         }
     }

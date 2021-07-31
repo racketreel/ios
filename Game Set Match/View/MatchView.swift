@@ -15,9 +15,12 @@ struct MatchView: View {
         List {
             ForEach ((match.history!.array as! [MatchState]), id: \.self) { matchState in
                 HStack {
-                    Text(matchState.generationEventType!)
-                    Spacer()
-                    Text(String(matchState.generationEventTimestamp))
+                    ScoreBoardView(state: matchState)
+                    VStack(alignment: .leading) {
+                        Text(matchState.generationEventType!)
+                        Text(String(matchState.generationEventTimestamp))
+                        Spacer()
+                    }
                 }
             }
         }
