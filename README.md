@@ -10,7 +10,6 @@ V1 Todo
 - iOS
     - Add MatchView with a list of all the match events
     - Add "Cut Video" button to MatchView and video cutting functionality using AVFoundation
-    - Add "Delete Match" button to MatchListItem to delete from CoreData
     - Improve the list of matches
     - Add header
 

@@ -9,22 +9,27 @@ import SwiftUI
 
 struct MatchListItemView: View {
     
+    @ObservedObject var model: ViewModelPhone
     let match: Match
     
-    init(match: Match) {
+    init(model: ViewModelPhone, match: Match) {
+        self.model = model
         self.match = match
     }
     
     var body: some View {
         VStack {
-            Text(self.match.id!)
-            Text("\(self.match.history!.count) events in match")
+            Text(self.match.id ?? "ehh")
+            Text("\(self.match.history?.count ?? 0) events in match")
+            Button("Delete", action: {
+                model.deleteMatch(match: self.match)
+            })
         }
     }
 }
 
 struct MatchListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListItemView(match: Match())
+        MatchListItemView(model: ViewModelPhone(), match: Match())
     }
 }

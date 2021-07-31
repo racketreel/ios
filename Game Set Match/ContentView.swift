@@ -15,7 +15,7 @@ struct ContentView: View {
         ScrollView {
             VStack {
                 ForEach (model.matches, id: \.self) { match in
-                    MatchListItemView(match: match)
+                    MatchListItemView(model: model, match: match)
                 }
             }
         }

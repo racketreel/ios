@@ -49,6 +49,18 @@ class ViewModelPhone : NSObject, ObservableObject, WCSessionDelegate {
         }
     }
     
+    func deleteMatch(match: Match) {
+        self.persistentContainer.viewContext.delete(match)
+        // Save core data
+        do {
+            try self.persistentContainer.viewContext.save()
+        } catch {
+            print("could not save delete")
+        }
+        // Reload matches
+        getExistingMatches()
+    }
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
