@@ -65,6 +65,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     func applyServe() {
         let nextState = self.match!.currentState.copy() as! MatchState
         nextState.generationEventTimestamp = NSDate().timeIntervalSince1970
+        nextState.generationEventType = MatchEventType.firstServe
         
         // Set state as second serve if previous state was a first serve
         if (self.match!.currentState.generationEventType == MatchEventType.firstServe) {
