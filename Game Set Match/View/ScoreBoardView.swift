@@ -17,34 +17,40 @@ struct ScoreBoardView: View {
             VStack {
                 HStack {
                     Text("ME")
+                    Spacer()
                     Image(systemName: "circle.fill")
                         .font(.system(size: 6))
                         .opacity(state.toServe ? 1 : 0)
                 }
                 HStack {
                     Text("OP")
+                    Spacer()
                     Image(systemName: "circle.fill")
                         .font(.system(size: 6))
                         .opacity(state.toServe ? 0 : 1)
                 }
             }
+            .frame(width: 50)
             // Sets
             VStack {
                 Text(String(state.setsUser))
                 Text(String(state.setsOpponent))
             }
+            .frame(width: 25)
             // Games
             VStack {
                 Text(String(state.gamesUser))
                 Text(String(state.gamesOpponent))
             }
+            .frame(width: 25)
             // Points
             VStack {
                 Text(state.pointsUser!)
                 Text(state.pointsOpponent!)
             }
+            .frame(width: 25)
         }
-        .font(.system(size: 20))
+        .font(.system(size: 16))
         .padding(10)
         .background(Color(red: 0.9, green: 0.9, blue: 0.9))
         .cornerRadius(10)

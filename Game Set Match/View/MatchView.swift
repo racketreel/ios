@@ -18,9 +18,14 @@ struct MatchView: View {
                     ScoreBoardView(state: matchState)
                     VStack(alignment: .leading) {
                         Text(matchState.generationEventType!)
+                            .font(.system(size: 16))
                         Text(String(matchState.generationEventTimestamp))
+                        if (matchState.pointType != "none") {
+                            Text(matchState.pointType! + (matchState.breakPoint ? " and break" : ""))
+                        }
                         Spacer()
                     }
+                    .font(.system(size: 12))
                 }
             }
         }
