@@ -28,7 +28,7 @@ struct MatchView: View {
                     model.undo()
                 })
                 Button("Quit", action: {
-                    model.changeView(view: ViewType.welcome)
+                    model.quit()
                 })
             }
         }

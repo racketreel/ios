@@ -17,7 +17,7 @@ struct MatchOverView: View {
                 model.saveMatch()
             })
             Button("Done", action: {
-                model.changeView(view: ViewType.welcome)
+                model.quit()
             })
         }
     }
