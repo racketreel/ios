@@ -2,34 +2,44 @@
 
 Cut dead time from tennis match videos by keeping score on an Apple Watch.
 
-V1 Todo
-- Fix previews
-- watchOS
-    - Only enable win/loss buttons/actions after a serve event
-    - Disable undo button/action when only the initial state exists
-    - Improve match user experience with gestures and better button placement
-    - Scoring on final point can be "AD - 30" when viewed in iOS
-- iOS
-    - Add MatchView with a list of all the match events
-    - Add "Cut Video" button to MatchView and video cutting functionality using AVFoundation
-    - Improve the list of matches
-    - Add header
+Internal
+- Fix previews in Xcode
 
-Other Todo
-- Design overhaul
-- Automatically send match to iOS at the end of the game
-- Improve error handling for WatchConnectivity and CoreData
-- App icon
-- Authentication
-- Sign in and sign up workflow (allow use without sign up?)
-- Web usage logs
-- Subcription and billing
-- App Store description and images
+Functioning Prototype (Alpha)
+- Video trimming functionality
+- Scoring on final point can be "AD - 30" when viewed in iOS
+- Opponent cannot serve first
+- Score overlay on processed videos
+- Share video online and in forums
+- Google form to register interest in app and beta (email list)
+
+First Release (Beta)
+- Haptic feedback on watch buttons
+- Last event displayed on watch (know when accidental press)
+- Are you sure you want to quit?
+- Only enable Win and Loss buttons after a serve
+- Disable Undo button when there is only the initial state in history
+- App icon and name
+- Watermark overlay on processed videos (app icon and name)
+- Automatically send match to iOS at the end of the match
+- Improve error handling and exception control flow
+- Debugging logs, usage logs, and errors to database
+
+Public Release (V1)
+- Design overhaul of mobile app
+- Privacy policy
+- App store description, images, and video
+- Authentication and sign in/up workflow
+- In app purchase subscription
 - Contact influencers for advertising
-- Collect email addresses of interested users
-- Free alpa to interested users
-- Publish to App Store
 
-Future Todo
-- Phsyical bluetooth le device
-- Android application
+Future (V1+)
+- Set up match on mobile and then send to watch (or other device)
+- Scoring on mobile (with arm strap)
+- Android version
+- Highlight a point (create highlight reel)
+- Watch gestures to replace buttons
+- Speech recognition events (say win, loss, serve etc)
+- Dedicated Bluetooth LE device
+- Match statistics
+- Computer Vision to further refine trimming points
