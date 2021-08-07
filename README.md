@@ -8,7 +8,6 @@ Internal
 Functioning Prototype (Alpha)
 - Video trimming functionality
 - Scoring on final point can be "AD - 30" when viewed in iOS
-- Opponent cannot serve first
 - Score overlay on processed videos
 - Share video online and in forums
 - Google form to register interest in app and beta (email list)

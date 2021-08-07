@@ -26,7 +26,7 @@ class Match: Encodable, Identifiable, Hashable {
         self.id = UUID().uuidString
         self.matchPreferences = matchPreferences
         
-        let initialState = MatchState(toServe: true)
+        let initialState = MatchState(toServe: matchPreferences.firstServe)
         self.currentState = initialState
         self.history = [initialState]
     }
