@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import AVFoundation
+import PhotosUI
 
 struct MatchView: View {
     
+    @ObservedObject var model: ViewModel
     let match: Match
     
     @State private var showImagePicker = false
-    @State private var inputImage: UIImage?
+    @State private var video: AVAsset?
     
     var body: some View {
         List {
@@ -40,62 +43,72 @@ struct MatchView: View {
         .navigationTitle(String((match.history!.array[0] as! MatchState).generationEventTimestamp))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showImagePicker, onDismiss: cut) {
-            ImagePicker(image: self.$inputImage)
+            ImagePicker(video: self.$video)
                 .ignoresSafeArea()
         }
     }
     
-    // Temp - move to new ViewModel
     func cut() {
-        print("Cutting")
+        if (video != nil) {
+            model.cut(video: video!, match: match)
+        } else {
+            print("No video.")
+        }
     }
     
 }
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView(match: Match())
+        MatchView(model: ViewModel(), match: Match())
     }
 }
 
 struct ImagePicker: UIViewControllerRepresentable {
     
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+//    @Binding var isPresented: Bool
+    @Binding var video: AVAsset?
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> PHPickerViewController {
+        // Request photo library access
+        PHPhotoLibrary.requestAuthorization(for: .readWrite, handler: { authStatus in
+           print(authStatus)
+        })
+        // Create and return photo picker
+        var configuration = PHPickerConfiguration(photoLibrary: .shared())
+        configuration.filter = PHPickerFilter.any(of: [.videos])
+        configuration.selectionLimit = 1
+        let controller = PHPickerViewController(configuration: configuration)
+        controller.delegate = context.coordinator
+        return controller
+    }
+
+    func updateUIViewController(_ uiViewController: PHPickerViewController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, UINavigationControllerDelegate, PHPickerViewControllerDelegate {
+        
         let parent: ImagePicker
 
         init(_ parent: ImagePicker) {
             self.parent = parent
         }
         
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            if let uiImage = info[.originalImage] as? UIImage {
-                parent.image = uiImage
+        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            picker.dismiss(animated: true)
+            let identifiers = results.compactMap(\.assetIdentifier)
+            let fetchResult = PHAsset.fetchAssets(withLocalIdentifiers: identifiers, options: nil)
+            
+            PHImageManager.default().requestAVAsset(forVideo: fetchResult.firstObject!, options: PHVideoRequestOptions()) { avAsset, _, _ in
+                self.parent.video = avAsset
             }
-
-            parent.presentationMode.wrappedValue.dismiss()
+//            self.parent.isPresented.toggle()
         }
         
-    }
-    
-    @Environment(\.presentationMode) var presentationMode
-    @Binding var image: UIImage?
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        picker.mediaTypes = ["public.movie"]
-        picker.allowsEditing = false
-        // Longest ever tennis match 11 hours and 5 minutes (39900 seconds)
-        picker.videoMaximumDuration = 39900
-        return picker
-    }
-
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
     }
     
 }

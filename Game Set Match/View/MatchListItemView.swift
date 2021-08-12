@@ -13,7 +13,7 @@ struct MatchListItemView: View {
     let match: Match
     
     var body: some View {
-        NavigationLink(destination: MatchView(match: match)) {
+        NavigationLink(destination: MatchView(model: model, match: match)) {
             HStack {
                 Text(String((match.history?.array[0] as? MatchState)?.generationEventTimestamp ?? 0))
             }
