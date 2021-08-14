@@ -14,7 +14,7 @@ class MatchState: Encodable {
         case gamesOpponent
         case gamesUser
         case generationEventTimestamp
-        case generationEventType
+        case generationEvent
         case pointsOpponent
         case pointsUser
         case pointType
@@ -24,7 +24,7 @@ class MatchState: Encodable {
     }
     
     // The match event which caused this new state to be generated
-    var generationEventType: MatchEventType
+    var generationEvent: GenerationEvent
     
     // The timestamp when the generation event occured
     var generationEventTimestamp: TimeInterval
@@ -55,8 +55,8 @@ class MatchState: Encodable {
     var pointsUserInt: Int
     var pointsOpponentInt: Int
     
-    init(generationEventType: MatchEventType, generationEventTimestamp: TimeInterval, toServe: Bool, setsUser: Int, setsOpponent: Int, gamesUser: Int, gamesOpponent: Int, pointsUser: String, pointsOpponent: String, setTieBreak: Bool, tieBreakPointCounter: Int, toServePostTieBreak: Bool, pointsUserInt: Int, pointsOpponentInt: Int, breakPoint: Bool, pointType: PointType) {
-        self.generationEventType = generationEventType
+    init(generationEvent: GenerationEvent, generationEventTimestamp: TimeInterval, toServe: Bool, setsUser: Int, setsOpponent: Int, gamesUser: Int, gamesOpponent: Int, pointsUser: String, pointsOpponent: String, setTieBreak: Bool, tieBreakPointCounter: Int, toServePostTieBreak: Bool, pointsUserInt: Int, pointsOpponentInt: Int, breakPoint: Bool, pointType: PointType) {
+        self.generationEvent = generationEvent
         self.generationEventTimestamp = generationEventTimestamp
         self.toServe = toServe
         self.setsUser = setsUser
@@ -76,7 +76,7 @@ class MatchState: Encodable {
 
     // Used to initialise the first MatchState for a game
     init(toServe: Bool) {
-        self.generationEventType = MatchEventType.start
+        self.generationEvent = GenerationEvent.Start
         self.generationEventTimestamp = NSDate().timeIntervalSince1970
         self.toServe = toServe
         self.setsUser = 0
@@ -95,7 +95,7 @@ class MatchState: Encodable {
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
-        let copy = MatchState(generationEventType: generationEventType, generationEventTimestamp: generationEventTimestamp, toServe: toServe, setsUser: setsUser, setsOpponent: setsOpponent, gamesUser: gamesUser, gamesOpponent: gamesOpponent, pointsUser: pointsUser, pointsOpponent: pointsOpponent, setTieBreak: setTieBreak, tieBreakPointCounter: tieBreakPointCounter, toServePostTieBreak: toServePostTieBreak, pointsUserInt: pointsUserInt, pointsOpponentInt: pointsOpponentInt,  breakPoint: breakPoint, pointType: pointType)
+        let copy = MatchState(generationEvent: generationEvent, generationEventTimestamp: generationEventTimestamp, toServe: toServe, setsUser: setsUser, setsOpponent: setsOpponent, gamesUser: gamesUser, gamesOpponent: gamesOpponent, pointsUser: pointsUser, pointsOpponent: pointsOpponent, setTieBreak: setTieBreak, tieBreakPointCounter: tieBreakPointCounter, toServePostTieBreak: toServePostTieBreak, pointsUserInt: pointsUserInt, pointsOpponentInt: pointsOpponentInt,  breakPoint: breakPoint, pointType: pointType)
         return copy
     }
     
@@ -105,7 +105,7 @@ class MatchState: Encodable {
         try container.encode(gamesOpponent, forKey: .gamesOpponent)
         try container.encode(gamesUser, forKey: .gamesUser)
         try container.encode(generationEventTimestamp, forKey: .generationEventTimestamp)
-        try container.encode(generationEventType, forKey: .generationEventType)
+        try container.encode(generationEvent, forKey: .generationEvent)
         try container.encode(pointsOpponent, forKey: .pointsOpponent)
         try container.encode(pointsUser, forKey: .pointsUser)
         try container.encode(pointType, forKey: .pointType)

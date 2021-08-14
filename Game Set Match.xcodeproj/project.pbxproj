@@ -16,9 +16,10 @@
 		E268560226C7FA4C00DEF435 /* Match+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560126C7FA4C00DEF435 /* Match+Helper.swift */; };
 		E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560326C8082A00DEF435 /* GenerationEvent.swift */; };
 		E268560626C808B000DEF435 /* PointDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560526C808B000DEF435 /* PointDescription.swift */; };
+		E268560C26C818CE00DEF435 /* PointDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560526C808B000DEF435 /* PointDescription.swift */; };
+		E268560D26C818CE00DEF435 /* GenerationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560326C8082A00DEF435 /* GenerationEvent.swift */; };
 		E273A0AF26AC16B000259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
 		E273A0B026AC16B000259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
-		E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
 		E2B11E4B26AC23A00049A48F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4A26AC23A00049A48F /* ViewModel.swift */; };
 		E2B11E4D26AC23C00049A48F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4C26AC23C00049A48F /* ViewModel.swift */; };
 		E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */; };
@@ -102,7 +103,6 @@
 		E268560526C808B000DEF435 /* PointDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDescription.swift; sourceTree = "<group>"; };
 		E273A0A926AC144D00259066 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		E273A0AB26AC14C500259066 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
-		E273A0AD26AC150100259066 /* MatchEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEventType.swift; sourceTree = "<group>"; };
 		E2B11E4A26AC23A00049A48F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E2B11E4C26AC23C00049A48F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListItemView.swift; sourceTree = "<group>"; };
@@ -162,6 +162,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E268560B26C8180100DEF435 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E268560526C808B000DEF435 /* PointDescription.swift */,
+				E268560326C8082A00DEF435 /* GenerationEvent.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E2B9264626AC4FF50075CBF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +189,6 @@
 				E273A0A926AC144D00259066 /* Match.swift */,
 				E273A0AB26AC14C500259066 /* MatchState.swift */,
 				E2B9266026ACA48C0075CBF6 /* PointType.swift */,
-				E273A0AD26AC150100259066 /* MatchEventType.swift */,
 				E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */,
 				E263E6AF26A9F88400173F1D /* PlayerType.swift */,
 				E2B11E5826AC46370049A48F /* ViewType.swift */,
@@ -197,8 +205,6 @@
 				E26855E326C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift */,
 				E26855E526C7F18600DEF435 /* MatchState+CoreDataClass.swift */,
 				E26855FF26C7F7F900DEF435 /* MatchState+Helper.swift */,
-				E268560326C8082A00DEF435 /* GenerationEvent.swift */,
-				E268560526C808B000DEF435 /* PointDescription.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 		E2FF732C26A33710002209CA = {
 			isa = PBXGroup;
 			children = (
+				E268560B26C8180100DEF435 /* Common */,
 				E2FF733726A33710002209CA /* Game Set Match */,
 				E2FF734826A33711002209CA /* Game Set Match WatchKit App */,
 				E2FF735426A33711002209CA /* Game Set Match WatchKit Extension */,
@@ -442,11 +449,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E268560C26C818CE00DEF435 /* PointDescription.swift in Sources */,
+				E268560D26C818CE00DEF435 /* GenerationEvent.swift in Sources */,
 				E2B9264A26AC50C50075CBF6 /* MatchPreferences.swift in Sources */,
 				E273A0AF26AC16B000259066 /* Match.swift in Sources */,
 				E273A0B026AC16B000259066 /* MatchState.swift in Sources */,
 				E2B11E5126AC435C0049A48F /* ContentView.swift in Sources */,
-				E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */,
 				E2B11E4B26AC23A00049A48F /* ViewModel.swift in Sources */,
 				E2B11E5526AC453B0049A48F /* MatchSetUpView.swift in Sources */,
 				E2B9266426ACABE10075CBF6 /* MatchOverView.swift in Sources */,

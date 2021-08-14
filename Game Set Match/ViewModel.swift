@@ -50,11 +50,11 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         while (i < match.history.count) {
             let currentState = match.history[i]
             // Find next state in history which is either a point win or loss
-            if (currentState.generationEventType == .FirstServe) {
+            if (currentState.generationEvent == .FirstServe) {
                 var j = i
                 while (j < match.history.count) {
                     let otherState = match.history[j]
-                    if (otherState.generationEventType == .Win || otherState.generationEventType == .Loss) {
+                    if (otherState.generationEvent == .Win || otherState.generationEvent == .Loss) {
                         // Get video timestamps for start and end of the clip
                         let startTimestamp = currentState.generationEventTimestamp - videoStartTimestamp
                         let endTimestamp = otherState.generationEventTimestamp - videoStartTimestamp

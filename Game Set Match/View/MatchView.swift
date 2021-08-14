@@ -23,7 +23,7 @@ struct MatchView: View {
                 HStack {
                     ScoreBoardView(state: matchState)
                     VStack(alignment: .leading) {
-                        Text(matchState.generationEventType.description)
+                        Text(matchState.generationEvent.description)
                             .font(.system(size: 16))
                         Text(String(matchState.generationEventTimestamp)) // todo format date
                         Text(matchState.pointType == .None ? "" : matchState.pointType.rawValue)

@@ -17,7 +17,7 @@ public class MatchState: NSManagedObject, Decodable {
         case gamesOpponent
         case gamesUser
         case generationEventTimestamp
-        case generationEventType
+        case generationEvent
         case pointsOpponent
         case pointsUser
         case pointType
@@ -39,7 +39,7 @@ public class MatchState: NSManagedObject, Decodable {
         self.gamesOpponent = try container.decode(Int64.self, forKey: .gamesOpponent)
         self.gamesUser = try container.decode(Int64.self, forKey: .gamesUser)
         self.generationEventTimestamp = try container.decode(Double.self, forKey: .generationEventTimestamp)
-        self.generationEventType_ = try container.decode(String.self, forKey: .generationEventType)
+        self.generationEvent_ = try container.decode(Int64.self, forKey: .generationEvent)
         self.pointsOpponent_ = try container.decode(String.self, forKey: .pointsOpponent)
         self.pointsUser_ = try container.decode(String.self, forKey: .pointsUser)
         self.pointType_ = try container.decode(String.self, forKey: .pointType)

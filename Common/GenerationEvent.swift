@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum GenerationEvent: String, CustomStringConvertible {
+enum GenerationEvent: Int64, Codable, CustomStringConvertible {
     
-    case Start = "start"
-    case FirstServe = "firstServe"
-    case SecondServe = "secondServe"
-    case Win = "win"
-    case Loss = "loss"
-    case Unknown = "unknown"
+    case Unknown = 0
+    case Start = 1
+    case FirstServe = 2
+    case SecondServe = 3
+    case Win = 4
+    case Loss = 5
     
     var description : String {
         switch self {

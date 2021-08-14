@@ -147,11 +147,11 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     func applyServe() {
         let nextState = self.match!.currentState.copy() as! MatchState
         nextState.generationEventTimestamp = NSDate().timeIntervalSince1970
-        nextState.generationEventType = MatchEventType.firstServe
+        nextState.generationEvent = GenerationEvent.FirstServe
         
         // Set state as second serve if previous state was a first serve
-        if (self.match!.currentState.generationEventType == MatchEventType.firstServe) {
-            nextState.generationEventType = MatchEventType.secondServe
+        if (self.match!.currentState.generationEvent == GenerationEvent.FirstServe) {
+            nextState.generationEvent = GenerationEvent.SecondServe
         }
         
         objectWillChange.send()
@@ -163,7 +163,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         let currentState = self.match!.currentState
         let newState = currentState.copy() as! MatchState
         newState.generationEventTimestamp = NSDate().timeIntervalSince1970
-        newState.generationEventType = MatchEventType.win
+        newState.generationEvent = GenerationEvent.Win
         
         if (currentState.pointType == PointType.setFor) {
             // Resolve set
@@ -220,7 +220,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         let currentState = self.match!.currentState
         let newState = currentState.copy() as! MatchState
         newState.generationEventTimestamp = NSDate().timeIntervalSince1970
-        newState.generationEventType = MatchEventType.loss
+        newState.generationEvent = GenerationEvent.Loss
         
         if (currentState.pointType == PointType.setAgainst) {
             // Resolve set

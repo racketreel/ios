@@ -9,14 +9,15 @@ import Foundation
 
 
 // Unwrap optionals from CoreData model into non-optionals
+// Change Int64 from CoreData into Enum where needed
 extension MatchState {
     
-    var generationEventType: GenerationEvent {
+    var generationEvent: GenerationEvent {
         get {
-            return GenerationEvent(rawValue: generationEventType_!) ?? GenerationEvent.Unknown
+            return GenerationEvent(rawValue: generationEvent_) ?? GenerationEvent.Unknown
         }
         set {
-            generationEventType_ = newValue.rawValue
+            generationEvent_ = newValue.rawValue
         }
     }
     
