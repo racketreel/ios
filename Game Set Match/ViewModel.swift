@@ -9,6 +9,7 @@ import Foundation
 import WatchConnectivity
 import CoreData
 import AVFoundation
+import Photos
 
 class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     
@@ -41,6 +42,45 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     }
     
     func cut(video: AVAsset, match: Match) {
+        // Create ordered array of clip ranges to add to composition
+        let videoStartTimestamp = video.creationDate!.dateValue!.timeIntervalSince1970
+        var clipTimeRanges = [CMTimeRange]()
+        // Find each firstServe then end the clip at the point win or loss
+        var i = 0
+        while (i < match.history!.count) {
+            let currentState = match.history![i] as! MatchState
+            // Find next state in history which is either a point win or loss
+            if (currentState.generationEventType == "firstServe") {
+                var j = i
+                while (j < match.history!.count) {
+                    let otherState = match.history![j] as! MatchState
+                    if (otherState.generationEventType == "win" || otherState.generationEventType == "loss") {
+                        // Get video timestamps for start and end of the clip
+                        let startTimestamp = currentState.generationEventTimestamp - videoStartTimestamp
+                        let endTimestamp = otherState.generationEventTimestamp - videoStartTimestamp
+                        // Create and add time range
+                        let startTime = CMTimeMake(value: Int64(startTimestamp*10), timescale: 10)
+                        let endTime = CMTimeMake(value: Int64(endTimestamp*10), timescale: 10)
+                        let timeRange = CMTimeRangeFromTimeToTime(start: startTime, end: endTime)
+                        clipTimeRanges.append(timeRange)
+                        break
+                    }
+                    j += 1
+                }
+            }
+            i += 1
+        }
+        print(clipTimeRanges.count)
+        print(clipTimeRanges)
+        
+        // Debug so just use one hard coded time range
+//        let oldClipTimeRanges = clipTimeRanges
+//        clipTimeRanges = []
+//        for i in 0..<20 {
+//            clipTimeRanges.append(oldClipTimeRanges[i])
+//        }
+//        clipTimeRanges.append(CMTimeRange(start: CMTimeMake(value: 1, timescale: 1), end: CMTimeMake(value: 3, timescale: 1)))
+        
         // Create output directory
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0]
@@ -54,26 +94,6 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
             }
         }
         
-        // Todo: Create ordered array of clip ranges to add to composition
-        
-        // Get the start and end timestamps of the clip
-//        let creationDate = video.creationDate!.dateValue!
-//        let startTimestamp = (match.history?[1] as! MatchState).generationEventTimestamp - creationDate.timeIntervalSince1970
-//        let endTimestamp = (match.history?[2] as! MatchState).generationEventTimestamp - creationDate.timeIntervalSince1970
-        
-//        print(creationDate)
-//        print(startTimestamp)
-//        print(endTimestamp)
-        
-        // Debugging with hardcoded timestamps between 1 and 3 seconds
-        let startTimestamp = 1
-        let endTimestamp = 3
-        
-        // Milliseconds as the degree of accuracy for cuts
-        let startTime = CMTimeMake(value: Int64(startTimestamp*10), timescale: 10)
-        let endTime = CMTimeMake(value: Int64(endTimestamp*10), timescale: 10)
-        let range = CMTimeRangeFromTimeToTime(start: startTime, end: endTime)
-        
         // Create composition with one video and one audio track
         let composition = AVMutableComposition()
         let compositionVideoTrack = composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: CMPersistentTrackID(kCMPersistentTrackID_Invalid))
@@ -82,39 +102,79 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         // Get video and audio tracks from user's video
         let sourceVideoTrack = video.tracks(withMediaType: AVMediaType.video).first!
         let sourceAudioTrack = video.tracks(withMediaType: AVMediaType.audio).first!
-        // Add specified range of user's video and audio track to the start of the composition's video and audio track
-        // Todo: Add clips for ranges of each point
-        do {
-            try compositionVideoTrack!.insertTimeRange(range, of: sourceVideoTrack, at: CMTime.zero)
-            try compositionAudioTrack!.insertTimeRange(range, of: sourceAudioTrack, at: CMTime.zero)
-        } catch {
-            print("Cannot add user video or audio track to the composition video or audio track")
-            return
+        
+        // Add each clip using the time range of that clip and after the previous clip
+        var endOfPreviousClip = CMTime.zero
+        for clipTimeRange in clipTimeRanges {
+            do {
+                try compositionVideoTrack!.insertTimeRange(clipTimeRange, of: sourceVideoTrack, at: endOfPreviousClip)
+                try compositionAudioTrack!.insertTimeRange(clipTimeRange, of: sourceAudioTrack, at: endOfPreviousClip)
+                // Add the next clip after this one
+                let value = clipTimeRange.duration.value + endOfPreviousClip.value
+                endOfPreviousClip = CMTimeMake(value: value, timescale: 10)
+            } catch {
+                print("Cannot add clip at time in video from \(clipTimeRange.start.seconds)s to \(clipTimeRange.end.seconds)s. This clip will be left out of the composition.")
+            }
         }
         
         // Debug
 //        print(composition.isExportable)
 //        print(AVAssetExportSession.exportPresets(compatibleWith: composition))
         
-        // Create exporter
+        
+        // Export the composition to documents
         // Todo: Display progress to user
         let exporter = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetPassthrough)
-        let outputPath = outputDirPath.appendingPathComponent("test.mov", isDirectory: false).path
-        exporter?.outputURL = URL(fileURLWithPath: outputPath)
-        exporter?.shouldOptimizeForNetworkUse = true
+        let outputPath = outputDirPath.appendingPathComponent("temp.mov", isDirectory: false).path
+        let outputURL = URL(fileURLWithPath: outputPath)
+        exporter?.outputURL = outputURL
         exporter?.outputFileType = .mov
+        
+        // Delete any existing temp file in Docs
+        do {
+            try FileManager.default.removeItem(at: outputURL)
+        } catch {
+            print("Could not delete temp file \(error.localizedDescription)")
+        }
+        
+        // Poll exporter progress to update progress in UI
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            DispatchQueue.main.async {
+                if (exporter?.status == .exporting) {
+                    print(exporter?.progress)
+//                    self.exportProgress = exporter?.progress
+//                    self.isExporting = true
+                } else if (exporter?.status == .waiting) {
+                    print("Exporter waiting...")
+                } else {
+//                    self.isExporting = false
+                    timer.invalidate()
+                }
+            }
+        }
+        
         // Export composition async
         exporter?.exportAsynchronously(completionHandler: {
              switch exporter!.status {
                 case .failed:
                     print("Export failed: \(exporter!.error != nil ? exporter!.error!.localizedDescription : "No Error Info")")
-                    // Todo: Tell user it failed and log
+                    // Todo: Log error
+//                    print(exporter!.error)
                 case .cancelled:
                     print("Export canceled")
                 case .completed:
                     print("Completed exporting")
-                    // Todo: Save to Photo Library
-                    // Todo: Delete temp file in Docs
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: outputPath))
+                    }) { success, error in
+                        if success {
+                            print("Video has been saved to photo library.")
+                        }
+                        if (error != nil) {
+                            print("Something went wrong saving to photo library: \(error!.localizedDescription)")
+                            print(error!)
+                        }
+                    }
                 default:
                     break
                 }
