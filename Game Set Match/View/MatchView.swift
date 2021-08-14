@@ -23,13 +23,12 @@ struct MatchView: View {
                 HStack {
                     ScoreBoardView(state: matchState)
                     VStack(alignment: .leading) {
-                        Text(matchState.generationEventType)
+                        Text(matchState.generationEventType.description)
                             .font(.system(size: 16))
-                        Text(String(matchState.generationEventTimestamp))
-                        if (matchState.pointType != "none") {
-                            Text(matchState.pointType + (matchState.breakPoint ? " and break" : ""))
-                        }
-                        Spacer()
+                        Text(String(matchState.generationEventTimestamp)) // todo format date
+                        Text(matchState.pointType == .None ? "" : matchState.pointType.rawValue)
+                        Text(matchState.breakPoint ? "Break Point" : "")
+                        Spacer() // todo use frame
                     }
                     .font(.system(size: 12))
                 }

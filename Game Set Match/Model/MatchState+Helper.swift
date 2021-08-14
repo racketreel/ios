@@ -11,12 +11,12 @@ import Foundation
 // Unwrap optionals from CoreData model into non-optionals
 extension MatchState {
     
-    var generationEventType: String {
+    var generationEventType: GenerationEvent {
         get {
-            return generationEventType_ ?? "none"
+            return GenerationEvent(rawValue: generationEventType_!) ?? GenerationEvent.Unknown
         }
         set {
-            generationEventType_ = newValue
+            generationEventType_ = newValue.rawValue
         }
     }
     
@@ -38,12 +38,12 @@ extension MatchState {
         }
     }
     
-    var pointType: String {
+    var pointType: PointDescription {
         get {
-            return pointType_ ?? "none"
+            return PointDescription(rawValue: pointType_!) ?? PointDescription.None
         }
         set {
-            pointType_ = newValue
+            pointType_ = newValue.rawValue
         }
     }
     
