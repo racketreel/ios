@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E260B60326BAFB3B00C35341 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E260B60226BAFB3B00C35341 /* HealthKit.framework */; };
 		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
+		E26855E726C7F18600DEF435 /* Match+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26855E126C7F18600DEF435 /* Match+CoreDataClass.swift */; };
+		E26855E926C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26855E326C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift */; };
+		E26855EB26C7F18600DEF435 /* MatchState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26855E526C7F18600DEF435 /* MatchState+CoreDataClass.swift */; };
 		E273A0AF26AC16B000259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
 		E273A0B026AC16B000259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
 		E273A0B126AC16B000259066 /* MatchEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AD26AC150100259066 /* MatchEventType.swift */; };
@@ -25,13 +28,7 @@
 		E2B9266126ACA48C0075CBF6 /* PointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9266026ACA48C0075CBF6 /* PointType.swift */; };
 		E2B9266426ACABE10075CBF6 /* MatchOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9266326ACABE10075CBF6 /* MatchOverView.swift */; };
 		E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */; };
-		E2B926E326B59BB60075CBF6 /* MatchState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */; };
-		E2B926E526B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */; };
-		E2B926E726B59BB60075CBF6 /* Match+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */; };
 		E2B926F826B5D2130075CBF6 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926F726B5D2130075CBF6 /* MatchView.swift */; };
-		E2B926FD26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FA26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift */; };
-		E2B926FE26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FB26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift */; };
-		E2B926FF26B5E4210075CBF6 /* Match+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926FC26B5E4210075CBF6 /* Match+CoreDataProperties.swift */; };
 		E2B9270426B5EE670075CBF6 /* ScoreBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9270326B5EE670075CBF6 /* ScoreBoardView.swift */; };
 		E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
 		E2FF733B26A33710002209CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* ContentView.swift */; };
@@ -92,6 +89,9 @@
 		E260B60026BAFB3B00C35341 /* Game Set Match WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Game Set Match WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		E260B60226BAFB3B00C35341 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		E263E6AF26A9F88400173F1D /* PlayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerType.swift; sourceTree = "<group>"; };
+		E26855E126C7F18600DEF435 /* Match+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E26855E326C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E26855E526C7F18600DEF435 /* MatchState+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E273A0A926AC144D00259066 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		E273A0AB26AC14C500259066 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
 		E273A0AD26AC150100259066 /* MatchEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEventType.swift; sourceTree = "<group>"; };
@@ -108,13 +108,7 @@
 		E2B9266026ACA48C0075CBF6 /* PointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointType.swift; sourceTree = "<group>"; };
 		E2B9266326ACABE10075CBF6 /* MatchOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverView.swift; sourceTree = "<group>"; };
 		E2B9269E26B350630075CBF6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E2B926F726B5D2130075CBF6 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
-		E2B926FA26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchPreferences+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E2B926FB26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchState+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E2B926FC26B5E4210075CBF6 /* Match+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E2B9270326B5EE670075CBF6 /* ScoreBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardView.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Game Set Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Set Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
@@ -190,12 +184,9 @@
 		E2B926AC26B350D30075CBF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E2B926FA26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift */,
-				E2B926FB26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift */,
-				E2B926FC26B5E4210075CBF6 /* Match+CoreDataProperties.swift */,
-				E2B926DD26B59BB60075CBF6 /* MatchState+CoreDataClass.swift */,
-				E2B926DF26B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift */,
-				E2B926E126B59BB60075CBF6 /* Match+CoreDataClass.swift */,
+				E26855E126C7F18600DEF435 /* Match+CoreDataClass.swift */,
+				E26855E326C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift */,
+				E26855E526C7F18600DEF435 /* MatchState+CoreDataClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,18 +409,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2B926E526B59BB60075CBF6 /* MatchPreferences+CoreDataClass.swift in Sources */,
 				E2FF733B26A33710002209CA /* ContentView.swift in Sources */,
-				E2B926E726B59BB60075CBF6 /* Match+CoreDataClass.swift in Sources */,
 				E2B11E4D26AC23C00049A48F /* ViewModel.swift in Sources */,
-				E2B926FE26B5E4210075CBF6 /* MatchState+CoreDataProperties.swift in Sources */,
+				E26855E926C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
 				E2B9270426B5EE670075CBF6 /* ScoreBoardView.swift in Sources */,
 				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
-				E2B926FD26B5E4210075CBF6 /* MatchPreferences+CoreDataProperties.swift in Sources */,
+				E26855EB26C7F18600DEF435 /* MatchState+CoreDataClass.swift in Sources */,
 				E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */,
-				E2B926FF26B5E4210075CBF6 /* Match+CoreDataProperties.swift in Sources */,
-				E2B926E326B59BB60075CBF6 /* MatchState+CoreDataClass.swift in Sources */,
+				E26855E726C7F18600DEF435 /* Match+CoreDataClass.swift in Sources */,
 				E2B926F826B5D2130075CBF6 /* MatchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

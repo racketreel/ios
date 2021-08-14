@@ -2,7 +2,7 @@
 //  MatchState+CoreDataClass.swift
 //  Game Set Match
 //
-//  Created by Tom Elvidge on 31/07/2021.
+//  Created by Tom Elvidge on 14/08/2021.
 //
 //
 
@@ -26,6 +26,7 @@ public class MatchState: NSManagedObject, Decodable {
         case toServe
     }
     
+    // 'required' initializer cannot be defined in an extension
     required convenience public init(from decoder: Decoder) throws {
         guard let context = decoder.userInfo[.managedObjectContext] as? NSManagedObjectContext else {
             throw DecoderConfigurationError.missingManagedObjectContext
