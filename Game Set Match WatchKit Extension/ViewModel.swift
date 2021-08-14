@@ -129,6 +129,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     func saveMatch() {
         // Encode match into JSON
         let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
         do {
             let data = try encoder.encode(match)
             encoder.outputFormatting = .prettyPrinted
