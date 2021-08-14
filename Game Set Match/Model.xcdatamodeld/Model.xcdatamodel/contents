@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Match" representedClassName=".Match" syncable="YES" codeGenerationType="category">
-        <attribute name="id" attributeType="String"/>
-        <relationship name="history" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MatchState" inverseName="match" inverseEntity="MatchState"/>
-        <relationship name="matchPreferences" maxCount="1" deletionRule="Nullify" destinationEntity="MatchPreferences" inverseName="match" inverseEntity="MatchPreferences"/>
+        <attribute name="id_" attributeType="String"/>
+        <relationship name="history_" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MatchState" inverseName="match_" inverseEntity="MatchState"/>
+        <relationship name="matchPreferences_" maxCount="1" deletionRule="Nullify" destinationEntity="MatchPreferences" inverseName="match_" inverseEntity="MatchPreferences"/>
     </entity>
     <entity name="MatchPreferences" representedClassName=".MatchPreferences" syncable="YES" codeGenerationType="category">
         <attribute name="firstServe" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="gamesForSet" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setsToWin" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="match" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Match" inverseName="matchPreferences" inverseEntity="Match"/>
+        <relationship name="match_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Match" inverseName="matchPreferences_" inverseEntity="Match"/>
     </entity>
     <entity name="MatchState" representedClassName=".MatchState" syncable="YES" codeGenerationType="category">
         <attribute name="breakPoint" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="gamesOpponent" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gamesUser" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="generationEventTimestamp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" customClassName="TimeInterval"/>
-        <attribute name="generationEventType" attributeType="String" customClassName="MatchEventType"/>
-        <attribute name="pointsOpponent" attributeType="String"/>
-        <attribute name="pointsUser" attributeType="String"/>
-        <attribute name="pointType" attributeType="String" customClassName="PointType"/>
+        <attribute name="generationEventType_" attributeType="String" customClassName="MatchEventType"/>
+        <attribute name="pointsOpponent_" attributeType="String"/>
+        <attribute name="pointsUser_" attributeType="String"/>
+        <attribute name="pointType_" attributeType="String" customClassName="PointType"/>
         <attribute name="setsOpponent" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setsUser" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="toServe" attributeType="Boolean" usesScalarValueType="YES"/>
-        <relationship name="match" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Match" inverseName="history" inverseEntity="Match"/>
+        <relationship name="match_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Match" inverseName="history_" inverseEntity="Match"/>
     </entity>
     <elements>
         <element name="Match" positionX="-54" positionY="72" width="128" height="74"/>

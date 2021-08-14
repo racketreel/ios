@@ -35,17 +35,17 @@ public class MatchState: NSManagedObject, Decodable {
         self.init(context: context)
 
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.breakPoint = try container.decodeIfPresent(Bool.self, forKey: .breakPoint)!
-        self.gamesOpponent = try container.decodeIfPresent(Int64.self, forKey: .gamesOpponent)!
-        self.gamesUser = try container.decodeIfPresent(Int64.self, forKey: .gamesUser)!
-        self.generationEventTimestamp = try container.decodeIfPresent(Double.self, forKey: .generationEventTimestamp)!
-        self.generationEventType = try container.decodeIfPresent(String.self, forKey: .generationEventType)
-        self.pointsOpponent = try container.decodeIfPresent(String.self, forKey: .pointsOpponent)
-        self.pointsUser = try container.decodeIfPresent(String.self, forKey: .pointsUser)
-        self.pointType = try container.decodeIfPresent(String.self, forKey: .pointType)
-        self.setsOpponent = try container.decodeIfPresent(Int64.self, forKey: .setsOpponent)!
-        self.setsUser = try container.decodeIfPresent(Int64.self, forKey: .setsUser)!
-        self.toServe = try container.decodeIfPresent(Bool.self, forKey: .toServe)!
+        self.breakPoint = try container.decode(Bool.self, forKey: .breakPoint)
+        self.gamesOpponent = try container.decode(Int64.self, forKey: .gamesOpponent)
+        self.gamesUser = try container.decode(Int64.self, forKey: .gamesUser)
+        self.generationEventTimestamp = try container.decode(Double.self, forKey: .generationEventTimestamp)
+        self.generationEventType_ = try container.decode(String.self, forKey: .generationEventType)
+        self.pointsOpponent_ = try container.decode(String.self, forKey: .pointsOpponent)
+        self.pointsUser_ = try container.decode(String.self, forKey: .pointsUser)
+        self.pointType_ = try container.decode(String.self, forKey: .pointType)
+        self.setsOpponent = try container.decode(Int64.self, forKey: .setsOpponent)
+        self.setsUser = try container.decode(Int64.self, forKey: .setsUser)
+        self.toServe = try container.decode(Bool.self, forKey: .toServe)
     }
 
 }

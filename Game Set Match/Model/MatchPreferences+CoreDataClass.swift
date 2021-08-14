@@ -27,9 +27,11 @@ public class MatchPreferences: NSManagedObject, Decodable {
         self.init(context: context)
 
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.firstServe = try container.decodeIfPresent(Bool.self, forKey: .firstServe)!
-        self.setsToWin = try container.decodeIfPresent(Int64.self, forKey: .setsToWin)!
-        self.gamesForSet = try container.decodeIfPresent(Int64.self, forKey: .gamesForSet)!
+       
+        // All non-optional
+        self.firstServe = try container.decode(Bool.self, forKey: .firstServe)
+        self.setsToWin = try container.decode(Int64.self, forKey: .setsToWin)
+        self.gamesForSet = try container.decode(Int64.self, forKey: .gamesForSet)
     }
 
 }

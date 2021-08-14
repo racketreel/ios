@@ -25,11 +25,10 @@ public class Match: NSManagedObject, Decodable {
         }
         
         self.init(context: context)
-
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.history = NSOrderedSet(array: try container.decode([MatchState].self, forKey: .history))
-        self.id = try container.decode(String.self, forKey: .id)
-        self.matchPreferences = try container.decode(MatchPreferences.self, forKey: .matchPreferences)
+        self.history_ = NSOrderedSet(array: try container.decode([MatchState].self, forKey: .history))
+        self.id_ = try container.decode(String.self, forKey: .id)
+        self.matchPreferences_ = try container.decode(MatchPreferences.self, forKey: .matchPreferences)
     }
 
 }

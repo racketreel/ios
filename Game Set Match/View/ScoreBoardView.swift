@@ -45,8 +45,8 @@ struct ScoreBoardView: View {
             .frame(width: 25)
             // Points
             VStack {
-                Text(state.pointsUser!)
-                Text(state.pointsOpponent!)
+                Text(state.pointsUser)
+                Text(state.pointsOpponent)
             }
             .frame(width: 25)
         }

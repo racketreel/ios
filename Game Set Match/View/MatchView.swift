@@ -19,15 +19,15 @@ struct MatchView: View {
     
     var body: some View {
         List {
-            ForEach ((match.history!.array as! [MatchState]), id: \.self) { matchState in
+            ForEach (match.history, id: \.self) { matchState in
                 HStack {
                     ScoreBoardView(state: matchState)
                     VStack(alignment: .leading) {
-                        Text(matchState.generationEventType!)
+                        Text(matchState.generationEventType)
                             .font(.system(size: 16))
                         Text(String(matchState.generationEventTimestamp))
                         if (matchState.pointType != "none") {
-                            Text(matchState.pointType! + (matchState.breakPoint ? " and break" : ""))
+                            Text(matchState.pointType + (matchState.breakPoint ? " and break" : ""))
                         }
                         Spacer()
                     }
@@ -40,7 +40,7 @@ struct MatchView: View {
                 self.showImagePicker = true
             })
         }
-        .navigationTitle(String((match.history!.array[0] as! MatchState).generationEventTimestamp))
+        .navigationTitle(match.name)
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showImagePicker, onDismiss: cut) {
             ImagePicker(video: self.$video)

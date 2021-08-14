@@ -47,13 +47,13 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         var clipTimeRanges = [CMTimeRange]()
         // Find each firstServe then end the clip at the point win or loss
         var i = 0
-        while (i < match.history!.count) {
-            let currentState = match.history![i] as! MatchState
+        while (i < match.history.count) {
+            let currentState = match.history[i]
             // Find next state in history which is either a point win or loss
             if (currentState.generationEventType == "firstServe") {
                 var j = i
-                while (j < match.history!.count) {
-                    let otherState = match.history![j] as! MatchState
+                while (j < match.history.count) {
+                    let otherState = match.history[j]
                     if (otherState.generationEventType == "win" || otherState.generationEventType == "loss") {
                         // Get video timestamps for start and end of the clip
                         let startTimestamp = currentState.generationEventTimestamp - videoStartTimestamp
@@ -141,7 +141,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             DispatchQueue.main.async {
                 if (exporter?.status == .exporting) {
-                    print(exporter?.progress)
+                    print(exporter?.progress ?? "no progress")
 //                    self.exportProgress = exporter?.progress
 //                    self.isExporting = true
                 } else if (exporter?.status == .waiting) {
@@ -223,7 +223,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         
         do {
             let match = try decoder.decode(Match.self, from: matchJSON)
-            NSLog("Match with id \(match.id!) decoded")
+            NSLog("Match with id \(match.id) decoded")
         } catch{
             NSLog("Unable to decode match JSON")
         }
