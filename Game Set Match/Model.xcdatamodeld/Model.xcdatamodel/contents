@@ -17,9 +17,9 @@
         <attribute name="gamesUser" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="generationEvent_" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" customClassName="MatchEventType"/>
         <attribute name="generationEventTimestamp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" customClassName="TimeInterval"/>
+        <attribute name="pointDescription_" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" customClassName="PointType"/>
         <attribute name="pointsOpponent_" attributeType="String"/>
         <attribute name="pointsUser_" attributeType="String"/>
-        <attribute name="pointType_" attributeType="String" customClassName="PointType"/>
         <attribute name="setsOpponent" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setsUser" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="toServe" attributeType="Boolean" usesScalarValueType="YES"/>

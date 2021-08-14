@@ -165,11 +165,11 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         newState.generationEventTimestamp = NSDate().timeIntervalSince1970
         newState.generationEvent = GenerationEvent.Win
         
-        if (currentState.pointType == PointType.setFor) {
+        if (currentState.pointDescription == PointDescription.SetFor) {
             // Resolve set
             newState.setsUser += 1
             setReset(state: newState)
-        } else if (currentState.pointType == PointType.gameFor) {
+        } else if (currentState.pointDescription == PointDescription.GameFor) {
             // Resolve game
             newState.gamesUser += 1
             gameReset(state: newState)
@@ -197,7 +197,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
                 newState.pointsOpponent = pointMapping[newState.pointsOpponentInt]!
             }
         }
-        updatePointType(state: newState)
+        updatePointDescription(state: newState)
         
         // If state now in a tie break then keep track of who will serve after
         if isTieBreak(state: newState) {
@@ -211,7 +211,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         match!.currentState = newState
         
         // If won on match point then change to MatchOverView
-        if (currentState.pointType == PointType.matchFor) {
+        if (currentState.pointDescription == PointDescription.MatchFor) {
             currentView = ViewType.matchOver
         }
     }
@@ -222,11 +222,11 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         newState.generationEventTimestamp = NSDate().timeIntervalSince1970
         newState.generationEvent = GenerationEvent.Loss
         
-        if (currentState.pointType == PointType.setAgainst) {
+        if (currentState.pointDescription == PointDescription.SetAgainst) {
             // Resolve set
             newState.setsOpponent += 1
             setReset(state: newState)
-        } else if (currentState.pointType == PointType.gameAgainst) {
+        } else if (currentState.pointDescription == PointDescription.GameAgainst) {
             // Resolve game
             newState.gamesOpponent += 1
             gameReset(state: newState)
@@ -254,7 +254,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
                 newState.pointsOpponent = pointMapping[newState.pointsOpponentInt]!
             }
         }
-        updatePointType(state: newState)
+        updatePointDescription(state: newState)
         
         // If state now in a tie break then keep track of who will serve after
         if isTieBreak(state: newState) {
@@ -268,7 +268,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         match!.currentState = newState
         
         // If opponent won on match point then change to MatchOverView
-        if (currentState.pointType == PointType.matchAgainst) {
+        if (currentState.pointDescription == PointDescription.MatchAgainst) {
             currentView = ViewType.matchOver
         }
     }
@@ -281,8 +281,8 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         }
     }
     
-    private func updatePointType(state: MatchState) {
-        state.pointType = PointType.none
+    private func updatePointDescription(state: MatchState) {
+        state.pointDescription = PointDescription.None
         state.breakPoint = false
         
         let gamePointTo = gamePointTo(state: state)
@@ -292,24 +292,24 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         let matchPointTo = matchPointTo(state: state, setPointTo: setPointTo)
         
         if (matchPointTo == PlayerType.user) {
-            state.pointType = PointType.matchFor
+            state.pointDescription = PointDescription.MatchFor
         }
         if (matchPointTo == PlayerType.opponent) {
-            state.pointType = PointType.matchAgainst
+            state.pointDescription = PointDescription.MatchAgainst
         }
         if (matchPointTo == PlayerType.neither) {
             if (setPointTo == PlayerType.user) {
-                state.pointType = PointType.setFor
+                state.pointDescription = PointDescription.SetFor
             }
             if (setPointTo == PlayerType.opponent) {
-                state.pointType = PointType.setAgainst
+                state.pointDescription = PointDescription.SetAgainst
             }
             if (setPointTo == PlayerType.neither) {
                 if (gamePointTo == PlayerType.user) {
-                    state.pointType = PointType.gameFor
+                    state.pointDescription = PointDescription.GameFor
                 }
                 if (gamePointTo == PlayerType.opponent) {
-                    state.pointType = PointType.gameAgainst
+                    state.pointDescription = PointDescription.GameAgainst
                 }
             }
         }

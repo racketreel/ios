@@ -17,7 +17,7 @@ class MatchState: Encodable {
         case generationEvent
         case pointsOpponent
         case pointsUser
-        case pointType
+        case pointDescription
         case setsOpponent
         case setsUser
         case toServe
@@ -41,7 +41,7 @@ class MatchState: Encodable {
     var pointsOpponent: String
     
     var breakPoint: Bool
-    var pointType: PointType
+    var pointDescription: PointDescription
     
     // Use alternate point scoring when set in a tie break
     var setTieBreak: Bool
@@ -55,7 +55,7 @@ class MatchState: Encodable {
     var pointsUserInt: Int
     var pointsOpponentInt: Int
     
-    init(generationEvent: GenerationEvent, generationEventTimestamp: TimeInterval, toServe: Bool, setsUser: Int, setsOpponent: Int, gamesUser: Int, gamesOpponent: Int, pointsUser: String, pointsOpponent: String, setTieBreak: Bool, tieBreakPointCounter: Int, toServePostTieBreak: Bool, pointsUserInt: Int, pointsOpponentInt: Int, breakPoint: Bool, pointType: PointType) {
+    init(generationEvent: GenerationEvent, generationEventTimestamp: TimeInterval, toServe: Bool, setsUser: Int, setsOpponent: Int, gamesUser: Int, gamesOpponent: Int, pointsUser: String, pointsOpponent: String, setTieBreak: Bool, tieBreakPointCounter: Int, toServePostTieBreak: Bool, pointsUserInt: Int, pointsOpponentInt: Int, breakPoint: Bool, pointDescription: PointDescription) {
         self.generationEvent = generationEvent
         self.generationEventTimestamp = generationEventTimestamp
         self.toServe = toServe
@@ -66,7 +66,7 @@ class MatchState: Encodable {
         self.pointsUser = pointsUser
         self.pointsOpponent = pointsOpponent
         self.breakPoint = breakPoint
-        self.pointType = pointType
+        self.pointDescription = pointDescription
         self.setTieBreak = setTieBreak
         self.tieBreakPointCounter = tieBreakPointCounter
         self.toServePostTieBreak = toServePostTieBreak
@@ -86,7 +86,7 @@ class MatchState: Encodable {
         self.pointsUser = "0"
         self.pointsOpponent = "0"
         self.breakPoint = false
-        self.pointType = PointType.none
+        self.pointDescription = PointDescription.None
         self.setTieBreak = false
         self.tieBreakPointCounter = 0
         self.toServePostTieBreak = false
@@ -95,7 +95,7 @@ class MatchState: Encodable {
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
-        let copy = MatchState(generationEvent: generationEvent, generationEventTimestamp: generationEventTimestamp, toServe: toServe, setsUser: setsUser, setsOpponent: setsOpponent, gamesUser: gamesUser, gamesOpponent: gamesOpponent, pointsUser: pointsUser, pointsOpponent: pointsOpponent, setTieBreak: setTieBreak, tieBreakPointCounter: tieBreakPointCounter, toServePostTieBreak: toServePostTieBreak, pointsUserInt: pointsUserInt, pointsOpponentInt: pointsOpponentInt,  breakPoint: breakPoint, pointType: pointType)
+        let copy = MatchState(generationEvent: generationEvent, generationEventTimestamp: generationEventTimestamp, toServe: toServe, setsUser: setsUser, setsOpponent: setsOpponent, gamesUser: gamesUser, gamesOpponent: gamesOpponent, pointsUser: pointsUser, pointsOpponent: pointsOpponent, setTieBreak: setTieBreak, tieBreakPointCounter: tieBreakPointCounter, toServePostTieBreak: toServePostTieBreak, pointsUserInt: pointsUserInt, pointsOpponentInt: pointsOpponentInt,  breakPoint: breakPoint, pointDescription: pointDescription)
         return copy
     }
     
@@ -108,7 +108,7 @@ class MatchState: Encodable {
         try container.encode(generationEvent, forKey: .generationEvent)
         try container.encode(pointsOpponent, forKey: .pointsOpponent)
         try container.encode(pointsUser, forKey: .pointsUser)
-        try container.encode(pointType, forKey: .pointType)
+        try container.encode(pointDescription, forKey: .pointDescription)
         try container.encode(setsOpponent, forKey: .setsOpponent)
         try container.encode(setsUser, forKey: .setsUser)
         try container.encode(toServe, forKey: .toServe)

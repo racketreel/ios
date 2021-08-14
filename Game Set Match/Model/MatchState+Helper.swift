@@ -39,12 +39,12 @@ extension MatchState {
         }
     }
     
-    var pointType: PointDescription {
+    var pointDescription: PointDescription {
         get {
-            return PointDescription(rawValue: pointType_!) ?? PointDescription.None
+            return PointDescription(rawValue: pointDescription_) ?? PointDescription.None
         }
         set {
-            pointType_ = newValue.rawValue
+            pointDescription_ = newValue.rawValue
         }
     }
     

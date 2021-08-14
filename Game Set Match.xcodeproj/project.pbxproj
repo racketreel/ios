@@ -30,7 +30,6 @@
 		E2B9264A26AC50C50075CBF6 /* MatchPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */; };
 		E2B9265226AC61750075CBF6 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9265126AC61750075CBF6 /* MatchView.swift */; };
 		E2B9265626AC62B10075CBF6 /* ScoreBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9265526AC62B00075CBF6 /* ScoreBoardView.swift */; };
-		E2B9266126ACA48C0075CBF6 /* PointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9266026ACA48C0075CBF6 /* PointType.swift */; };
 		E2B9266426ACABE10075CBF6 /* MatchOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9266326ACABE10075CBF6 /* MatchOverView.swift */; };
 		E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */; };
 		E2B926F826B5D2130075CBF6 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926F726B5D2130075CBF6 /* MatchView.swift */; };
@@ -113,7 +112,6 @@
 		E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPreferences.swift; sourceTree = "<group>"; };
 		E2B9265126AC61750075CBF6 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		E2B9265526AC62B00075CBF6 /* ScoreBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardView.swift; sourceTree = "<group>"; };
-		E2B9266026ACA48C0075CBF6 /* PointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointType.swift; sourceTree = "<group>"; };
 		E2B9266326ACABE10075CBF6 /* MatchOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverView.swift; sourceTree = "<group>"; };
 		E2B9269E26B350630075CBF6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E2B926F726B5D2130075CBF6 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 			children = (
 				E273A0A926AC144D00259066 /* Match.swift */,
 				E273A0AB26AC14C500259066 /* MatchState.swift */,
-				E2B9266026ACA48C0075CBF6 /* PointType.swift */,
 				E2B9264826AC50C50075CBF6 /* MatchPreferences.swift */,
 				E263E6AF26A9F88400173F1D /* PlayerType.swift */,
 				E2B11E5826AC46370049A48F /* ViewType.swift */,
@@ -462,7 +459,6 @@
 				E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */,
 				E2B9265226AC61750075CBF6 /* MatchView.swift in Sources */,
 				E2FF735826A33711002209CA /* Game_Set_MatchApp.swift in Sources */,
-				E2B9266126ACA48C0075CBF6 /* PointType.swift in Sources */,
 				E2FF735A26A33711002209CA /* ComplicationController.swift in Sources */,
 				E2B11E5926AC46370049A48F /* ViewType.swift in Sources */,
 				E2B11E5726AC45AA0049A48F /* WelcomeView.swift in Sources */,

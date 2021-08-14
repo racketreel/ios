@@ -26,7 +26,7 @@ struct MatchView: View {
                         Text(matchState.generationEvent.description)
                             .font(.system(size: 16))
                         Text(String(matchState.generationEventTimestamp)) // todo format date
-                        Text(matchState.pointType == .None ? "" : matchState.pointType.rawValue)
+                        Text(matchState.pointDescription == .None ? "" : matchState.pointDescription.description)
                         Text(matchState.breakPoint ? "Break Point" : "")
                         Spacer() // todo use frame
                     }
