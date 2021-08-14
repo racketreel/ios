@@ -175,7 +175,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
             gameReset(state: newState)
         } else {
             // Score points for a win
-            if currentState.setTieBreak {
+            if currentState.tieBreak {
                 newState.pointsUserInt += 1
                 // Just 0, 1, 2 etc scoring in tie break
                 newState.pointsUser = String(newState.pointsUserInt)
@@ -201,7 +201,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         
         // If state now in a tie break then keep track of who will serve after
         if isTieBreak(state: newState) {
-            newState.setTieBreak = true
+            newState.tieBreak = true
             newState.toServePostTieBreak = newState.toServe
         }
         
@@ -232,7 +232,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
             gameReset(state: newState)
         } else {
             // Score points for a win
-            if currentState.setTieBreak {
+            if currentState.tieBreak {
                 newState.pointsOpponentInt += 1
                 // Just 0, 1, 2 etc scoring in tie break
                 newState.pointsOpponent = String(newState.pointsOpponentInt)
@@ -258,7 +258,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         
         // If state now in a tie break then keep track of who will serve after
         if isTieBreak(state: newState) {
-            newState.setTieBreak = true
+            newState.tieBreak = true
             newState.toServePostTieBreak = newState.toServe
         }
         
@@ -330,7 +330,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     }
     
     private func gamePointTo(state: MatchState) -> PlayerType {
-        if state.setTieBreak {
+        if state.tieBreak {
             // User on 6 or more points
             // and at least one point ahead
             if (state.pointsUserInt >= 6 && state.pointsUserInt >= (state.pointsOpponentInt + 1)) {
@@ -357,7 +357,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     
     private func setPointTo(state: MatchState, gamePointTo: PlayerType) -> PlayerType {
         // Different condition when in tie break
-        if state.setTieBreak {
+        if state.tieBreak {
             // Just comes down to the tie break (game)
             return gamePointTo
         } else {
@@ -397,12 +397,12 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         state.toServe = !state.toServe
         
         // Additional reset steps if was a tie break
-        if state.setTieBreak {
+        if state.tieBreak {
             // Restore next serve from var
             state.toServe = state.toServePostTieBreak
             // Reset point counter
             state.tieBreakPointCounter = 0
-            state.setTieBreak = false
+            state.tieBreak = false
         }
         
         // Points reset

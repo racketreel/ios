@@ -18,16 +18,17 @@
         <attribute name="generationEvent_" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" customClassName="MatchEventType"/>
         <attribute name="generationEventTimestamp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" customClassName="TimeInterval"/>
         <attribute name="pointDescription_" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" customClassName="PointType"/>
-        <attribute name="pointsOpponent_" attributeType="String"/>
-        <attribute name="pointsUser_" attributeType="String"/>
+        <attribute name="pointsOpponent_" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pointsUser_" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setsOpponent" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="setsUser" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tieBreak" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="toServe" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="match_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Match" inverseName="history_" inverseEntity="Match"/>
     </entity>
     <elements>
         <element name="Match" positionX="-54" positionY="72" width="128" height="74"/>
         <element name="MatchPreferences" positionX="-36" positionY="81" width="128" height="89"/>
-        <element name="MatchState" positionX="-63" positionY="-18" width="128" height="209"/>
+        <element name="MatchState" positionX="-63" positionY="-18" width="128" height="224"/>
     </elements>
 </model>
