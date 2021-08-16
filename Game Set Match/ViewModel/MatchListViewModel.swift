@@ -216,8 +216,10 @@ class MatchListViewModel : NSObject, ObservableObject, WCSessionDelegate {
         
         // Extract match from context
         let matchJSON = applicationContext["match"] as! Data
+        print(matchJSON)
         
         let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         // Once decoded add Match to CoreData
         decoder.userInfo[CodingUserInfoKey.managedObjectContext] = persistentContainer.viewContext
         
