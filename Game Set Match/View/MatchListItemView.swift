@@ -9,11 +9,10 @@ import SwiftUI
 
 struct MatchListItemView: View {
     
-    @ObservedObject var model: ViewModel
     let match: Match
     
     var body: some View {
-        NavigationLink(destination: MatchView(model: model, match: match)) {
+        NavigationLink(destination: MatchView(match: match)) {
             HStack {
                 Text(String(match.name))
             }
@@ -23,6 +22,6 @@ struct MatchListItemView: View {
 
 struct MatchListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListItemView(model: ViewModel(), match: Match())
+        MatchListItemView(match: Match())
     }
 }

@@ -11,47 +11,28 @@ import PhotosUI
 
 struct MatchView: View {
     
-    @ObservedObject var model: ViewModel
-    let match: Match
+    @ObservedObject var viewModel: MatchViewModel
     
-    @State private var showImagePicker = false
-    @State private var video: AVAsset?
+    init (match: Match) {
+        viewModel = MatchViewModel(match: match)
+    }
     
     var body: some View {
         List {
-            ForEach (match.history, id: \.self) { matchState in
-                HStack {
-                    ScoreBoardView(state: matchState)
-                    VStack(alignment: .leading) {
-                        Text(matchState.generationEvent.description)
-                            .font(.system(size: 16))
-                        Text(String(matchState.generationEventTimestamp)) // todo format date
-                        Text(matchState.pointDescription == .None ? "" : matchState.pointDescription.description)
-                        Text(matchState.breakPoint ? "Break Point" : "")
-                        Spacer() // todo use frame
-                    }
-                    .font(.system(size: 12))
-                }
+            ForEach (viewModel.match.history, id: \.self) { state in
+                MatchStateView(state: state)
             }
         }
         .toolbar {
             Button("Process Video", action: {
-                self.showImagePicker = true
+                viewModel.showVideoPicker = true
             })
         }
-        .navigationTitle(match.name)
+        .navigationTitle(viewModel.match.name)
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $showImagePicker, onDismiss: cut) {
-            ImagePicker(video: self.$video)
+        .sheet(isPresented: $viewModel.showVideoPicker, onDismiss: viewModel.trimMatchVideo) {
+            ImagePicker(video: $viewModel.video)
                 .ignoresSafeArea()
-        }
-    }
-    
-    func cut() {
-        if (video != nil) {
-            model.cut(video: video!, match: match)
-        } else {
-            print("No video.")
         }
     }
     
@@ -59,7 +40,7 @@ struct MatchView: View {
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView(model: ViewModel(), match: Match())
+        MatchView(match: Match())
     }
 }
 

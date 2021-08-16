@@ -11,7 +11,7 @@ import CoreData
 import AVFoundation
 import Photos
 
-class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
+class MatchListViewModel : NSObject, ObservableObject, WCSessionDelegate {
     
     // WatchConnectivity for recording match data on watchOS
     var session: WCSession?

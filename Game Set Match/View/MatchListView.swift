@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MatchListView: View {
     
-    @ObservedObject var model = ViewModel()
+    @ObservedObject var viewModel = MatchListViewModel()
     
     var body: some View {
         NavigationView {
             List {
-                ForEach (model.matches, id: \.self) { match in
-                    MatchListItemView(model: model, match: match)
+                ForEach (viewModel.matches, id: \.self) { match in
+                    MatchListItemView(match: match)
                 }
-                .onDelete(perform: self.model.deleteMatches)
+                .onDelete(perform: self.viewModel.deleteMatches)
             }
             .navigationTitle("Matches")
         }
@@ -26,6 +26,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MatchListView()
     }
 }

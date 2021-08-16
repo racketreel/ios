@@ -11,7 +11,7 @@ import SwiftUI
 struct Game_Set_MatchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MatchListView()
         }
     }
 }
