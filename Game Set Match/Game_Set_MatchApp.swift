@@ -6,12 +6,34 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 
 @main
 struct Game_Set_MatchApp: App {
+    
+    @Environment(\.scenePhase) var scenePhase
+    let persistenceController = PersistenceController.shared
+    
+    private var watchSession: WCSession?
+    private var watchSessionDelegate: CoreDataWCSessionDelegate?
+    
+    init() {
+        if WCSession.isSupported() {
+            watchSession = WCSession.default
+            watchSessionDelegate = CoreDataWCSessionDelegate(persistenceController: persistenceController)
+            watchSession!.delegate = watchSessionDelegate
+            watchSession!.activate()
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             MatchListView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+            .onChange(of: scenePhase) { _ in
+                // Save CoreData changes when app goes to background
+                persistenceController.save()
+            }
     }
 }

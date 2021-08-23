@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MatchListItemView: View {
     
-    let match: Match
+    @ObservedObject var match: Match
     
     var body: some View {
         NavigationLink(destination: MatchView(match: match)) {

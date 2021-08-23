@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E247252926CAD30D00C0DF7D /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247252826CAD30D00C0DF7D /* MatchViewModel.swift */; };
 		E247252B26CAD3AD00C0DF7D /* MatchStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247252A26CAD3AD00C0DF7D /* MatchStateView.swift */; };
+		E2537D0126D429FE000A277E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2537D0026D429FE000A277E /* PersistenceController.swift */; };
+		E2537D0326D4372C000A277E /* CoreDataWCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */; };
 		E260B60326BAFB3B00C35341 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E260B60226BAFB3B00C35341 /* HealthKit.framework */; };
 		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
 		E26855E726C7F18600DEF435 /* Match+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26855E126C7F18600DEF435 /* Match+CoreDataClass.swift */; };
@@ -23,7 +25,6 @@
 		E273A0AF26AC16B000259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
 		E273A0B026AC16B000259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
 		E2B11E4B26AC23A00049A48F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4A26AC23A00049A48F /* ViewModel.swift */; };
-		E2B11E4D26AC23C00049A48F /* MatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4C26AC23C00049A48F /* MatchListViewModel.swift */; };
 		E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */; };
 		E2B11E5126AC435C0049A48F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5026AC435C0049A48F /* ContentView.swift */; };
 		E2B11E5526AC453B0049A48F /* MatchSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5426AC453B0049A48F /* MatchSetUpView.swift */; };
@@ -94,6 +95,8 @@
 /* Begin PBXFileReference section */
 		E247252826CAD30D00C0DF7D /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
 		E247252A26CAD3AD00C0DF7D /* MatchStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStateView.swift; sourceTree = "<group>"; };
+		E2537D0026D429FE000A277E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWCSessionDelegate.swift; sourceTree = "<group>"; };
 		E260B60026BAFB3B00C35341 /* Game Set Match WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Game Set Match WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		E260B60226BAFB3B00C35341 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		E263E6AF26A9F88400173F1D /* PlayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerType.swift; sourceTree = "<group>"; };
@@ -107,7 +110,6 @@
 		E273A0A926AC144D00259066 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		E273A0AB26AC14C500259066 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
 		E2B11E4A26AC23A00049A48F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		E2B11E4C26AC23C00049A48F /* MatchListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchListViewModel.swift; sourceTree = "<group>"; };
 		E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListItemView.swift; sourceTree = "<group>"; };
 		E2B11E5026AC435C0049A48F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E2B11E5426AC453B0049A48F /* MatchSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSetUpView.swift; sourceTree = "<group>"; };
@@ -159,7 +161,6 @@
 		E247252726CAD22A00C0DF7D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				E2B11E4C26AC23C00049A48F /* MatchListViewModel.swift */,
 				E247252826CAD30D00C0DF7D /* MatchViewModel.swift */,
 			);
 			path = ViewModel;
@@ -260,6 +261,8 @@
 				E2B926F926B5DD200075CBF6 /* View */,
 				E2B926AC26B350D30075CBF6 /* Model */,
 				E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */,
+				E2537D0026D429FE000A277E /* PersistenceController.swift */,
+				E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */,
 				E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */,
 				E2FF733C26A33711002209CA /* Assets.xcassets */,
 				E2FF734126A33711002209CA /* Info.plist */,
@@ -441,7 +444,6 @@
 			files = (
 				E268560026C7F7F900DEF435 /* MatchState+Helper.swift in Sources */,
 				E2FF733B26A33710002209CA /* MatchListView.swift in Sources */,
-				E2B11E4D26AC23C00049A48F /* MatchListViewModel.swift in Sources */,
 				E268560626C808B000DEF435 /* PointDescription.swift in Sources */,
 				E26855E926C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
@@ -449,10 +451,12 @@
 				E247252926CAD30D00C0DF7D /* MatchViewModel.swift in Sources */,
 				E247252B26CAD3AD00C0DF7D /* MatchStateView.swift in Sources */,
 				E2FF733926A33710002209CA /* Game_Set_MatchApp.swift in Sources */,
+				E2537D0126D429FE000A277E /* PersistenceController.swift in Sources */,
 				E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */,
 				E26855EB26C7F18600DEF435 /* MatchState+CoreDataClass.swift in Sources */,
 				E2B11E4F26AC2BA80049A48F /* MatchListItemView.swift in Sources */,
 				E268560226C7FA4C00DEF435 /* Match+Helper.swift in Sources */,
+				E2537D0326D4372C000A277E /* CoreDataWCSessionDelegate.swift in Sources */,
 				E26855E726C7F18600DEF435 /* Match+CoreDataClass.swift in Sources */,
 				E2B926F826B5D2130075CBF6 /* MatchView.swift in Sources */,
 			);

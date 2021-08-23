@@ -6,26 +6,43 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 
 struct MatchListView: View {
     
-    @ObservedObject var viewModel = MatchListViewModel()
+    @Environment(\.managedObjectContext) private var managedObjectContext
+    @FetchRequest(
+        entity: Match.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Match.id_, ascending: true)
+        ]
+    ) var matches: FetchedResults<Match>
     
     var body: some View {
         NavigationView {
             List {
-                ForEach (viewModel.matches, id: \.self) { match in
+                ForEach (matches, id: \.self) { match in
                     MatchListItemView(match: match)
                 }
-                .onDelete(perform: self.viewModel.deleteMatches)
+                .onDelete(perform: deleteMatches)
             }
             .navigationTitle("Matches")
         }
     }
+    
+    func deleteMatches(at offsets: IndexSet) {
+        for index in offsets {
+            let match = matches[index]
+            managedObjectContext.delete(match)
+        }
+    }
+    
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MatchListView_Previews: PreviewProvider {
     static var previews: some View {
         MatchListView()
+            .environment(\.managedObjectContext,
+                PersistenceController.preview.container.viewContext)
     }
 }
