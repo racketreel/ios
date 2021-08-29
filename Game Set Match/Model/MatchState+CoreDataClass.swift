@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-public class MatchState: NSManagedObject, Decodable {
+public class MatchState: NSManagedObject, Codable {
     
     // Cannot be stored in an extension
     let pointIntStringMap = [
@@ -41,7 +41,6 @@ public class MatchState: NSManagedObject, Decodable {
         guard let context = decoder.userInfo[.managedObjectContext] as? NSManagedObjectContext else {
             throw DecoderConfigurationError.missingManagedObjectContext
         }
-        
         self.init(context: context)
 
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -57,6 +56,22 @@ public class MatchState: NSManagedObject, Decodable {
         self.setsUser = try container.decode(Int64.self, forKey: .setsUser)
         self.toServe = try container.decode(Bool.self, forKey: .toServe)
         self.tieBreak = try container.decode(Bool.self, forKey: .tieBreak)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(breakPoint, forKey: .breakPoint)
+        try container.encode(gamesOpponent, forKey: .gamesOpponent)
+        try container.encode(gamesUser, forKey: .gamesUser)
+        try container.encode(generationEventTimestamp, forKey: .generationEventTimestamp)
+        try container.encode(generationEvent_, forKey: .generationEvent)
+        try container.encode(pointsOpponent_, forKey: .pointsOpponent)
+        try container.encode(pointsUser_, forKey: .pointsUser)
+        try container.encode(pointDescription_, forKey: .pointDescription)
+        try container.encode(setsOpponent, forKey: .setsOpponent)
+        try container.encode(setsUser, forKey: .setsUser)
+        try container.encode(toServe, forKey: .toServe)
+        try container.encode(tieBreak, forKey: .tieBreak)
     }
 
 }

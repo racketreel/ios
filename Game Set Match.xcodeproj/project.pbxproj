@@ -11,6 +11,7 @@
 		E247252B26CAD3AD00C0DF7D /* MatchStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247252A26CAD3AD00C0DF7D /* MatchStateView.swift */; };
 		E2537D0126D429FE000A277E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2537D0026D429FE000A277E /* PersistenceController.swift */; };
 		E2537D0326D4372C000A277E /* CoreDataWCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */; };
+		E2537D0726D52B09000A277E /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = E2537D0626D52B09000A277E /* matches.json */; };
 		E260B60326BAFB3B00C35341 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E260B60226BAFB3B00C35341 /* HealthKit.framework */; };
 		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
 		E26855E726C7F18600DEF435 /* Match+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26855E126C7F18600DEF435 /* Match+CoreDataClass.swift */; };
@@ -97,6 +98,7 @@
 		E247252A26CAD3AD00C0DF7D /* MatchStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStateView.swift; sourceTree = "<group>"; };
 		E2537D0026D429FE000A277E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWCSessionDelegate.swift; sourceTree = "<group>"; };
+		E2537D0626D52B09000A277E /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = matches.json; path = ../../../matches.json; sourceTree = "<group>"; };
 		E260B60026BAFB3B00C35341 /* Game Set Match WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Game Set Match WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		E260B60226BAFB3B00C35341 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		E263E6AF26A9F88400173F1D /* PlayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerType.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 				E247252826CAD30D00C0DF7D /* MatchViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E2537D0526D52AFA000A277E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E2537D0626D52B09000A277E /* matches.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		E260B60126BAFB3B00C35341 /* Frameworks */ = {
@@ -257,6 +267,7 @@
 		E2FF733726A33710002209CA /* Game Set Match */ = {
 			isa = PBXGroup;
 			children = (
+				E2537D0526D52AFA000A277E /* Data */,
 				E247252726CAD22A00C0DF7D /* ViewModel */,
 				E2B926F926B5DD200075CBF6 /* View */,
 				E2B926AC26B350D30075CBF6 /* Model */,
@@ -414,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2FF734026A33711002209CA /* Preview Assets.xcassets in Resources */,
+				E2537D0726D52B09000A277E /* matches.json in Resources */,
 				E2FF733D26A33711002209CA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

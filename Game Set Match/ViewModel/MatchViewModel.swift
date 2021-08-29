@@ -21,6 +21,21 @@ class MatchViewModel: ObservableObject {
         self.match = match
     }
     
+    func exportMatch() -> Data? {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        do {
+            let data = try encoder.encode(match)
+            encoder.outputFormatting = .prettyPrinted
+            // Debug
+            print(String(data: data, encoding: .utf8)!)
+            return data
+        } catch {
+            print("Unable to encode match: \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
     private func getTrimmedTimeRanges() -> [CMTimeRange] {
         var clipTimeRanges = [CMTimeRange]()
         

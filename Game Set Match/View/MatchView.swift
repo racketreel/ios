@@ -14,11 +14,16 @@ struct MatchView: View {
     @ObservedObject var viewModel: MatchViewModel
     
     init (match: Match) {
+        let matches = PersistenceController.getTestMatches()
+        print(matches?[0] ?? [Match()])
         viewModel = MatchViewModel(match: match)
     }
     
     var body: some View {
         List {
+            Button("Export Match", action: {
+                _ = viewModel.exportMatch()
+            })
             ForEach (viewModel.match.history, id: \.self) { state in
                 MatchStateView(state: state)
             }

@@ -19,34 +19,11 @@ struct PersistenceController {
     // Dummy data for previews
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
-
-        // Todo: Decode test matches from json
-        for _ in 0..<4 {
-            let match = Match(context: controller.container.viewContext)
-            
-            let matchPreferences = MatchPreferences()
-            matchPreferences.firstServe = true
-            matchPreferences.gamesForSet = 6
-            matchPreferences.setsToWin = 3
-//            matchPreferences.match_ = match
-            match.matchPreferences = matchPreferences
-            
-            let initialState = MatchState()
-            initialState.breakPoint = false
-            initialState.gamesOpponent = 0
-            initialState.gamesUser = 0
-            initialState.generationEvent = GenerationEvent.Start
-            initialState.generationEventTimestamp = Date().timeIntervalSince1970
-//            initialState.match_ = match
-            initialState.pointDescription = PointDescription.None
-            initialState.pointsOpponent_ = 0
-            initialState.pointsUser_ = 0
-            initialState.setsOpponent = 0
-            initialState.setsUser = 0
-            initialState.tieBreak = false
-            initialState.toServe = true
-            match.history = [initialState]
-        }
+        
+        let decoder = JSONDecoder()
+        // Custom decoder to add decoded matches to CoreData container
+        decoder.userInfo[CodingUserInfoKey.managedObjectContext] = controller.container.viewContext
+        _ = getTestMatches(decoder: decoder)
 
         return controller
     }()
@@ -77,6 +54,19 @@ struct PersistenceController {
                 print("Unable to save to CoreData: \(error.localizedDescription)")
             }
         }
+    }
+    
+    static func getTestMatches(decoder: JSONDecoder = JSONDecoder()) -> [Match]? {
+        if let path = Bundle.main.path(forResource: "matches", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                return try decoder.decode([Match].self, from: data)
+            } catch {
+                print("Cannot decode test matches: \(error)")
+            }
+        }
+        return nil
     }
     
 }
