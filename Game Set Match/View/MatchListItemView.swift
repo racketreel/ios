@@ -22,6 +22,6 @@ struct MatchListItemView: View {
 
 struct MatchListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListItemView(match: Match())
+        MatchListItemView(match: Match.example)
     }
 }

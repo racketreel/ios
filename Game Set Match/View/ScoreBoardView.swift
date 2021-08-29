@@ -59,6 +59,6 @@ struct ScoreBoardView: View {
 
 struct ScoreBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreBoardView(state: MatchState())
+        ScoreBoardView(state: Match.example.history.first!)
     }
 }

@@ -29,6 +29,6 @@ struct MatchStateView: View {
 
 struct MatchStateView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchStateView(state: MatchState())
+        MatchStateView(state: Match.example.history.first!)
     }
 }

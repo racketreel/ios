@@ -45,7 +45,7 @@ struct MatchView: View {
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView(match: Match())
+        MatchView(match: Match.example)
     }
 }
 
