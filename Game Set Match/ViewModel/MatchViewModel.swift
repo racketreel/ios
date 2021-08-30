@@ -75,31 +75,42 @@ class MatchViewModel: ObservableObject {
         return clipTimeRanges
     }
     
-    private func newComposition(timeRanges: [CMTimeRange]) -> AVComposition {
-        // Create composition with one video and one audio track
-        let composition = AVMutableComposition()
-        let compositionVideoTrack = composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: CMPersistentTrackID(kCMPersistentTrackID_Invalid))
-        let compositionAudioTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: CMPersistentTrackID(kCMPersistentTrackID_Invalid))
+    private func add(text: String, to layer: CALayer, videoSize: CGSize) {
+        let textLayer = CATextLayer()
+        textLayer.string = text
+        textLayer.shouldRasterize = true
+        textLayer.rasterizationScale = UIScreen.main.scale
+        textLayer.backgroundColor = UIColor.white.cgColor
+        textLayer.alignmentMode = .center
 
-        // Get video and audio tracks from user's video
-        let sourceVideoTrack = video!.tracks(withMediaType: AVMediaType.video).first!
-        let sourceAudioTrack = video!.tracks(withMediaType: AVMediaType.audio).first!
+        textLayer.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: videoSize.width,
+            height: videoSize.height
+        )
         
-        // Add each clip using the time range of that clip and after the previous clip
-        var endOfPreviousClip = CMTime.zero
-        for timeRange in timeRanges {
-            do {
-                try compositionVideoTrack!.insertTimeRange(timeRange, of: sourceVideoTrack, at: endOfPreviousClip)
-                try compositionAudioTrack!.insertTimeRange(timeRange, of: sourceAudioTrack, at: endOfPreviousClip)
-                // Add the next clip after this one
-                let value = timeRange.duration.value + endOfPreviousClip.value
-                endOfPreviousClip = CMTimeMake(value: value, timescale: 10)
-            } catch {
-                print("Cannot add clip at time in video from \(timeRange.start.seconds)s to \(timeRange.end.seconds)s. This clip will be left out of the composition.")
-            }
-        }
-        
-        return composition
+        textLayer.displayIfNeeded()
+
+        layer.addSublayer(textLayer)
+    }
+    
+    private func orientation(from transform: CGAffineTransform) -> (orientation: UIImage.Orientation, isPortrait: Bool) {
+      var assetOrientation = UIImage.Orientation.up
+      var isPortrait = false
+      if transform.a == 0 && transform.b == 1.0 && transform.c == -1.0 && transform.d == 0 {
+        assetOrientation = .right
+        isPortrait = true
+      } else if transform.a == 0 && transform.b == -1.0 && transform.c == 1.0 && transform.d == 0 {
+        assetOrientation = .left
+        isPortrait = true
+      } else if transform.a == 1.0 && transform.b == 0 && transform.c == 0 && transform.d == 1.0 {
+        assetOrientation = .up
+      } else if transform.a == -1.0 && transform.b == 0 && transform.c == 0 && transform.d == -1.0 {
+        assetOrientation = .down
+      }
+      
+      return (assetOrientation, isPortrait)
     }
     
     func trimMatchVideo() {
@@ -107,8 +118,6 @@ class MatchViewModel: ObservableObject {
             print("No video selected.")
             return
         }
-        
-        let clipTimeRanges = getTrimmedTimeRanges()
                 
         // Create output directory
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
@@ -124,7 +133,7 @@ class MatchViewModel: ObservableObject {
         }
         
         // Delete any existing temp file in Docs
-        let outputPath = outputDirPath.appendingPathComponent("temp.mov", isDirectory: false).path
+        let outputPath = outputDirPath.appendingPathComponent("temp.mp4", isDirectory: false).path
         let outputURL = URL(fileURLWithPath: outputPath)
         do {
             try FileManager.default.removeItem(at: outputURL)
@@ -132,17 +141,86 @@ class MatchViewModel: ObservableObject {
             print("Could not delete temp file \(error.localizedDescription)")
         }
         
-        // Debug
-//        print(composition.isExportable)
-//        print(AVAssetExportSession.exportPresets(compatibleWith: composition))
+        // Get video and audio tracks from user's match video
+        let sourceVideoTrack = video!.tracks(withMediaType: AVMediaType.video).first!
+        let sourceAudioTrack = video!.tracks(withMediaType: AVMediaType.audio).first
         
-        let composition = newComposition(timeRanges: clipTimeRanges)
+        let videoInfo = orientation(from: sourceVideoTrack.preferredTransform)
+        let videoSize: CGSize
+        if videoInfo.isPortrait {
+          videoSize = CGSize(
+            width: sourceVideoTrack.naturalSize.height,
+            height: sourceVideoTrack.naturalSize.width)
+        } else {
+          videoSize = sourceVideoTrack.naturalSize
+        }
+        
+        // Create composition with one video and one audio track
+        let composition = AVMutableComposition()
+        let compositionVideoTrack = composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: CMPersistentTrackID(kCMPersistentTrackID_Invalid))
+        let compositionAudioTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: CMPersistentTrackID(kCMPersistentTrackID_Invalid))
+        
+        // Add clips for each point to the composition
+        var endOfPreviousClip = CMTime.zero
+        for timeRange in getTrimmedTimeRanges() {
+            do {
+                try compositionVideoTrack!.insertTimeRange(timeRange, of: sourceVideoTrack, at: endOfPreviousClip)
+                if (sourceAudioTrack != nil) {
+                    try compositionAudioTrack!.insertTimeRange(timeRange, of: sourceAudioTrack!, at: endOfPreviousClip)
+                }
+                // Add the next clip after this one
+                let value = timeRange.duration.value + endOfPreviousClip.value
+                endOfPreviousClip = CMTimeMake(value: value, timescale: 10)
+            } catch {
+                print("Cannot add clip at time in video from \(timeRange.start.seconds)s to \(timeRange.end.seconds)s. This clip will be left out of the composition.")
+            }
+        }
+        
+        // Create layer tree
+        let videoLayer = CALayer()
+        videoLayer.frame = CGRect(origin: .zero, size: videoSize)
+        let watermarkLayer = CATextLayer()
+        watermarkLayer.string = "Processed by Racket Reel"
+        watermarkLayer.fontSize = 80
+        watermarkLayer.shouldRasterize = true
+        watermarkLayer.rasterizationScale = UIScreen.main.scale
+        watermarkLayer.foregroundColor = UIColor.white.cgColor
+        watermarkLayer.backgroundColor = UIColor.clear.cgColor
+        watermarkLayer.alignmentMode = .center
+        watermarkLayer.frame = CGRect(origin: .zero, size: videoSize)
+        
+        let outputLayer = CALayer()
+        outputLayer.frame = CGRect(origin: .zero, size: videoSize)
+        outputLayer.addSublayer(videoLayer)
+        outputLayer.addSublayer(watermarkLayer)
+        
+        // Create videoComposition to layer the original composition's video track
+        let videoComposition = AVMutableVideoComposition()
+        videoComposition.renderSize = videoSize
+        videoComposition.frameDuration = CMTime(value: 1, timescale: 30)
+        
+        // Add resulting videoComposition into layer tree
+        videoComposition.animationTool = AVVideoCompositionCoreAnimationTool(
+          postProcessingAsVideoLayer: videoLayer,
+          in: outputLayer)
+        
+        // Intruct videoComposition on layering
+        let instruction = AVMutableVideoCompositionInstruction()
+        instruction.timeRange = CMTimeRange(
+          start: .zero,
+          duration: composition.duration)
+        videoComposition.instructions = [instruction]
+        let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: compositionVideoTrack!)
+        layerInstruction.setTransform(sourceVideoTrack.preferredTransform, at: .zero) // Match source orientation
+        instruction.layerInstructions = [layerInstruction]
         
         // Export the composition to documents
         // Todo: Display progress to user
-        let exporter = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetPassthrough)
+        let exporter = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetHighestQuality)
+        exporter?.videoComposition = videoComposition
         exporter?.outputURL = outputURL
-        exporter?.outputFileType = .mov
+        exporter?.outputFileType = AVFileType.mp4
+        exporter?.videoComposition = videoComposition
         
         // Poll exporter progress to update progress
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
