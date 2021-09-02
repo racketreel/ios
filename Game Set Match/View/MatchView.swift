@@ -11,33 +11,41 @@ import PhotosUI
 
 struct MatchView: View {
     
-    @ObservedObject var viewModel: MatchViewModel
+    @EnvironmentObject var videoEditor: VideoEditor
+    @State var match: Match
+    @State var video: AVAsset?
+    @State var showVideoPicker: Bool
     
     init (match: Match) {
-        let matches = PersistenceController.getTestMatches()
-        print(matches?[0] ?? [Match()])
-        viewModel = MatchViewModel(match: match)
+        self.match = match
+        self.showVideoPicker = false
     }
     
     var body: some View {
         List {
-            Button("Export Match", action: {
-                _ = viewModel.exportMatch()
-            })
-            ForEach (viewModel.match.history, id: \.self) { state in
+            ForEach (match.history, id: \.self) { state in
                 MatchStateView(state: state)
             }
         }
         .toolbar {
-            Button("Process Video", action: {
-                viewModel.showVideoPicker = true
-            })
+            VStack {
+                Button("Process Video", action: {
+                    showVideoPicker = true
+                })
+                .disabled(videoEditor.progress != nil)
+            }
         }
-        .navigationTitle(viewModel.match.name)
+        .navigationTitle(match.name)
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $viewModel.showVideoPicker, onDismiss: viewModel.trimMatchVideo) {
-            ImagePicker(video: $viewModel.video)
+        .sheet(isPresented: $showVideoPicker, onDismiss: videoPickerDismiss) {
+            ImagePicker(video: $video)
                 .ignoresSafeArea()
+        }
+    }
+    
+    func videoPickerDismiss() {
+        if (video != nil) {
+            videoEditor.process(video: video!, match: match)
         }
     }
     
@@ -51,7 +59,6 @@ struct MatchView_Previews: PreviewProvider {
 
 struct ImagePicker: UIViewControllerRepresentable {
     
-//    @Binding var isPresented: Bool
     @Binding var video: AVAsset?
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> PHPickerViewController {
@@ -89,9 +96,10 @@ struct ImagePicker: UIViewControllerRepresentable {
             let fetchResult = PHAsset.fetchAssets(withLocalIdentifiers: identifiers, options: nil)
             
             PHImageManager.default().requestAVAsset(forVideo: fetchResult.firstObject!, options: PHVideoRequestOptions()) { avAsset, _, _ in
-                self.parent.video = avAsset
+                DispatchQueue.main.async {
+                    self.parent.video = avAsset
+                }
             }
-//            self.parent.isPresented.toggle()
         }
         
     }

@@ -11,6 +11,8 @@ import WatchConnectivity
 @main
 struct Game_Set_MatchApp: App {
     
+    @StateObject var videoEditor = VideoEditor()
+    
     @Environment(\.scenePhase) var scenePhase
     let persistenceController = PersistenceController.shared
     
@@ -29,6 +31,7 @@ struct Game_Set_MatchApp: App {
     var body: some Scene {
         WindowGroup {
             MatchListView()
+                .environmentObject(videoEditor)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
             .onChange(of: scenePhase) { _ in

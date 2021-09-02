@@ -10,6 +10,7 @@ import WatchConnectivity
 
 struct MatchListView: View {
     
+    @EnvironmentObject var videoEditor: VideoEditor
     @Environment(\.managedObjectContext) private var managedObjectContext
     @FetchRequest(
         entity: Match.entity(),
@@ -19,15 +20,27 @@ struct MatchListView: View {
     ) var matches: FetchedResults<Match>
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach (matches, id: \.self) { match in
-                    MatchListItemView(match: match)
-                }
-                .onDelete(perform: deleteMatches)
+        VStack(alignment: .center, spacing: 0, content: {
+            if (videoEditor.progress != nil) {
+                Text(String(videoEditor.progress!))
             }
-            .navigationTitle("Matches")
-        }
+            NavigationView {
+                List {
+                    ForEach (matches, id: \.self) { match in
+                        MatchListItemView(match: match)
+                    }
+                    .onDelete(perform: deleteMatches)
+                }
+                .navigationTitle("Matches")
+                .navigationBarTitleDisplayMode(.inline)
+                .alert(isPresented: $videoEditor.success) {
+                    Alert(title: Text("Done"), message: Text("Match video exported to Photo Library"), dismissButton: .default(Text("OK")))
+                }
+                .alert(isPresented: $videoEditor.error) {
+                    Alert(title: Text("Error"), message: Text("Could not process match video"), dismissButton: .default(Text("OK")))
+                }
+            }
+        })
     }
     
     func deleteMatches(at offsets: IndexSet) {
