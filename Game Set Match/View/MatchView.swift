@@ -94,10 +94,11 @@ struct ImagePicker: UIViewControllerRepresentable {
             picker.dismiss(animated: true)
             let identifiers = results.compactMap(\.assetIdentifier)
             let fetchResult = PHAsset.fetchAssets(withLocalIdentifiers: identifiers, options: nil)
-            
-            PHImageManager.default().requestAVAsset(forVideo: fetchResult.firstObject!, options: PHVideoRequestOptions()) { avAsset, _, _ in
-                DispatchQueue.main.async {
-                    self.parent.video = avAsset
+            if let video = fetchResult.firstObject {
+                PHImageManager.default().requestAVAsset(forVideo: video, options: PHVideoRequestOptions()) { videoAsset, _, _ in
+                    DispatchQueue.main.async {
+                        self.parent.video = videoAsset
+                    }
                 }
             }
         }

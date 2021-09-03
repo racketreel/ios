@@ -13,7 +13,7 @@ struct PersistenceController {
     // CoreData container
     let container: NSPersistentContainer
     
-    // A singleton for our entire app to use
+    // A singleton for the entire app to use
     static let shared = PersistenceController()
     
     // Dummy data for previews

@@ -36,9 +36,9 @@ struct MatchListView: View {
                 .alert(isPresented: $videoEditor.success) {
                     Alert(title: Text("Done"), message: Text("Match video exported to Photo Library"), dismissButton: .default(Text("OK")))
                 }
-                .alert(isPresented: $videoEditor.error) {
-                    Alert(title: Text("Error"), message: Text("Could not process match video"), dismissButton: .default(Text("OK")))
-                }
+            }
+            .alert(isPresented: $videoEditor.error) {
+                Alert(title: Text("Error"), message: Text("Could not process match video"), dismissButton: .default(Text("OK")))
             }
         })
     }
