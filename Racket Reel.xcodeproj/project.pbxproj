@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A7E5F80B78163C4E87900FF /* Pods_Racket_Reel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */; };
+		BB79C2F7B977FF0198530BB6 /* Pods_Racket_Reel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */; };
 		E260B60326BAFB3B00C35341 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E260B60226BAFB3B00C35341 /* HealthKit.framework */; };
 		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
 		E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560326C8082A00DEF435 /* GenerationEvent.swift */; };
@@ -38,10 +40,26 @@
 		E2D6130B271B115000788B5A /* MatchPreferences+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26855E326C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift */; };
 		E2D6130C271B115000788B5A /* MatchState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26855E526C7F18600DEF435 /* MatchState+CoreDataClass.swift */; };
 		E2D6130D271B115000788B5A /* MatchState+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26855FF26C7F7F900DEF435 /* MatchState+Helper.swift */; };
-		E2D6130E271B115000788B5A /* Game_Set_MatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */; };
+		E2D6130E271B115000788B5A /* RacketReelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733826A33710002209CA /* RacketReelApp.swift */; };
 		E2D6130F271B115000788B5A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2537D0026D429FE000A277E /* PersistenceController.swift */; };
 		E2D61310271B115000788B5A /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27733EC26DEA75500321805 /* VideoEditor.swift */; };
 		E2D61311271B115000788B5A /* CoreDataWCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */; };
+		E2D61313271B1B9900788B5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61312271B1B9900788B5A /* User.swift */; };
+		E2D61318271B1BD700788B5A /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61315271B1BD700788B5A /* AuthProtocol.swift */; };
+		E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61316271B1BD700788B5A /* PreviewAuth.swift */; };
+		E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */; };
+		E2D6131C271B222500788B5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D6131B271B222500788B5A /* GoogleService-Info.plist */; };
+		E2D61321271B232B00788B5A /* GrowingPrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */; };
+		E2D61322271B232B00788B5A /* GrowingSecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */; };
+		E2D61323271B232B00788B5A /* RRTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */; };
+		E2D61327271B23A100788B5A /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61324271B23A000788B5A /* LogInViewModel.swift */; };
+		E2D61328271B23A100788B5A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61325271B23A100788B5A /* ContentViewModel.swift */; };
+		E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61326271B23A100788B5A /* RegisterViewModel.swift */; };
+		E2D6132E271B23C700788B5A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6132A271B23C700788B5A /* LogInView.swift */; };
+		E2D6132F271B23C700788B5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6132B271B23C700788B5A /* ContentView.swift */; };
+		E2D61330271B23C700788B5A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6132C271B23C700788B5A /* RegisterView.swift */; };
+		E2D61331271B23C700788B5A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6132D271B23C700788B5A /* ActivityIndicator.swift */; };
+		E2D61340271B2F0600788B5A /* AuthIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6133F271B2F0600788B5A /* AuthIntegrationTests.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
 		E2FF734026A33711002209CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733F26A33711002209CA /* Preview Assets.xcassets */; };
 		E2FF734526A33711002209CA /* Racket Reel WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E2FF734426A33711002209CA /* Racket Reel WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -54,6 +72,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E2D6133A271B2EBB00788B5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2FF732D26A33710002209CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2FF733426A33710002209CA;
+			remoteInfo = "Racket Reel";
+		};
 		E2FF734626A33711002209CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E2FF732D26A33710002209CA /* Project object */;
@@ -96,6 +121,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7DEDCF038C777AF3B34195D0 /* Pods-Racket Reel Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racket Reel Tests.debug.xcconfig"; path = "Target Support Files/Pods-Racket Reel Tests/Pods-Racket Reel Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6A1C5CEBF893F3C9F6CD97B /* Pods-Racket Reel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racket Reel.debug.xcconfig"; path = "Target Support Files/Pods-Racket Reel/Pods-Racket Reel.debug.xcconfig"; sourceTree = "<group>"; };
+		BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racket_Reel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2942E2EBD7199D25F021C7 /* Pods-Racket Reel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racket Reel.release.xcconfig"; path = "Target Support Files/Pods-Racket Reel/Pods-Racket Reel.release.xcconfig"; sourceTree = "<group>"; };
+		D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racket_Reel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E247252826CAD30D00C0DF7D /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
 		E247252A26CAD3AD00C0DF7D /* MatchStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStateView.swift; sourceTree = "<group>"; };
 		E2537D0026D429FE000A277E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -127,8 +157,25 @@
 		E2B9269E26B350630075CBF6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E2B926F726B5D2130075CBF6 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		E2B9270326B5EE670075CBF6 /* ScoreBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardView.swift; sourceTree = "<group>"; };
+		E2D61312271B1B9900788B5A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2D61315271B1BD700788B5A /* AuthProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
+		E2D61316271B1BD700788B5A /* PreviewAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewAuth.swift; sourceTree = "<group>"; };
+		E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreAuth.swift; sourceTree = "<group>"; };
+		E2D6131B271B222500788B5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingPrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingSecondaryButtonStyle.swift; sourceTree = "<group>"; };
+		E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRTextFieldStyle.swift; sourceTree = "<group>"; };
+		E2D61324271B23A000788B5A /* LogInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		E2D61325271B23A100788B5A /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		E2D61326271B23A100788B5A /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		E2D6132A271B23C700788B5A /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		E2D6132B271B23C700788B5A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2D6132C271B23C700788B5A /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E2D6132D271B23C700788B5A /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		E2D61336271B2EBB00788B5A /* Racket Reel Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Racket Reel Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D6133F271B2F0600788B5A /* AuthIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthIntegrationTests.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Racket Reel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racket Reel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Set_MatchApp.swift; sourceTree = "<group>"; };
+		E2FF733826A33710002209CA /* RacketReelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacketReelApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* MatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListView.swift; sourceTree = "<group>"; };
 		E2FF733C26A33711002209CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2FF733F26A33711002209CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -142,13 +189,23 @@
 		E2FF735B26A33712002209CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2FF735E26A33712002209CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E2FF736026A33712002209CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2E3F4D9A82E276EE1B2561B /* Pods-Racket Reel Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racket Reel Tests.release.xcconfig"; path = "Target Support Files/Pods-Racket Reel Tests/Pods-Racket Reel Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E2D61333271B2EBB00788B5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A7E5F80B78163C4E87900FF /* Pods_Racket_Reel_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2FF733226A33710002209CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB79C2F7B977FF0198530BB6 /* Pods_Racket_Reel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,9 +220,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DED95CB640137CA3CD77FE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6A1C5CEBF893F3C9F6CD97B /* Pods-Racket Reel.debug.xcconfig */,
+				CE2942E2EBD7199D25F021C7 /* Pods-Racket Reel.release.xcconfig */,
+				7DEDCF038C777AF3B34195D0 /* Pods-Racket Reel Tests.debug.xcconfig */,
+				F2E3F4D9A82E276EE1B2561B /* Pods-Racket Reel Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E247252726CAD22A00C0DF7D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E2D61325271B23A100788B5A /* ContentViewModel.swift */,
+				E2D61324271B23A000788B5A /* LogInViewModel.swift */,
+				E2D61326271B23A100788B5A /* RegisterViewModel.swift */,
 				E247252826CAD30D00C0DF7D /* MatchViewModel.swift */,
 			);
 			path = ViewModel;
@@ -175,6 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				E260B60226BAFB3B00C35341 /* HealthKit.framework */,
+				BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */,
+				D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,6 +295,7 @@
 				E26855E326C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift */,
 				E26855E526C7F18600DEF435 /* MatchState+CoreDataClass.swift */,
 				E26855FF26C7F7F900DEF435 /* MatchState+Helper.swift */,
+				E2D61312271B1B9900788B5A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +303,11 @@
 		E2B926F926B5DD200075CBF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2D6132D271B23C700788B5A /* ActivityIndicator.swift */,
+				E2D6132B271B23C700788B5A /* ContentView.swift */,
+				E2D6132A271B23C700788B5A /* LogInView.swift */,
+				E2D6132C271B23C700788B5A /* RegisterView.swift */,
+				E2D6131D271B230600788B5A /* Styles */,
 				E2FF733A26A33710002209CA /* MatchListView.swift */,
 				E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */,
 				E2B926F726B5D2130075CBF6 /* MatchView.swift */,
@@ -238,6 +317,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E2D61314271B1BB900788B5A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2D61315271B1BD700788B5A /* AuthProtocol.swift */,
+				E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */,
+				E2D61316271B1BD700788B5A /* PreviewAuth.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E2D6131D271B230600788B5A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */,
+				E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */,
+				E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		E2D61337271B2EBB00788B5A /* Racket Reel Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E2D6133F271B2F0600788B5A /* AuthIntegrationTests.swift */,
+			);
+			path = "Racket Reel Tests";
+			sourceTree = "<group>";
+		};
 		E2FF732C26A33710002209CA = {
 			isa = PBXGroup;
 			children = (
@@ -245,8 +352,10 @@
 				E2FF733726A33710002209CA /* Racket Reel */,
 				E2FF734826A33711002209CA /* Racket Reel WatchKit App */,
 				E2FF735426A33711002209CA /* Racket Reel WatchKit Extension */,
+				E2D61337271B2EBB00788B5A /* Racket Reel Tests */,
 				E2FF733626A33710002209CA /* Products */,
 				E260B60126BAFB3B00C35341 /* Frameworks */,
+				7DED95CB640137CA3CD77FE1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,6 +365,7 @@
 				E2FF733526A33710002209CA /* Racket Reel.app */,
 				E2FF734426A33711002209CA /* Racket Reel WatchKit App.app */,
 				E2FF735026A33711002209CA /* Racket Reel WatchKit Extension.appex */,
+				E2D61336271B2EBB00788B5A /* Racket Reel Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,16 +373,18 @@
 		E2FF733726A33710002209CA /* Racket Reel */ = {
 			isa = PBXGroup;
 			children = (
+				E2D61314271B1BB900788B5A /* Services */,
 				E247252726CAD22A00C0DF7D /* ViewModel */,
 				E2B926F926B5DD200075CBF6 /* View */,
 				E2B926AC26B350D30075CBF6 /* Model */,
-				E2FF733826A33710002209CA /* Game_Set_MatchApp.swift */,
+				E2FF733826A33710002209CA /* RacketReelApp.swift */,
 				E2537D0026D429FE000A277E /* PersistenceController.swift */,
 				E27733EC26DEA75500321805 /* VideoEditor.swift */,
 				E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */,
 				E2B9269D26B350630075CBF6 /* Model.xcdatamodeld */,
 				E2FF733C26A33711002209CA /* Assets.xcassets */,
 				E2FF734126A33711002209CA /* Info.plist */,
+				E2D6131B271B222500788B5A /* GoogleService-Info.plist */,
 				E2FF733E26A33711002209CA /* Preview Content */,
 			);
 			path = "Racket Reel";
@@ -322,14 +434,35 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E2D61335271B2EBB00788B5A /* Racket Reel Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2D6133C271B2EBB00788B5A /* Build configuration list for PBXNativeTarget "Racket Reel Tests" */;
+			buildPhases = (
+				9E4846487EF023A18B8918F4 /* [CP] Check Pods Manifest.lock */,
+				E2D61332271B2EBB00788B5A /* Sources */,
+				E2D61333271B2EBB00788B5A /* Frameworks */,
+				E2D61334271B2EBB00788B5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2D6133B271B2EBB00788B5A /* PBXTargetDependency */,
+			);
+			name = "Racket Reel Tests";
+			productName = "Racket Reel Tests";
+			productReference = E2D61336271B2EBB00788B5A /* Racket Reel Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E2FF733426A33710002209CA /* Racket Reel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2FF736B26A33712002209CA /* Build configuration list for PBXNativeTarget "Racket Reel" */;
 			buildPhases = (
+				83EF2031DA7668B1A434EA07 /* [CP] Check Pods Manifest.lock */,
 				E2FF733126A33710002209CA /* Sources */,
 				E2FF733226A33710002209CA /* Frameworks */,
 				E2FF733326A33710002209CA /* Resources */,
 				E2FF736A26A33712002209CA /* Embed Watch Content */,
+				880451000A213EA8234CD855 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -381,9 +514,13 @@
 		E2FF732D26A33710002209CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					E2D61335271B2EBB00788B5A = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = E2FF733426A33710002209CA;
+					};
 					E2FF733426A33710002209CA = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -411,16 +548,25 @@
 				E2FF733426A33710002209CA /* Racket Reel */,
 				E2FF734326A33711002209CA /* Racket Reel WatchKit App */,
 				E2FF734F26A33711002209CA /* Racket Reel WatchKit Extension */,
+				E2D61335271B2EBB00788B5A /* Racket Reel Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E2D61334271B2EBB00788B5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2FF733326A33710002209CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E2FF734026A33711002209CA /* Preview Assets.xcassets in Resources */,
+				E2D6131C271B222500788B5A /* GoogleService-Info.plist in Resources */,
 				E27733EB26DBCF2900321805 /* matches.json in Resources */,
 				E2FF733D26A33711002209CA /* Assets.xcassets in Resources */,
 			);
@@ -445,28 +591,114 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		83EF2031DA7668B1A434EA07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Racket Reel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		880451000A213EA8234CD855 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Racket Reel/Pods-Racket Reel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Racket Reel/Pods-Racket Reel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Racket Reel/Pods-Racket Reel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E4846487EF023A18B8918F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Racket Reel Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		E2D61332271B2EBB00788B5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2D61340271B2F0600788B5A /* AuthIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2FF733126A33710002209CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D6132E271B23C700788B5A /* LogInView.swift in Sources */,
+				E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */,
 				E2D61302271B115000788B5A /* MatchViewModel.swift in Sources */,
+				E2D61322271B232B00788B5A /* GrowingSecondaryButtonStyle.swift in Sources */,
 				E2D61303271B115000788B5A /* MatchListView.swift in Sources */,
 				E2D61304271B115000788B5A /* MatchListItemView.swift in Sources */,
 				E2D61305271B115000788B5A /* MatchView.swift in Sources */,
 				E2D61306271B115000788B5A /* ScoreBoardView.swift in Sources */,
 				E2D61307271B115000788B5A /* MatchStateView.swift in Sources */,
+				E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */,
+				E2D61321271B232B00788B5A /* GrowingPrimaryButtonStyle.swift in Sources */,
+				E2D6132F271B23C700788B5A /* ContentView.swift in Sources */,
 				E2D61308271B115000788B5A /* Match+CoreDataClass.swift in Sources */,
+				E2D61330271B23C700788B5A /* RegisterView.swift in Sources */,
 				E2D61309271B115000788B5A /* Match+Helper.swift in Sources */,
+				E2D61313271B1B9900788B5A /* User.swift in Sources */,
+				E2D61331271B23C700788B5A /* ActivityIndicator.swift in Sources */,
+				E2D61327271B23A100788B5A /* LogInViewModel.swift in Sources */,
 				E2D6130A271B115000788B5A /* Match+Preview.swift in Sources */,
 				E2D6130B271B115000788B5A /* MatchPreferences+CoreDataClass.swift in Sources */,
+				E2D61323271B232B00788B5A /* RRTextFieldStyle.swift in Sources */,
 				E2D6130C271B115000788B5A /* MatchState+CoreDataClass.swift in Sources */,
 				E2D6130D271B115000788B5A /* MatchState+Helper.swift in Sources */,
-				E2D6130E271B115000788B5A /* Game_Set_MatchApp.swift in Sources */,
+				E2D61318271B1BD700788B5A /* AuthProtocol.swift in Sources */,
+				E2D6130E271B115000788B5A /* RacketReelApp.swift in Sources */,
 				E2D6130F271B115000788B5A /* PersistenceController.swift in Sources */,
 				E2D61310271B115000788B5A /* VideoEditor.swift in Sources */,
 				E2D61311271B115000788B5A /* CoreDataWCSessionDelegate.swift in Sources */,
+				E2D61328271B23A100788B5A /* ContentViewModel.swift in Sources */,
 				E268560626C808B000DEF435 /* PointDescription.swift in Sources */,
+				E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
 				E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */,
 			);
@@ -498,6 +730,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E2D6133B271B2EBB00788B5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2FF733426A33710002209CA /* Racket Reel */;
+			targetProxy = E2D6133A271B2EBB00788B5A /* PBXContainerItemProxy */;
+		};
 		E2FF734726A33711002209CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E2FF734326A33711002209CA /* Racket Reel WatchKit App */;
@@ -511,6 +748,61 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E2D6133D271B2EBB00788B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DEDCF038C777AF3B34195D0 /* Pods-Racket Reel Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N77FNQX2YM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomelvidge.Racket-Reel-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Racket Reel.app/Racket Reel";
+			};
+			name = Debug;
+		};
+		E2D6133E271B2EBB00788B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2E3F4D9A82E276EE1B2561B /* Pods-Racket Reel Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N77FNQX2YM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomelvidge.Racket-Reel-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Racket Reel.app/Racket Reel";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		E2FF736126A33712002209CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -716,6 +1008,7 @@
 		};
 		E2FF736C26A33712002209CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A1C5CEBF893F3C9F6CD97B /* Pods-Racket Reel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -739,6 +1032,7 @@
 		};
 		E2FF736D26A33712002209CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE2942E2EBD7199D25F021C7 /* Pods-Racket Reel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -764,6 +1058,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E2D6133C271B2EBB00788B5A /* Build configuration list for PBXNativeTarget "Racket Reel Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2D6133D271B2EBB00788B5A /* Debug */,
+				E2D6133E271B2EBB00788B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E2FF733026A33710002209CA /* Build configuration list for PBXProject "Racket Reel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -7,11 +7,12 @@
 
 import SwiftUI
 import WatchConnectivity
+import Firebase
 
 @main
-struct Game_Set_MatchApp: App {
+struct RacketReelApp: App {
     
-    @StateObject var videoEditor = VideoEditor()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @Environment(\.scenePhase) var scenePhase
     let persistenceController = PersistenceController.shared
@@ -30,13 +31,19 @@ struct Game_Set_MatchApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MatchListView()
-                .environmentObject(videoEditor)
+            ContentView(auth: FirebaseFirestoreAuth())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
             .onChange(of: scenePhase) { _ in
                 // Save CoreData changes when app goes to background
                 persistenceController.save()
             }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
     }
 }
