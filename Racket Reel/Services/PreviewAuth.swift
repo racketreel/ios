@@ -36,7 +36,7 @@ class PreviewAuth: AuthProtocol {
         completion(nil)
     }
     
-    func register(email: String, password: String, firstname: String, surname: String, completion: @escaping AuthTaskCompletion) {
+    func register(email: String, password: String, confirmPassword: String, firstname: String, surname: String, completion: @escaping AuthTaskCompletion) {
         // New user
         self.user = User(uid: UUID().uuidString.lowercased(), firstname: firstname, surname: surname, email: email, verifiedEmail: false)
         

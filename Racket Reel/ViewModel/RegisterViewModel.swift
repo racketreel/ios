@@ -32,19 +32,14 @@ class RegisterViewModel: ObservableObject {
         // Show spinner while attempting to sign up
         self.showRegisteringSpinner = true
         
-        auth.register(email: self.email, password: self.password, firstname: self.firstname, surname: self.surname, completion: { error in
+        auth.register(email: self.email, password: self.password, confirmPassword: self.confirmPassword, firstname: self.firstname, surname: self.surname, completion: { error in
             // Completed attempting to register
             self.showRegisteringSpinner = false
             
-            // If failed to register then show alert and log error
+            // If failed to register then show alert and show error
             if (error != nil) {
                 self.showRegisterFailedAlert = true
-                // No message for authentication service error
-                self.registerFailedAlertMessage = ""
-                
-                if (error != nil) {
-                    print(error!.localizedDescription)
-                }
+                self.registerFailedAlertMessage = error!.localizedDescription
             }
         })
     }

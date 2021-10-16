@@ -99,6 +99,15 @@ class FirebaseFirestoreAuth : AuthProtocol {
     }
 
     func logIn(email: String, password: String, completion: @escaping AuthTaskCompletion) {
+        if (email.isEmpty) {
+            completion(LogInError.emptyEmail)
+            return
+        }
+        if (password.isEmpty) {
+            completion(LogInError.emptyPassword)
+            return
+        }
+        
         auth.signIn(withEmail: email, password: password) { authResult, error in
             completion(error)
         }
@@ -113,7 +122,23 @@ class FirebaseFirestoreAuth : AuthProtocol {
         }
     }
 
-    func register(email: String, password: String, firstname: String, surname: String, completion: @escaping AuthTaskCompletion) {
+    func register(email: String, password: String, confirmPassword: String, firstname: String, surname: String, completion: @escaping AuthTaskCompletion) {
+        // Custom validation and error messages.
+        if (password != confirmPassword) {
+            completion(RegistrationError.passwordDoesNotMatch)
+            return
+        }
+        if (firstname.isEmpty) {
+            completion(RegistrationError.emptyFirstname)
+            return
+        }
+        if (surname.isEmpty) {
+            completion(RegistrationError.emptySurname)
+            return
+        }
+        
+        
+        // Try create user, Firebase does some additional validation.
         auth.createUser(withEmail: email, password: password, completion: { authResult, error in
             // If user was created add additional user data to Firestore.
             if let user = authResult?.user {

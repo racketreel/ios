@@ -20,7 +20,7 @@ protocol AuthProtocol {
     
     func logOut(completion: @escaping AuthTaskCompletion)
     
-    func register(email: String, password: String, firstname: String, surname: String, completion: @escaping AuthTaskCompletion)
+    func register(email: String, password: String, confirmPassword: String, firstname: String, surname: String, completion: @escaping AuthTaskCompletion)
     
     func sendEmailVerification(completion: @escaping AuthTaskCompletion)
     
@@ -47,8 +47,43 @@ public enum AuthError: Error {
 extension AuthError: LocalizedError {
     public var errorDescription: String? {
         switch self {
-        case .notSignedIn:
-            return NSLocalizedString("There is no user currently signed in.", comment: "Not Signed In")
+            case .notSignedIn:
+                return NSLocalizedString("There is no user currently signed in.", comment: "Not Signed In")
+        }
+    }
+}
+
+public enum RegistrationError: Error {
+    case passwordDoesNotMatch
+    case emptyFirstname
+    case emptySurname
+}
+
+extension RegistrationError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+            case .passwordDoesNotMatch:
+                return NSLocalizedString("The passwords do not match.", comment: "Passwords Does Not Match")
+            case .emptyFirstname:
+                return NSLocalizedString("Firstname cannot be empty.", comment: "Empty Firstname")
+            case .emptySurname:
+                return NSLocalizedString("Surname cannot be empty.", comment: "Empty Surname")
+        }
+    }
+}
+
+public enum LogInError: Error {
+    case emptyEmail
+    case emptyPassword
+}
+
+extension LogInError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+            case .emptyEmail:
+                return NSLocalizedString("Email cannot be empty.", comment: "Empty Email")
+            case .emptyPassword:
+                return NSLocalizedString("Password cannot be empty.", comment: "Empty Password")
         }
     }
 }

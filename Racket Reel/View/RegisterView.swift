@@ -73,7 +73,7 @@ struct RegisterView: View {
         .navigationBarHidden(true)
         .alert(isPresented: $viewModel.showRegisterFailedAlert) {
             Alert(
-                title: Text("Register Failed"),
+                title: Text("Cannot Register"),
                 message: Text(viewModel.registerFailedAlertMessage),
                 dismissButton: .default(Text("OK"))
             )

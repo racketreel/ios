@@ -14,8 +14,12 @@ class LogInViewModel: ObservableObject {
     @Published var password = ""
     
     @Published var showLoggingInSpinner = false
+    
     @Published var showLogInFailedAlert = false
-    @Published var showSentPasswordResetEmailAlert = false
+    @Published var logInFailedAlertMessage = ""
+    
+    @Published var showPasswordResetEmailAlert = false
+    @Published var passwordResetEmailAlertMessage = ""
     
     var auth: AuthProtocol
     
@@ -31,10 +35,10 @@ class LogInViewModel: ObservableObject {
             // Completed attempting to sign in
             self.showLoggingInSpinner = false
             
-            // If failed to sign in then show alert and log error
+            // If failed to sign in then show alert and show error
             if (error != nil) {
                 self.showLogInFailedAlert = true
-                print(error!.localizedDescription)
+                self.logInFailedAlertMessage = error!.localizedDescription
             }
         })
     }
@@ -42,10 +46,11 @@ class LogInViewModel: ObservableObject {
     func forgotPassword() {
         auth.sendPasswordReset(email: self.email, completion: { error in
             if (error != nil) {
-                print(error!.localizedDescription)
+                self.passwordResetEmailAlertMessage = error!.localizedDescription
             } else {
-                self.showSentPasswordResetEmailAlert = true
+                self.passwordResetEmailAlertMessage = "A password reset email has been sent."
             }
+            self.showPasswordResetEmailAlert = true
         })
     }
     

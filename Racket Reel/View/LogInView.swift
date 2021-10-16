@@ -52,9 +52,10 @@ struct LogInView: View {
                             .foregroundColor(Color.gray)
                     })
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .alert(isPresented: $viewModel.showSentPasswordResetEmailAlert) {
+                        .alert(isPresented: $viewModel.showPasswordResetEmailAlert) {
                             Alert(
-                                title: Text("Password Reset Email Sent"),
+                                title: Text("Password Reset"),
+                                message: Text(viewModel.passwordResetEmailAlertMessage),
                                 dismissButton: .default(Text("OK"))
                             )
                         }
@@ -66,7 +67,8 @@ struct LogInView: View {
                         .buttonStyle(GrowingPrimaryButtonStyle())
                         .alert(isPresented: $viewModel.showLogInFailedAlert) {
                             Alert(
-                                title: Text("Log In Failed"),
+                                title: Text("Cannot Log In"),
+                                message: Text(viewModel.logInFailedAlertMessage),
                                 dismissButton: .default(Text("OK"))
                             )
                         }

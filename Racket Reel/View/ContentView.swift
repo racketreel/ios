@@ -23,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if (viewModel.isSignedIn) {
-                MatchListView()
+                MatchListView(auth: self.auth)
                     .environmentObject(videoEditor)
             } else {
                 LogInView(viewModel: LogInViewModel(auth: auth))
