@@ -7,9 +7,12 @@
 
 import SwiftUI
 import WatchConnectivity
+import Firebase
 
 @main
-struct Game_Set_MatchApp: App {
+struct RacketReelApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @StateObject var videoEditor = VideoEditor()
     
@@ -38,5 +41,12 @@ struct Game_Set_MatchApp: App {
                 // Save CoreData changes when app goes to background
                 persistenceController.save()
             }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
     }
 }
