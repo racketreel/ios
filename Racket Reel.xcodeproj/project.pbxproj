@@ -48,6 +48,16 @@
 		E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61316271B1BD700788B5A /* PreviewAuth.swift */; };
 		E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */; };
 		E2D6131C271B222500788B5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D6131B271B222500788B5A /* GoogleService-Info.plist */; };
+		E2D61321271B232B00788B5A /* GrowingPrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */; };
+		E2D61322271B232B00788B5A /* GrowingSecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */; };
+		E2D61323271B232B00788B5A /* RRTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */; };
+		E2D61327271B23A100788B5A /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61324271B23A000788B5A /* LogInViewModel.swift */; };
+		E2D61328271B23A100788B5A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61325271B23A100788B5A /* ContentViewModel.swift */; };
+		E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61326271B23A100788B5A /* RegisterViewModel.swift */; };
+		E2D6132E271B23C700788B5A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6132A271B23C700788B5A /* LogInView.swift */; };
+		E2D6132F271B23C700788B5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6132B271B23C700788B5A /* ContentView.swift */; };
+		E2D61330271B23C700788B5A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6132C271B23C700788B5A /* RegisterView.swift */; };
+		E2D61331271B23C700788B5A /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6132D271B23C700788B5A /* ActivityIndicator.swift */; };
 		E2FF733D26A33711002209CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733C26A33711002209CA /* Assets.xcassets */; };
 		E2FF734026A33711002209CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FF733F26A33711002209CA /* Preview Assets.xcassets */; };
 		E2FF734526A33711002209CA /* Racket Reel WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E2FF734426A33711002209CA /* Racket Reel WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -141,6 +151,16 @@
 		E2D61316271B1BD700788B5A /* PreviewAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewAuth.swift; sourceTree = "<group>"; };
 		E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreAuth.swift; sourceTree = "<group>"; };
 		E2D6131B271B222500788B5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingPrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingSecondaryButtonStyle.swift; sourceTree = "<group>"; };
+		E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRTextFieldStyle.swift; sourceTree = "<group>"; };
+		E2D61324271B23A000788B5A /* LogInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		E2D61325271B23A100788B5A /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		E2D61326271B23A100788B5A /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		E2D6132A271B23C700788B5A /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		E2D6132B271B23C700788B5A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2D6132C271B23C700788B5A /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E2D6132D271B23C700788B5A /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Racket Reel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racket Reel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* RacketReelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacketReelApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* MatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListView.swift; sourceTree = "<group>"; };
@@ -190,6 +210,9 @@
 		E247252726CAD22A00C0DF7D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E2D61325271B23A100788B5A /* ContentViewModel.swift */,
+				E2D61324271B23A000788B5A /* LogInViewModel.swift */,
+				E2D61326271B23A100788B5A /* RegisterViewModel.swift */,
 				E247252826CAD30D00C0DF7D /* MatchViewModel.swift */,
 			);
 			path = ViewModel;
@@ -255,6 +278,11 @@
 		E2B926F926B5DD200075CBF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2D6132D271B23C700788B5A /* ActivityIndicator.swift */,
+				E2D6132B271B23C700788B5A /* ContentView.swift */,
+				E2D6132A271B23C700788B5A /* LogInView.swift */,
+				E2D6132C271B23C700788B5A /* RegisterView.swift */,
+				E2D6131D271B230600788B5A /* Styles */,
 				E2FF733A26A33710002209CA /* MatchListView.swift */,
 				E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */,
 				E2B926F726B5D2130075CBF6 /* MatchView.swift */,
@@ -272,6 +300,16 @@
 				E2D61316271B1BD700788B5A /* PreviewAuth.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E2D6131D271B230600788B5A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */,
+				E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */,
+				E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		E2FF732C26A33710002209CA = {
@@ -534,19 +572,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D6132E271B23C700788B5A /* LogInView.swift in Sources */,
 				E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */,
 				E2D61302271B115000788B5A /* MatchViewModel.swift in Sources */,
+				E2D61322271B232B00788B5A /* GrowingSecondaryButtonStyle.swift in Sources */,
 				E2D61303271B115000788B5A /* MatchListView.swift in Sources */,
 				E2D61304271B115000788B5A /* MatchListItemView.swift in Sources */,
 				E2D61305271B115000788B5A /* MatchView.swift in Sources */,
 				E2D61306271B115000788B5A /* ScoreBoardView.swift in Sources */,
 				E2D61307271B115000788B5A /* MatchStateView.swift in Sources */,
 				E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */,
+				E2D61321271B232B00788B5A /* GrowingPrimaryButtonStyle.swift in Sources */,
+				E2D6132F271B23C700788B5A /* ContentView.swift in Sources */,
 				E2D61308271B115000788B5A /* Match+CoreDataClass.swift in Sources */,
+				E2D61330271B23C700788B5A /* RegisterView.swift in Sources */,
 				E2D61309271B115000788B5A /* Match+Helper.swift in Sources */,
 				E2D61313271B1B9900788B5A /* User.swift in Sources */,
+				E2D61331271B23C700788B5A /* ActivityIndicator.swift in Sources */,
+				E2D61327271B23A100788B5A /* LogInViewModel.swift in Sources */,
 				E2D6130A271B115000788B5A /* Match+Preview.swift in Sources */,
 				E2D6130B271B115000788B5A /* MatchPreferences+CoreDataClass.swift in Sources */,
+				E2D61323271B232B00788B5A /* RRTextFieldStyle.swift in Sources */,
 				E2D6130C271B115000788B5A /* MatchState+CoreDataClass.swift in Sources */,
 				E2D6130D271B115000788B5A /* MatchState+Helper.swift in Sources */,
 				E2D61318271B1BD700788B5A /* AuthProtocol.swift in Sources */,
@@ -554,7 +600,9 @@
 				E2D6130F271B115000788B5A /* PersistenceController.swift in Sources */,
 				E2D61310271B115000788B5A /* VideoEditor.swift in Sources */,
 				E2D61311271B115000788B5A /* CoreDataWCSessionDelegate.swift in Sources */,
+				E2D61328271B23A100788B5A /* ContentViewModel.swift in Sources */,
 				E268560626C808B000DEF435 /* PointDescription.swift in Sources */,
+				E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
 				E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */,
 			);

@@ -14,8 +14,6 @@ struct RacketReelApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    @StateObject var videoEditor = VideoEditor()
-    
     @Environment(\.scenePhase) var scenePhase
     let persistenceController = PersistenceController.shared
     
@@ -33,8 +31,7 @@ struct RacketReelApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MatchListView()
-                .environmentObject(videoEditor)
+            ContentView(auth: FirebaseFirestoreAuth())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
             .onChange(of: scenePhase) { _ in
