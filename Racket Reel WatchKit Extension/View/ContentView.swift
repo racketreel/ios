@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Game Set Match WatchKit Extension
+//  Racket Reel WatchKit Extension
 //
 //  Created by Tom Elvidge on 24/07/2021.
 //

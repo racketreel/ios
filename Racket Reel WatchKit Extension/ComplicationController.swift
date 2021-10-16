@@ -1,6 +1,6 @@
 //
 //  ComplicationController.swift
-//  Game Set Match WatchKit Extension
+//  Racket Reel WatchKit Extension
 //
 //  Created by Tom Elvidge on 17/07/2021.
 //
@@ -14,7 +14,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "Game Set Match", supportedFamilies: CLKComplicationFamily.allCases)
+            CLKComplicationDescriptor(identifier: "complication", displayName: "Racket Reel", supportedFamilies: CLKComplicationFamily.allCases)
             // Multiple complication support can be added here with more descriptors
         ]
         
