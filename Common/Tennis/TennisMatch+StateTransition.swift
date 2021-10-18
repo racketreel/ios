@@ -68,14 +68,31 @@ extension TennisMatch {
             return nil
         }
         
-        // If it is a tie break.
-        if isTieBreak(when: after) {
+        // If won on game point then switch serves.
+        if (isGamePoint(to: pointWonBy, when: after)) {
+            serving = after.serving.opponent
+        }
+        
+        // Update scores
+        scores = newScores(after: after, whenWonBy: pointWonBy)
+        
+        // Init here as we need it to check if there is a tie break.
+        var newState = TennisState(
+            scores: scores,
+            serving: serving,
+            isSecondServe: isSecondServe,
+            tieBreakPointCounter: tieBreakPointCounter,
+            toServePostTieBreak: toServePostTieBreak
+        )
+        
+        // If the new state is a tie break.
+        if isTieBreak(when: newState) {
             if (tieBreakPointCounter == nil) {
                 // First tie break point, so set up tie break.
                 tieBreakPointCounter = 0
                 
-                // Return to the current serving Team after the tie breakk.
-                toServePostTieBreak = after.serving
+                // Next team to serve gets the game after the tie break.
+                toServePostTieBreak = after.serving.opponent
             } else {
                 // Existing tie break, so update.
                 tieBreakPointCounter = after.tieBreakPointCounter! + 1
@@ -85,23 +102,17 @@ extension TennisMatch {
                     serving = after.serving.opponent
                 }
             }
+            // Overwrite the newState since tie break fields changed.
+            newState = TennisState(
+                scores: scores,
+                serving: serving,
+                isSecondServe: isSecondServe,
+                tieBreakPointCounter: tieBreakPointCounter,
+                toServePostTieBreak: toServePostTieBreak
+            )
         }
         
-        // If won on game point then switch serves.
-        if (isGamePoint(to: pointWonBy, when: after)) {
-            serving = after.serving.opponent
-        }
-        
-        // Update scores
-        scores = newScores(after: after, whenWonBy: pointWonBy)
-            
-        return TennisState(
-            scores: scores,
-            serving: serving,
-            isSecondServe: isSecondServe,
-            tieBreakPointCounter: tieBreakPointCounter,
-            toServePostTieBreak: toServePostTieBreak
-        )
+        return newState
     }
     
     func newScores(after: TennisState, whenWonBy: Team) -> Dictionary<Team, TennisScore> {
@@ -115,7 +126,6 @@ extension TennisMatch {
             // Increment team's sets and reset games and points.
             newScores[whenWonBy] = TennisScore(points: 0, games: 0, sets: currentSets + 1)
             newScores[whenWonBy.opponent] = TennisScore(points: 0, games: 0, sets: currentSetsOpponent)
-            
             // Return early
             return newScores
         }
@@ -136,13 +146,13 @@ extension TennisMatch {
         let currentPoints = after.scores[whenWonBy]!.points
         let currentPointsOpponent = after.scores[whenWonBy.opponent]!.points
         
-        if (!isTieBreak(when: after)) {
-            // If opponent was on advantage put them back to 40 (deuce).
-            if (TennisPoint(rawValue: currentPointsOpponent) == TennisPoint.Advantage) {
-                newScores[whenWonBy] = after.scores[whenWonBy]!
-                newScores[whenWonBy.opponent] = TennisScore(points: TennisPoint.Forty.rawValue, games: currentGamesOpponent, sets: currentSetsOpponent)
-            }
-            
+        
+        // If opponent was on advantage (not in tie breal) put them back to 40 (deuce).
+        if ((!isTieBreak(when: after))
+            && (TennisPoint(rawValue: currentPointsOpponent) == TennisPoint.Advantage)
+        ) {
+            newScores[whenWonBy] = after.scores[whenWonBy]!
+            newScores[whenWonBy.opponent] = TennisScore(points: TennisPoint.Forty.rawValue, games: currentGamesOpponent, sets: currentSetsOpponent)
             // Return early
             return newScores
         }
@@ -150,13 +160,7 @@ extension TennisMatch {
         // Just increment winning team's points.
         newScores[whenWonBy] = TennisScore(points: currentPoints + 1, games: currentGames, sets: currentSets)
         newScores[whenWonBy.opponent] = after.scores[whenWonBy.opponent]!
-        
         return newScores
-    }
-    
-    private func isTieBreak(when: TennisState) -> Bool {
-        // Both teams have the games required to win the set.
-        return (when.scores[Team.One]!.games == preferences.games) && (when.scores[Team.Two]!.games == preferences.games)
     }
     
 }

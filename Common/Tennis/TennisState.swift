@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TennisState {
+class TennisState: Equatable {
     
     let scores: Dictionary<Team, TennisScore>
     
@@ -32,6 +32,19 @@ class TennisState {
         self.isSecondServe = isSecondServe
         self.tieBreakPointCounter = tieBreakPointCounter
         self.toServePostTieBreak = toServePostTieBreak
+    }
+    
+    static func == (lhs: TennisState, rhs: TennisState) -> Bool {
+        if (
+            (lhs.scores != rhs.scores)
+            || (lhs.isSecondServe != rhs.isSecondServe)
+            || (lhs.tieBreakPointCounter != rhs.tieBreakPointCounter)
+            || (lhs.toServePostTieBreak != rhs.toServePostTieBreak)
+        ) {
+            return false
+        } else {
+            return true
+        }
     }
     
 }

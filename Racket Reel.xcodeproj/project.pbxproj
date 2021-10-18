@@ -40,7 +40,11 @@
 		E2C7C72E271C21C30076B84B /* TennisPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C72D271C21C30076B84B /* TennisPoint.swift */; };
 		E2C7C736271C3B370076B84B /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C735271C3B370076B84B /* TeamMember.swift */; };
 		E2C7C738271C3B400076B84B /* TeamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C737271C3B400076B84B /* TeamType.swift */; };
-		E2C7C73A271C3BFC0076B84B /* TennisMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C739271C3BFC0076B84B /* TennisMatchTests.swift */; };
+		E2C7C73A271C3BFC0076B84B /* MiscTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C739271C3BFC0076B84B /* MiscTests.swift */; };
+		E2C7C73D271DF7DE0076B84B /* StateTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C73C271DF7DE0076B84B /* StateTransitionTests.swift */; };
+		E2C7C73F271DF7EA0076B84B /* ScoringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C73E271DF7EA0076B84B /* ScoringTests.swift */; };
+		E2C7C741271DF7FD0076B84B /* StateDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C740271DF7FD0076B84B /* StateDescriptionTests.swift */; };
+		E2C7C746271E06D20076B84B /* TennisMatch+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C744271E05FA0076B84B /* TennisMatch+Constants.swift */; };
 		E2D61302271B115000788B5A /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247252826CAD30D00C0DF7D /* MatchViewModel.swift */; };
 		E2D61303271B115000788B5A /* MatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* MatchListView.swift */; };
 		E2D61304271B115000788B5A /* MatchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */; };
@@ -182,7 +186,11 @@
 		E2C7C72D271C21C30076B84B /* TennisPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisPoint.swift; sourceTree = "<group>"; };
 		E2C7C735271C3B370076B84B /* TeamMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMember.swift; sourceTree = "<group>"; };
 		E2C7C737271C3B400076B84B /* TeamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamType.swift; sourceTree = "<group>"; };
-		E2C7C739271C3BFC0076B84B /* TennisMatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisMatchTests.swift; sourceTree = "<group>"; };
+		E2C7C739271C3BFC0076B84B /* MiscTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscTests.swift; sourceTree = "<group>"; };
+		E2C7C73C271DF7DE0076B84B /* StateTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTransitionTests.swift; sourceTree = "<group>"; };
+		E2C7C73E271DF7EA0076B84B /* ScoringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringTests.swift; sourceTree = "<group>"; };
+		E2C7C740271DF7FD0076B84B /* StateDescriptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDescriptionTests.swift; sourceTree = "<group>"; };
+		E2C7C744271E05FA0076B84B /* TennisMatch+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TennisMatch+Constants.swift"; sourceTree = "<group>"; };
 		E2D61312271B1B9900788B5A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2D61315271B1BD700788B5A /* AuthProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		E2D61316271B1BD700788B5A /* PreviewAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewAuth.swift; sourceTree = "<group>"; };
@@ -354,11 +362,23 @@
 				E2C7C71D271C205C0076B84B /* TennisMatch+StateTransition.swift */,
 				E2C7C71F271C207D0076B84B /* TennisMatch+StateDescription.swift */,
 				E2C7C721271C212A0076B84B /* TennisPreferences.swift */,
+				E2C7C744271E05FA0076B84B /* TennisMatch+Constants.swift */,
 				E2C7C723271C21430076B84B /* TennisState.swift */,
 				E2C7C725271C21590076B84B /* TennisScore.swift */,
 				E2C7C727271C21770076B84B /* TennisEvent.swift */,
 				E2C7C729271C21840076B84B /* TennisEventType.swift */,
 				E2C7C72D271C21C30076B84B /* TennisPoint.swift */,
+			);
+			path = Tennis;
+			sourceTree = "<group>";
+		};
+		E2C7C73B271DF7D40076B84B /* Tennis */ = {
+			isa = PBXGroup;
+			children = (
+				E2C7C739271C3BFC0076B84B /* MiscTests.swift */,
+				E2C7C73C271DF7DE0076B84B /* StateTransitionTests.swift */,
+				E2C7C73E271DF7EA0076B84B /* ScoringTests.swift */,
+				E2C7C740271DF7FD0076B84B /* StateDescriptionTests.swift */,
 			);
 			path = Tennis;
 			sourceTree = "<group>";
@@ -386,8 +406,8 @@
 		E2D61337271B2EBB00788B5A /* Racket Reel Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E2C7C73B271DF7D40076B84B /* Tennis */,
 				E2D6133F271B2F0600788B5A /* AuthIntegrationTests.swift */,
-				E2C7C739271C3BFC0076B84B /* TennisMatchTests.swift */,
 			);
 			path = "Racket Reel Tests";
 			sourceTree = "<group>";
@@ -707,7 +727,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C7C73A271C3BFC0076B84B /* TennisMatchTests.swift in Sources */,
+				E2C7C73D271DF7DE0076B84B /* StateTransitionTests.swift in Sources */,
+				E2C7C73F271DF7EA0076B84B /* ScoringTests.swift in Sources */,
+				E2C7C741271DF7FD0076B84B /* StateDescriptionTests.swift in Sources */,
+				E2C7C73A271C3BFC0076B84B /* MiscTests.swift in Sources */,
 				E2D61340271B2F0600788B5A /* AuthIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C7C746271E06D20076B84B /* TennisMatch+Constants.swift in Sources */,
 				E2D6132E271B23C700788B5A /* LogInView.swift in Sources */,
 				E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */,
 				E2C7C736271C3B370076B84B /* TeamMember.swift in Sources */,

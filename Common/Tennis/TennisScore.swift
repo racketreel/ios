@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TennisScore {
+struct TennisScore: Equatable {
     
     let points: Int
     let games: Int

@@ -51,7 +51,7 @@ extension TennisMatch {
         } else {
             return (
                 isGamePointTo
-                && (gamesTo >= (preferences.sets - 1)) // One game less than the amount required to win (or more).
+                && (gamesTo >= (preferences.games - 1)) // One game less than the amount required to win (or more).
                 && ((gamesTo - gamesOpponent) >= 1) // Opponent is at least one game behind.
             )
         }
@@ -69,6 +69,11 @@ extension TennisMatch {
         
         // Team is one off the required sets to win.
         return (isSetPointTo && (setsTo == (preferences.sets - 1)))
+    }
+    
+    func isTieBreak(when: TennisState) -> Bool {
+        // Both teams have the games required to win the set.
+        return (when.scores[Team.One]!.games == preferences.games) && (when.scores[Team.Two]!.games == preferences.games)
     }
     
 }
