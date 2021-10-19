@@ -16,7 +16,10 @@ struct MatchSetUpView: View {
     }
     
     @State private var setUpStage = SetUpStage.setsToWin
-    @State private var matchPreferences = MatchPreferences()
+    // Defaults
+    @State var setsToWin: Int = 2
+    @State var gamesForSet: Int = 6
+    @State var servingFirst: Team = Team.One
     
     @ObservedObject var model: ViewModel
     
@@ -25,41 +28,56 @@ struct MatchSetUpView: View {
             if (setUpStage == SetUpStage.setsToWin) {
                 Text("How many sets to win?")
                 Button("1", action: {
-                    self.matchPreferences.setsToWin = 1
+                    self.setsToWin = 1
                     setUpStage = SetUpStage.gamesPerSet
                 })
                 Button("2", action: {
-                    self.matchPreferences.setsToWin = 2
+                    self.setsToWin = 2
                     setUpStage = SetUpStage.gamesPerSet
                 })
                 Button("3", action: {
-                    self.matchPreferences.setsToWin = 3
+                    self.setsToWin = 3
                     setUpStage = SetUpStage.gamesPerSet
                 })
             }
             if (setUpStage == SetUpStage.gamesPerSet) {
                 Text("How many games per set?")
                 Button("6", action: {
-                    self.matchPreferences.gamesForSet = 6
+                    self.gamesForSet = 6
                     setUpStage = SetUpStage.firstServe
                 })
             }
             if (setUpStage == SetUpStage.firstServe) {
                 Text("Who is serving first?")
                 Button("Me", action: {
-                    self.matchPreferences.firstServe = true
+                    self.servingFirst = Team.One
                     model.currentView = ViewType.matchInProgress
-                    
-                    model.newMatch(matchPreferences: self.matchPreferences)
+                    createMatch()
                 })
                 Button("Opponent", action: {
-                    self.matchPreferences.firstServe = false
+                    self.servingFirst = Team.Two
                     model.currentView = ViewType.matchInProgress
-                    
-                    model.newMatch(matchPreferences: self.matchPreferences)
+                    createMatch()
                 })
             }
         }
+    }
+    
+    private func createMatch() {
+        // Hardcode defaults for preferences not yet in UI.
+        model.newtMatch(preferences: TennisPreferences(
+            sets: self.setsToWin,
+            games: self.gamesForSet,
+            timestamp: Date(),
+            initialServe: self.servingFirst,
+            finalSetTieBreak: false,
+            pointsForTieBreak: 7,
+            teamType: TeamType.Singles,
+            teamMembers: [
+                Team.One: [TeamMember(firstname: "Player 1 (me)", surname: "")],
+                Team.Two: [TeamMember(firstname: "Player 2", surname: "")]
+            ])
+        )
     }
         
 }
