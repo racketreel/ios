@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TennisPoint: Int {
+enum TennisPoint: Int, Codable {
     
     case Love = 0
     case Fifteen = 1

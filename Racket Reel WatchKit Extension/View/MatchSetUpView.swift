@@ -73,10 +73,10 @@ struct MatchSetUpView: View {
             finalSetTieBreak: false,
             pointsForTieBreak: 7,
             teamType: TeamType.Singles,
-            teamMembers: [
+            teamMembers: TeamMembersWrapper(dict: [
                 Team.One: [TeamMember(firstname: "Player 1 (me)", surname: "")],
                 Team.Two: [TeamMember(firstname: "Player 2", surname: "")]
-            ])
+            ]))
         )
     }
         

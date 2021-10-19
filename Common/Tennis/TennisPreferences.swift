@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TennisPreferences {
+struct TennisPreferences: Codable {
     
     // You must not change the preferences after the match so let.
     let sets: Int // Sets needed to win the match
@@ -19,6 +19,6 @@ struct TennisPreferences {
     let teamType: TeamType
     
     // No harm in changing team members after the match so var.
-    var teamMembers: Dictionary<Team, [TeamMember]>
+    var teamMembers: TeamMembersWrapper
     
 }

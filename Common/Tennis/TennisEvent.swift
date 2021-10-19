@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TennisEvent {
+struct TennisEvent: Codable {
     
     // Must not be changed so let.
     let timestamp: Date

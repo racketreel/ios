@@ -7,9 +7,10 @@
 
 import Foundation
 
-enum Team: CaseIterable {
-    case One
-    case Two
+enum Team: String, CaseIterable, Codable {
+    
+    case One = "TEAM_ONE"
+    case Two = "TEAM_TWO"
     
     var opponent: Team {
         if (self == Team.One) {

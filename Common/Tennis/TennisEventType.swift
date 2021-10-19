@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum TennisEventType {
-    case FirstServe
-    case SecondServe
-    case Let
-    case Fault
-    case TeamOnePoint
-    case TeamTwoPoint
+enum TennisEventType: String, Codable {
+    case FirstServe = "FIRST_SERVE"
+    case SecondServe = "SECOND_SERVE"
+    case Let = "LET"
+    case Fault = "FAULT"
+    case TeamOnePoint = "TEAM_ONE_POINT"
+    case TeamTwoPoint = "TEAM_TWO_POINT"
 }

@@ -19,7 +19,7 @@ extension TennisMatch {
             finalSetTieBreak: false,
             pointsForTieBreak: 7,
             teamType: TeamType.Singles,
-            teamMembers: [
+            teamMembers: TeamMembersWrapper(dict: [
                 Team.One: [
                     TeamMember(
                         firstname: "Tom",
@@ -32,7 +32,7 @@ extension TennisMatch {
                         surname: "Murray"
                     )
                 ]
-            ]
+            ])
         ),
         events: []
     )

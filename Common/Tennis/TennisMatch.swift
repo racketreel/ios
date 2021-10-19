@@ -7,7 +7,12 @@
 
 import Foundation
 
-class TennisMatch {
+class TennisMatch: Codable {
+    
+    enum CodingKeys: String, CodingKey {
+        case preferences
+        case events
+    }
     
     // Todo: Validation?
     
@@ -87,6 +92,18 @@ class TennisMatch {
     
     convenience init(preferences: TennisPreferences) {
         self.init(preferences: preferences, events: [])
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        preferences = try values.decode(TennisPreferences.self, forKey: .preferences)
+        events = try values.decode([TennisEvent].self, forKey: .events)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.preferences, forKey: .preferences)
+        try container.encode(self.events, forKey: .events)
     }
     
 }

@@ -126,27 +126,23 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
         self.startWorkoutSession()
     }
     
-//    func saveMatch() {
-//        // Encode match into JSON
-//        let encoder = JSONEncoder()
-//        encoder.keyEncodingStrategy = .convertToSnakeCase
-//        do {
-//            let data = try encoder.encode(match)
-//            encoder.outputFormatting = .prettyPrinted
-//            NSLog(String(data: data, encoding: .utf8)!)
-//            // Send match JSON to iPhone
-//            do {
-//                try self.session?.updateApplicationContext(["match": data])
-//            } catch {
-//                print("Unable to send data to iPhone")
-//            }
-//        } catch {
-//            print("Unable to encode match JSON")
-//        }
-//    }
-    
     func savetMatch() {
-        // Todo
+        // Encode match into JSON
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        do {
+            let data = try encoder.encode(tMatch)
+            encoder.outputFormatting = .prettyPrinted
+            NSLog(String(data: data, encoding: .utf8)!)
+            // Send match JSON to iPhone
+            do {
+                try self.session?.updateApplicationContext(["match": data])
+            } catch {
+                print("Unable to send data to iPhone")
+            }
+        } catch {
+            print("Unable to encode match JSON")
+        }
     }
     
     func newtEvent(event: TennisEventType) {
