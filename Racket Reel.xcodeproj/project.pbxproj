@@ -66,6 +66,8 @@
 		E2C7C75B2720830D0076B84B /* TeamMembersWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C758271F62E20076B84B /* TeamMembersWrapper.swift */; };
 		E2C7C75D272085740076B84B /* NewMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C75C272085740076B84B /* NewMatchView.swift */; };
 		E2C7C75F272085C40076B84B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C75E272085C40076B84B /* UserView.swift */; };
+		E2C7C76127208E130076B84B /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C76027208E130076B84B /* AuthenticationView.swift */; };
+		E2C7C76327208E420076B84B /* AuthenticationSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C76227208E420076B84B /* AuthenticationSubview.swift */; };
 		E2D61302271B115000788B5A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247252826CAD30D00C0DF7D /* MainViewModel.swift */; };
 		E2D61303271B115000788B5A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF733A26A33710002209CA /* MainView.swift */; };
 		E2D61304271B115000788B5A /* MatchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */; };
@@ -216,6 +218,8 @@
 		E2C7C758271F62E20076B84B /* TeamMembersWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersWrapper.swift; sourceTree = "<group>"; };
 		E2C7C75C272085740076B84B /* NewMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchView.swift; sourceTree = "<group>"; };
 		E2C7C75E272085C40076B84B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		E2C7C76027208E130076B84B /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		E2C7C76227208E420076B84B /* AuthenticationSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSubview.swift; sourceTree = "<group>"; };
 		E2D61312271B1B9900788B5A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2D61315271B1BD700788B5A /* AuthProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		E2D61316271B1BD700788B5A /* PreviewAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewAuth.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				E2D61324271B23A000788B5A /* LogInViewModel.swift */,
 				E2D61326271B23A100788B5A /* RegisterViewModel.swift */,
 				E247252826CAD30D00C0DF7D /* MainViewModel.swift */,
+				E2C7C76227208E420076B84B /* AuthenticationSubview.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				E2C7C75C272085740076B84B /* NewMatchView.swift */,
 				E2D6132B271B23C700788B5A /* ContentView.swift */,
 				E2D6132A271B23C700788B5A /* LogInView.swift */,
+				E2C7C76027208E130076B84B /* AuthenticationView.swift */,
 				E2C7C75E272085C40076B84B /* UserView.swift */,
 				E2D6132C271B23C700788B5A /* RegisterView.swift */,
 				E2FF733A26A33710002209CA /* MainView.swift */,
@@ -773,6 +779,7 @@
 				E2C7C746271E06D20076B84B /* TennisMatch+Constants.swift in Sources */,
 				E2D6132E271B23C700788B5A /* LogInView.swift in Sources */,
 				E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */,
+				E2C7C76327208E420076B84B /* AuthenticationSubview.swift in Sources */,
 				E2C7C736271C3B370076B84B /* TeamMember.swift in Sources */,
 				E2D61302271B115000788B5A /* MainViewModel.swift in Sources */,
 				E2D61322271B232B00788B5A /* GrowingSecondaryButtonStyle.swift in Sources */,
@@ -817,6 +824,7 @@
 				E2C7C75D272085740076B84B /* NewMatchView.swift in Sources */,
 				E2C7C720271C207D0076B84B /* TennisMatch+StateDescription.swift in Sources */,
 				E268560626C808B000DEF435 /* PointDescription.swift in Sources */,
+				E2C7C76127208E130076B84B /* AuthenticationView.swift in Sources */,
 				E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
 				E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */,

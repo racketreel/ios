@@ -21,26 +21,24 @@ struct ContentView: View {
     }
 
     var body: some View {
-        NavigationView {
-            if (viewModel.isSignedIn) {
-                TabView {
-                    NewMatchView()
-                        .tabItem {
-                            Image(systemName: "plus")
-                        }
-                    MainView()
-                        .environmentObject(videoEditor)
-                        .tabItem {
-                            Image(systemName: "house")
-                        }
-                    UserView(auth: self.auth)
-                        .tabItem {
-                            Image(systemName: "person")
-                        }
-                }
-            } else {
-                LogInView(viewModel: LogInViewModel(auth: auth))
+        if (viewModel.isSignedIn) {
+            TabView {
+                NewMatchView()
+                    .tabItem {
+                        Image(systemName: "plus")
+                    }
+                MainView()
+                    .environmentObject(videoEditor)
+                    .tabItem {
+                        Image(systemName: "house")
+                    }
+                UserView(auth: self.auth)
+                    .tabItem {
+                        Image(systemName: "person")
+                    }
             }
+        } else {
+            AuthenticationView(auth: self.auth)
         }
     }
     

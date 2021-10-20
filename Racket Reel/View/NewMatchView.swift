@@ -10,7 +10,18 @@ import SwiftUI
 struct NewMatchView: View {
     
     var body: some View {
-        Text("Logging")
+        NavigationView {
+            ZStack {
+                // Custom background color.
+                Color("Background")
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Text("New Match")
+                }
+            }
+            .navigationTitle("New Match")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

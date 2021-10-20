@@ -16,13 +16,24 @@ struct UserView: View {
     }
     
     var body: some View {
-        // Temp log out button
-        Button("Log Out") {
-            auth.logOut(completion: { error in
-                if (error != nil) {
-                    print(error!.localizedDescription)
+        NavigationView {
+            ZStack {
+                // Custom background color.
+                Color("Background")
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    // Temp log out button
+                    Button("Log Out") {
+                        auth.logOut(completion: { error in
+                            if (error != nil) {
+                                print(error!.localizedDescription)
+                            }
+                        })
+                    }
                 }
-            })
+            }
+            .navigationTitle("User")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
