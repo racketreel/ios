@@ -14,18 +14,27 @@ struct MatchView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ScoreBoardView(state: model.match!.currentState)
-                Button("Serve", action: {
-                    model.applyServe()
+                ScoreBoardView(tState: model.tMatch!.states.last!)
+                Button("First Serve", action: {
+                    model.newtEvent(event: TennisEventType.FirstServe)
+                })
+                Button("Second Serve", action: {
+                    model.newtEvent(event: TennisEventType.SecondServe)
+                })
+                Button("Fault", action: {
+                    model.newtEvent(event: TennisEventType.Fault)
+                })
+                Button("Let", action: {
+                    model.newtEvent(event: TennisEventType.Let)
                 })
                 Button("Point won", action: {
-                    model.applyWin()
+                    model.newtEvent(event: TennisEventType.TeamOnePoint)
                 })
                 Button("Point lost", action: {
-                    model.applyLoss()
+                    model.newtEvent(event: TennisEventType.TeamTwoPoint)
                 })
                 Button("Undo", action: {
-                    model.undo()
+                    model.undotEvent()
                 })
                 Button("Quit", action: {
                     model.quit()

@@ -23,7 +23,7 @@ class CoreDataWCSessionDelegate: NSObject, WCSessionDelegate {
         NSLog("didReceiveApplicationContext : \(applicationContext)")
         
         let matchData = applicationContext["match"] as! Data
-        // print(matchData)
+        print(matchData)
         
         // Decode matchData
         let decoder = JSONDecoder()
@@ -31,6 +31,7 @@ class CoreDataWCSessionDelegate: NSObject, WCSessionDelegate {
         // Add decoded Match to CoreData
         decoder.userInfo[CodingUserInfoKey.managedObjectContext] = persistenceController.container.viewContext
         do {
+            // matchData actually of type TennisMatch now
             _ = try decoder.decode(Match.self, from: matchData)
         } catch{
             print("Unable to decode: \(error.localizedDescription)")

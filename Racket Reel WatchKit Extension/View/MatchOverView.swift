@@ -14,7 +14,7 @@ struct MatchOverView: View {
     var body: some View {
         VStack {
             Button("Save match to iPhone", action: {
-                model.saveMatch()
+                model.savetMatch()
             })
             Button("Done", action: {
                 model.quit()

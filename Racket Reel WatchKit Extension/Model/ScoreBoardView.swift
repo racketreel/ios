@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScoreBoardView: View {
     
-    let state: MatchState
+    let tState: TennisState
     
     var body: some View {
         HStack {
@@ -19,36 +19,46 @@ struct ScoreBoardView: View {
                     Text("ME")
                     Image(systemName: "circle.fill")
                         .font(.system(size: 6))
-                        .opacity(state.toServe ? 1 : 0)
+                        .opacity(tState.serving == Team.One ? 1 : 0)
                 }
                 HStack {
                     Text("OP")
                     Image(systemName: "circle.fill")
                         .font(.system(size: 6))
-                        .opacity(state.toServe ? 0 : 1)
+                        .opacity(tState.serving == Team.Two ? 1 : 0)
                 }
             }
             // Sets
             VStack {
-                Text(String(state.setsUser))
-                Text(String(state.setsOpponent))
+                Text(String(tState.scores[Team.One]!.sets))
+                Text(String(tState.scores[Team.Two]!.sets))
             }
             // Games
             VStack {
-                Text(String(state.gamesUser))
-                Text(String(state.gamesOpponent))
+                Text(String(tState.scores[Team.One]!.games))
+                Text(String(tState.scores[Team.Two]!.games))
             }
             // Points
             VStack {
-                Text(state.pointsUser)
-                Text(state.pointsOpponent)
+                Text(displayablePoint(team: Team.One))
+                Text(displayablePoint(team: Team.Two))
             }
         }
     }
+    
+    func displayablePoint(team: Team) -> String {
+        let intPoints = self.tState.scores[team]!.points
+        if tState.isTieBreak {
+            return String(intPoints)
+        } else {
+            return TennisPoint(rawValue: intPoints)?.forScoreboard ?? "ERR"
+        }
+    }
+    
 }
 
 struct ScoreBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreBoardView(state: MatchState(toServe: true))
+        ScoreBoardView(tState: TennisMatch.empty.initialState)
     }
 }
