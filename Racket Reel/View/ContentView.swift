@@ -23,8 +23,21 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if (viewModel.isSignedIn) {
-                MatchListView(auth: self.auth)
-                    .environmentObject(videoEditor)
+                TabView {
+                    NewMatchView()
+                        .tabItem {
+                            Image(systemName: "plus")
+                        }
+                    MainView()
+                        .environmentObject(videoEditor)
+                        .tabItem {
+                            Image(systemName: "house")
+                        }
+                    UserView(auth: self.auth)
+                        .tabItem {
+                            Image(systemName: "person")
+                        }
+                }
             } else {
                 LogInView(viewModel: LogInViewModel(auth: auth))
             }

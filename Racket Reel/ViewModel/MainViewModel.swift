@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import PhotosUI
 
-class MatchViewModel: ObservableObject {
+class MainViewModel: ObservableObject {
     
     @Published var match: Match
     
