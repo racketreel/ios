@@ -9,11 +9,7 @@ import SwiftUI
 
 struct UserView: View {
     
-    private var auth: AuthProtocol
-    
-    init(auth: AuthProtocol) {
-        self.auth = auth
-    }
+    @ObservedObject var viewModel = UserViewModel()
     
     var body: some View {
         NavigationView {
@@ -24,11 +20,7 @@ struct UserView: View {
                 VStack {
                     // Temp log out button
                     Button("Log Out") {
-                        auth.logOut(completion: { error in
-                            if (error != nil) {
-                                print(error!.localizedDescription)
-                            }
-                        })
+                        viewModel.logOut()
                     }
                 }
             }
@@ -41,6 +33,7 @@ struct UserView: View {
 
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView(auth: PreviewAuth())
+        Resolver.shared.setContainer(PreviewContainer.build())
+        return UserView()
     }
 }

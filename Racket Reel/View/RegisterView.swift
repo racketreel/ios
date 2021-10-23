@@ -9,13 +9,8 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @ObservedObject var viewModel: RegisterViewModel
+    @ObservedObject var viewModel = RegisterViewModel()
     @Binding var currentSubview: AuthenticationSubview
-    
-    init(viewModel: RegisterViewModel, currentSubview: Binding<AuthenticationSubview>) {
-        self.viewModel = viewModel
-        self._currentSubview = currentSubview
-    }
     
     var body: some View {
         if (viewModel.showRegisteringSpinner) {
@@ -68,6 +63,7 @@ struct RegisterView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(viewModel: RegisterViewModel(auth: PreviewAuth()), currentSubview: .constant(AuthenticationSubview.Register))
+        Resolver.shared.setContainer(PreviewContainer.build())
+        return RegisterView(currentSubview: .constant(AuthenticationSubview.Register))
     }
 }

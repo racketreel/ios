@@ -9,13 +9,8 @@ import SwiftUI
 
 struct LogInView: View {
     
-    @ObservedObject var viewModel: LogInViewModel
+    @ObservedObject var viewModel = LogInViewModel()
     @Binding var currentSubview: AuthenticationSubview
-
-    init(viewModel: LogInViewModel, currentSubview: Binding<AuthenticationSubview>) {
-        self.viewModel = viewModel
-        self._currentSubview = currentSubview
-    }
     
     var body: some View {
         // Todo: Animation between these
@@ -77,6 +72,7 @@ struct LogInView: View {
 
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInView(viewModel: LogInViewModel(auth: PreviewAuth()), currentSubview: .constant(AuthenticationSubview.LogIn))
+        Resolver.shared.setContainer(PreviewContainer.build())
+        return LogInView(currentSubview: .constant(AuthenticationSubview.LogIn))
     }
 }

@@ -21,11 +21,7 @@ class LogInViewModel: ObservableObject {
     @Published var showPasswordResetEmailAlert = false
     @Published var passwordResetEmailAlertMessage = ""
     
-    var auth: AuthProtocol
-    
-    init(auth: AuthProtocol) {
-        self.auth = auth
-    }
+    @Inject var auth: AuthProtocol
     
     func logIn() {
         // Show spinner while attempting to sign in

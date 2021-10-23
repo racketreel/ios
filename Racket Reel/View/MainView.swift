@@ -55,7 +55,8 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        Resolver.shared.setContainer(PreviewContainer.build())
+        return MainView()
             .environment(\.managedObjectContext,
                 PersistenceController.preview.container.viewContext)
     }

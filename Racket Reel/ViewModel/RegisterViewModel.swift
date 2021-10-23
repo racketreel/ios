@@ -19,11 +19,7 @@ class RegisterViewModel: ObservableObject {
     @Published var showRegisterFailedAlert = false
     @Published var registerFailedAlertMessage = ""
     
-    private var auth: AuthProtocol
-    
-    init(auth: AuthProtocol) {
-        self.auth = auth
-    }
+    @Inject var auth: AuthProtocol
     
     func register() {
         // Todo: Validate fields

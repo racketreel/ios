@@ -9,6 +9,7 @@ target 'Racket Reel' do
   use_frameworks!
 
   # Pods for RacketReel
+  pod 'Swinject'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'

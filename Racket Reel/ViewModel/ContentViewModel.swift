@@ -12,10 +12,9 @@ class ContentViewModel: ObservableObject {
     @Published var isSignedIn: Bool
     @Published var user: User?
     
-    public var auth: AuthProtocol
+    @Inject var auth: AuthProtocol
     
-    init(auth: AuthProtocol) {
-        self.auth = auth
+    init() {
         self.isSignedIn = false
         
         self.auth.addUserObserver { user in
@@ -25,7 +24,7 @@ class ContentViewModel: ObservableObject {
     }
     
     func sendEmailVerification() {
-        auth.sendEmailVerification(completion: { error in
+        self.auth.sendEmailVerification(completion: { error in
             if (error != nil) {
                 print(error!.localizedDescription)
             }

@@ -9,6 +9,27 @@
 /* Begin PBXBuildFile section */
 		6A7E5F80B78163C4E87900FF /* Pods_Racket_Reel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */; };
 		BB79C2F7B977FF0198530BB6 /* Pods_Racket_Reel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */; };
+		E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C287E27244B1E00FFFE3B /* UserViewModel.swift */; };
+		E22C288127244D4000FFFE3B /* ContainerDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288027244D4000FFFE3B /* ContainerDefinition.swift */; };
+		E22C288327244D4800FFFE3B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288227244D4800FFFE3B /* MainContainer.swift */; };
+		E22C288527244D5300FFFE3B /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288427244D5300FFFE3B /* PreviewContainer.swift */; };
+		E22C288727244D5A00FFFE3B /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288627244D5A00FFFE3B /* Resolver.swift */; };
+		E22C288927244DD600FFFE3B /* InjectPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288827244DD600FFFE3B /* InjectPropertyWrapper.swift */; };
+		E22C288B2724532A00FFFE3B /* TennisMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C71B271C20430076B84B /* TennisMatch.swift */; };
+		E22C288C2724532A00FFFE3B /* TennisMatch+StateTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C71D271C205C0076B84B /* TennisMatch+StateTransition.swift */; };
+		E22C288D2724532A00FFFE3B /* TennisMatch+StateDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C71F271C207D0076B84B /* TennisMatch+StateDescription.swift */; };
+		E22C288E2724532A00FFFE3B /* TennisPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C721271C212A0076B84B /* TennisPreferences.swift */; };
+		E22C288F2724532A00FFFE3B /* TennisMatch+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C744271E05FA0076B84B /* TennisMatch+Constants.swift */; };
+		E22C28902724532A00FFFE3B /* TennisState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C723271C21430076B84B /* TennisState.swift */; };
+		E22C28912724532A00FFFE3B /* TennisScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C725271C21590076B84B /* TennisScore.swift */; };
+		E22C28922724532A00FFFE3B /* TennisEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C727271C21770076B84B /* TennisEvent.swift */; };
+		E22C28932724532A00FFFE3B /* TennisEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C729271C21840076B84B /* TennisEventType.swift */; };
+		E22C28942724532A00FFFE3B /* TennisPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C72D271C21C30076B84B /* TennisPoint.swift */; };
+		E22C28952724532A00FFFE3B /* PointDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560526C808B000DEF435 /* PointDescription.swift */; };
+		E22C28962724532A00FFFE3B /* GenerationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560326C8082A00DEF435 /* GenerationEvent.swift */; };
+		E22C28972724532A00FFFE3B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C72B271C21AE0076B84B /* Team.swift */; };
+		E22C28982724532A00FFFE3B /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C735271C3B370076B84B /* TeamMember.swift */; };
+		E22C28992724532A00FFFE3B /* TeamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C737271C3B400076B84B /* TeamType.swift */; };
 		E260B60326BAFB3B00C35341 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E260B60226BAFB3B00C35341 /* HealthKit.framework */; };
 		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
 		E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560326C8082A00DEF435 /* GenerationEvent.swift */; };
@@ -166,6 +187,12 @@
 		BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racket_Reel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2942E2EBD7199D25F021C7 /* Pods-Racket Reel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racket Reel.release.xcconfig"; path = "Target Support Files/Pods-Racket Reel/Pods-Racket Reel.release.xcconfig"; sourceTree = "<group>"; };
 		D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racket_Reel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E22C287E27244B1E00FFFE3B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		E22C288027244D4000FFFE3B /* ContainerDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDefinition.swift; sourceTree = "<group>"; };
+		E22C288227244D4800FFFE3B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
+		E22C288427244D5300FFFE3B /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		E22C288627244D5A00FFFE3B /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		E22C288827244DD600FFFE3B /* InjectPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectPropertyWrapper.swift; sourceTree = "<group>"; };
 		E247252826CAD30D00C0DF7D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E247252A26CAD3AD00C0DF7D /* MatchStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStateView.swift; sourceTree = "<group>"; };
 		E2537D0026D429FE000A277E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -294,11 +321,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E22C288A27244DED00FFFE3B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				E22C288027244D4000FFFE3B /* ContainerDefinition.swift */,
+				E22C288227244D4800FFFE3B /* MainContainer.swift */,
+				E22C288427244D5300FFFE3B /* PreviewContainer.swift */,
+				E22C288627244D5A00FFFE3B /* Resolver.swift */,
+				E22C288827244DD600FFFE3B /* InjectPropertyWrapper.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		E247252726CAD22A00C0DF7D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				E2D61325271B23A100788B5A /* ContentViewModel.swift */,
 				E2D61324271B23A000788B5A /* LogInViewModel.swift */,
+				E22C287E27244B1E00FFFE3B /* UserViewModel.swift */,
 				E2D61326271B23A100788B5A /* RegisterViewModel.swift */,
 				E247252826CAD30D00C0DF7D /* MainViewModel.swift */,
 				E2C7C76227208E420076B84B /* AuthenticationSubview.swift */,
@@ -475,6 +515,7 @@
 		E2FF733726A33710002209CA /* Racket Reel */ = {
 			isa = PBXGroup;
 			children = (
+				E22C288A27244DED00FFFE3B /* DI */,
 				E2D61314271B1BB900788B5A /* Services */,
 				E247252726CAD22A00C0DF7D /* ViewModel */,
 				E2B926F926B5DD200075CBF6 /* View */,
@@ -762,6 +803,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E22C288B2724532A00FFFE3B /* TennisMatch.swift in Sources */,
+				E22C288C2724532A00FFFE3B /* TennisMatch+StateTransition.swift in Sources */,
+				E22C288D2724532A00FFFE3B /* TennisMatch+StateDescription.swift in Sources */,
+				E22C288E2724532A00FFFE3B /* TennisPreferences.swift in Sources */,
+				E22C288F2724532A00FFFE3B /* TennisMatch+Constants.swift in Sources */,
+				E22C28902724532A00FFFE3B /* TennisState.swift in Sources */,
+				E22C28912724532A00FFFE3B /* TennisScore.swift in Sources */,
+				E22C28922724532A00FFFE3B /* TennisEvent.swift in Sources */,
+				E22C28932724532A00FFFE3B /* TennisEventType.swift in Sources */,
+				E22C28942724532A00FFFE3B /* TennisPoint.swift in Sources */,
+				E22C28952724532A00FFFE3B /* PointDescription.swift in Sources */,
+				E22C28962724532A00FFFE3B /* GenerationEvent.swift in Sources */,
+				E22C28972724532A00FFFE3B /* Team.swift in Sources */,
+				E22C28982724532A00FFFE3B /* TeamMember.swift in Sources */,
+				E22C28992724532A00FFFE3B /* TeamType.swift in Sources */,
 				E2C7C73D271DF7DE0076B84B /* StateTransitionTests.swift in Sources */,
 				E2C7C756271F38960076B84B /* TennisLoggingError.swift in Sources */,
 				E2C7C73F271DF7EA0076B84B /* ScoringTests.swift in Sources */,
@@ -780,6 +836,7 @@
 				E2D6132E271B23C700788B5A /* LogInView.swift in Sources */,
 				E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */,
 				E2C7C76327208E420076B84B /* AuthenticationSubview.swift in Sources */,
+				E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */,
 				E2C7C736271C3B370076B84B /* TeamMember.swift in Sources */,
 				E2D61302271B115000788B5A /* MainViewModel.swift in Sources */,
 				E2D61322271B232B00788B5A /* GrowingSecondaryButtonStyle.swift in Sources */,
@@ -801,10 +858,12 @@
 				E2D61309271B115000788B5A /* Match+Helper.swift in Sources */,
 				E2D61313271B1B9900788B5A /* User.swift in Sources */,
 				E2D61331271B23C700788B5A /* ActivityIndicator.swift in Sources */,
+				E22C288327244D4800FFFE3B /* MainContainer.swift in Sources */,
 				E2C7C72A271C21840076B84B /* TennisEventType.swift in Sources */,
 				E2C7C72C271C21AE0076B84B /* Team.swift in Sources */,
 				E2C7C755271F38960076B84B /* TennisLoggingError.swift in Sources */,
 				E2C7C75F272085C40076B84B /* UserView.swift in Sources */,
+				E22C288927244DD600FFFE3B /* InjectPropertyWrapper.swift in Sources */,
 				E2C7C72E271C21C30076B84B /* TennisPoint.swift in Sources */,
 				E2C7C71C271C20430076B84B /* TennisMatch.swift in Sources */,
 				E2D61327271B23A100788B5A /* LogInViewModel.swift in Sources */,
@@ -816,6 +875,7 @@
 				E2C7C722271C212A0076B84B /* TennisPreferences.swift in Sources */,
 				E2D61318271B1BD700788B5A /* AuthProtocol.swift in Sources */,
 				E2D6130E271B115000788B5A /* RacketReelApp.swift in Sources */,
+				E22C288727244D5A00FFFE3B /* Resolver.swift in Sources */,
 				E2C7C759271F62E20076B84B /* TeamMembersWrapper.swift in Sources */,
 				E2D6130F271B115000788B5A /* PersistenceController.swift in Sources */,
 				E2D61310271B115000788B5A /* VideoEditor.swift in Sources */,
@@ -825,8 +885,10 @@
 				E2C7C720271C207D0076B84B /* TennisMatch+StateDescription.swift in Sources */,
 				E268560626C808B000DEF435 /* PointDescription.swift in Sources */,
 				E2C7C76127208E130076B84B /* AuthenticationView.swift in Sources */,
+				E22C288127244D4000FFFE3B /* ContainerDefinition.swift in Sources */,
 				E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
+				E22C288527244D5300FFFE3B /* PreviewContainer.swift in Sources */,
 				E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

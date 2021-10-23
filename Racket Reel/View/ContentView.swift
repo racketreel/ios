@@ -11,14 +11,7 @@ import CoreData
 struct ContentView: View {
     
     @StateObject var videoEditor = VideoEditor()
-    
-    var auth: AuthProtocol
-    @ObservedObject var viewModel: ContentViewModel
-    
-    init(auth: AuthProtocol) {
-        self.auth = auth
-        self.viewModel = ContentViewModel(auth: auth)
-    }
+    @ObservedObject var viewModel = ContentViewModel()
 
     var body: some View {
         if (viewModel.isSignedIn) {
@@ -32,13 +25,13 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "house")
                     }
-                UserView(auth: self.auth)
+                UserView()
                     .tabItem {
                         Image(systemName: "person")
                     }
             }
         } else {
-            AuthenticationView(auth: self.auth)
+            AuthenticationView()
         }
     }
     
@@ -46,6 +39,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(auth: PreviewAuth()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        Resolver.shared.setContainer(PreviewContainer.build())
+        return ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

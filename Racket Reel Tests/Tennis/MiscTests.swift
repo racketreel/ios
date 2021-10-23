@@ -42,7 +42,7 @@ class MiscTests: XCTestCase {
                 finalSetTieBreak: false,
                 pointsForTieBreak: 7,
                 teamType: TeamType.Singles,
-                teamMembers: teamMembers
+                teamMembers: TeamMembersWrapper(dict: teamMembers)
             )
             
             let match = TennisMatch(preferences: preferences, events: [])

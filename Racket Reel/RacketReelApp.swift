@@ -8,6 +8,7 @@
 import SwiftUI
 import WatchConnectivity
 import Firebase
+import Swinject
 
 @main
 struct RacketReelApp: App {
@@ -31,7 +32,7 @@ struct RacketReelApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(auth: FirebaseFirestoreAuth())
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
             .onChange(of: scenePhase) { _ in
@@ -47,3 +48,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
 }
+

@@ -9,13 +9,7 @@ import SwiftUI
 
 struct AuthenticationView: View {
     
-    var auth: AuthProtocol
-    
     @State var currentSubview: AuthenticationSubview = AuthenticationSubview.None
-    
-    init(auth: AuthProtocol) {
-        self.auth = auth
-    }
     
     var body: some View {
         ZStack {
@@ -30,9 +24,9 @@ struct AuthenticationView: View {
                     .cornerRadius(30)
                     .padding(30)
                 if (currentSubview == AuthenticationSubview.LogIn) {
-                    LogInView(viewModel: LogInViewModel(auth: self.auth), currentSubview: $currentSubview)
+                    LogInView(currentSubview: $currentSubview)
                 } else if (currentSubview == AuthenticationSubview.Register) {
-                    RegisterView(viewModel: RegisterViewModel(auth: self.auth), currentSubview: $currentSubview)
+                    RegisterView(currentSubview: $currentSubview)
                 } else { // currentSubview == AuthenticationSubview.None
                     // Log In
                     Button("Log In") {
@@ -55,6 +49,7 @@ struct AuthenticationView: View {
 
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationView(auth: PreviewAuth())
+        Resolver.shared.setContainer(PreviewContainer.build())
+        return AuthenticationView()
     }
 }
