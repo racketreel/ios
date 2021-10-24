@@ -39,7 +39,7 @@ struct RegisterView: View {
                 Button("Register") {
                     viewModel.register()
                 }
-                    .buttonStyle(GrowingPrimaryButtonStyle())
+                    .buttonStyle(PrimaryButtonStyle(fillWidth: true))
                     .padding(.top)
                 
                 // Back to Log In

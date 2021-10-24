@@ -30,6 +30,13 @@
 		E22C28972724532A00FFFE3B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C72B271C21AE0076B84B /* Team.swift */; };
 		E22C28982724532A00FFFE3B /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C735271C3B370076B84B /* TeamMember.swift */; };
 		E22C28992724532A00FFFE3B /* TeamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C737271C3B400076B84B /* TeamType.swift */; };
+		E24817B22725AA4B00CB1A13 /* NewMatchPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24817B12725AA4B00CB1A13 /* NewMatchPlayersView.swift */; };
+		E24817B52725AE7100CB1A13 /* NewMatchSetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24817B42725AE7100CB1A13 /* NewMatchSetsView.swift */; };
+		E24817B72725B02A00CB1A13 /* NewMatchGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24817B62725B02A00CB1A13 /* NewMatchGamesView.swift */; };
+		E24817B92725B14400CB1A13 /* NewMatchTieBreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24817B82725B14400CB1A13 /* NewMatchTieBreakView.swift */; };
+		E24817BB2725C0D800CB1A13 /* LoggingDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24817BA2725C0D800CB1A13 /* LoggingDevice.swift */; };
+		E25D81B22724723600527CBA /* NewMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D81B12724723600527CBA /* NewMatchViewModel.swift */; };
+		E25D81B4272479BA00527CBA /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D81B3272479BA00527CBA /* SelectableButtonStyle.swift */; };
 		E260B60326BAFB3B00C35341 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E260B60226BAFB3B00C35341 /* HealthKit.framework */; };
 		E263E6B026A9F88400173F1D /* PlayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263E6AF26A9F88400173F1D /* PlayerType.swift */; };
 		E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268560326C8082A00DEF435 /* GenerationEvent.swift */; };
@@ -110,8 +117,8 @@
 		E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61316271B1BD700788B5A /* PreviewAuth.swift */; };
 		E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */; };
 		E2D6131C271B222500788B5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D6131B271B222500788B5A /* GoogleService-Info.plist */; };
-		E2D61321271B232B00788B5A /* GrowingPrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */; };
-		E2D61322271B232B00788B5A /* GrowingSecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */; };
+		E2D61321271B232B00788B5A /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131E271B232B00788B5A /* PrimaryButtonStyle.swift */; };
+		E2D61322271B232B00788B5A /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131F271B232B00788B5A /* SecondaryButtonStyle.swift */; };
 		E2D61323271B232B00788B5A /* RRTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */; };
 		E2D61327271B23A100788B5A /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61324271B23A000788B5A /* LogInViewModel.swift */; };
 		E2D61328271B23A100788B5A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61325271B23A100788B5A /* ContentViewModel.swift */; };
@@ -195,8 +202,15 @@
 		E22C288827244DD600FFFE3B /* InjectPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectPropertyWrapper.swift; sourceTree = "<group>"; };
 		E247252826CAD30D00C0DF7D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E247252A26CAD3AD00C0DF7D /* MatchStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStateView.swift; sourceTree = "<group>"; };
+		E24817B12725AA4B00CB1A13 /* NewMatchPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchPlayersView.swift; sourceTree = "<group>"; };
+		E24817B42725AE7100CB1A13 /* NewMatchSetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchSetsView.swift; sourceTree = "<group>"; };
+		E24817B62725B02A00CB1A13 /* NewMatchGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchGamesView.swift; sourceTree = "<group>"; };
+		E24817B82725B14400CB1A13 /* NewMatchTieBreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchTieBreakView.swift; sourceTree = "<group>"; };
+		E24817BA2725C0D800CB1A13 /* LoggingDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingDevice.swift; sourceTree = "<group>"; };
 		E2537D0026D429FE000A277E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWCSessionDelegate.swift; sourceTree = "<group>"; };
+		E25D81B12724723600527CBA /* NewMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchViewModel.swift; sourceTree = "<group>"; };
+		E25D81B3272479BA00527CBA /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		E260B60226BAFB3B00C35341 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		E263E6AF26A9F88400173F1D /* PlayerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerType.swift; sourceTree = "<group>"; };
 		E26855E126C7F18600DEF435 /* Match+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -252,8 +266,8 @@
 		E2D61316271B1BD700788B5A /* PreviewAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewAuth.swift; sourceTree = "<group>"; };
 		E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreAuth.swift; sourceTree = "<group>"; };
 		E2D6131B271B222500788B5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingPrimaryButtonStyle.swift; sourceTree = "<group>"; };
-		E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingSecondaryButtonStyle.swift; sourceTree = "<group>"; };
+		E2D6131E271B232B00788B5A /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		E2D6131F271B232B00788B5A /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRTextFieldStyle.swift; sourceTree = "<group>"; };
 		E2D61324271B23A000788B5A /* LogInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		E2D61325271B23A100788B5A /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -342,8 +356,21 @@
 				E2D61326271B23A100788B5A /* RegisterViewModel.swift */,
 				E247252826CAD30D00C0DF7D /* MainViewModel.swift */,
 				E2C7C76227208E420076B84B /* AuthenticationSubview.swift */,
+				E25D81B12724723600527CBA /* NewMatchViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E24817B32725AE5F00CB1A13 /* NewMatch */ = {
+			isa = PBXGroup;
+			children = (
+				E2C7C75C272085740076B84B /* NewMatchView.swift */,
+				E24817B12725AA4B00CB1A13 /* NewMatchPlayersView.swift */,
+				E24817B42725AE7100CB1A13 /* NewMatchSetsView.swift */,
+				E24817B62725B02A00CB1A13 /* NewMatchGamesView.swift */,
+				E24817B82725B14400CB1A13 /* NewMatchTieBreakView.swift */,
+			);
+			path = NewMatch;
 			sourceTree = "<group>";
 		};
 		E260B60126BAFB3B00C35341 /* Frameworks */ = {
@@ -405,6 +432,7 @@
 				E26855E526C7F18600DEF435 /* MatchState+CoreDataClass.swift */,
 				E26855FF26C7F7F900DEF435 /* MatchState+Helper.swift */,
 				E2D61312271B1B9900788B5A /* User.swift */,
+				E24817BA2725C0D800CB1A13 /* LoggingDevice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,9 +440,9 @@
 		E2B926F926B5DD200075CBF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E24817B32725AE5F00CB1A13 /* NewMatch */,
 				E2D6131D271B230600788B5A /* Styles */,
 				E2D6132D271B23C700788B5A /* ActivityIndicator.swift */,
-				E2C7C75C272085740076B84B /* NewMatchView.swift */,
 				E2D6132B271B23C700788B5A /* ContentView.swift */,
 				E2D6132A271B23C700788B5A /* LogInView.swift */,
 				E2C7C76027208E130076B84B /* AuthenticationView.swift */,
@@ -471,9 +499,10 @@
 		E2D6131D271B230600788B5A /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				E2D6131E271B232B00788B5A /* GrowingPrimaryButtonStyle.swift */,
-				E2D6131F271B232B00788B5A /* GrowingSecondaryButtonStyle.swift */,
+				E2D6131E271B232B00788B5A /* PrimaryButtonStyle.swift */,
+				E2D6131F271B232B00788B5A /* SecondaryButtonStyle.swift */,
 				E2D61320271B232B00788B5A /* RRTextFieldStyle.swift */,
+				E25D81B3272479BA00527CBA /* SelectableButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -834,12 +863,15 @@
 			files = (
 				E2C7C746271E06D20076B84B /* TennisMatch+Constants.swift in Sources */,
 				E2D6132E271B23C700788B5A /* LogInView.swift in Sources */,
+				E24817B52725AE7100CB1A13 /* NewMatchSetsView.swift in Sources */,
 				E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */,
+				E25D81B4272479BA00527CBA /* SelectableButtonStyle.swift in Sources */,
 				E2C7C76327208E420076B84B /* AuthenticationSubview.swift in Sources */,
 				E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */,
 				E2C7C736271C3B370076B84B /* TeamMember.swift in Sources */,
+				E24817B72725B02A00CB1A13 /* NewMatchGamesView.swift in Sources */,
 				E2D61302271B115000788B5A /* MainViewModel.swift in Sources */,
-				E2D61322271B232B00788B5A /* GrowingSecondaryButtonStyle.swift in Sources */,
+				E2D61322271B232B00788B5A /* SecondaryButtonStyle.swift in Sources */,
 				E2D61303271B115000788B5A /* MainView.swift in Sources */,
 				E2C7C738271C3B400076B84B /* TeamType.swift in Sources */,
 				E2D61304271B115000788B5A /* MatchListItemView.swift in Sources */,
@@ -850,8 +882,9 @@
 				E2C7C726271C21590076B84B /* TennisScore.swift in Sources */,
 				E2D61307271B115000788B5A /* MatchStateView.swift in Sources */,
 				E2C7C724271C21430076B84B /* TennisState.swift in Sources */,
+				E24817B22725AA4B00CB1A13 /* NewMatchPlayersView.swift in Sources */,
 				E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */,
-				E2D61321271B232B00788B5A /* GrowingPrimaryButtonStyle.swift in Sources */,
+				E2D61321271B232B00788B5A /* PrimaryButtonStyle.swift in Sources */,
 				E2D6132F271B23C700788B5A /* ContentView.swift in Sources */,
 				E2D61308271B115000788B5A /* Match+CoreDataClass.swift in Sources */,
 				E2D61330271B23C700788B5A /* RegisterView.swift in Sources */,
@@ -874,6 +907,7 @@
 				E2D6130D271B115000788B5A /* MatchState+Helper.swift in Sources */,
 				E2C7C722271C212A0076B84B /* TennisPreferences.swift in Sources */,
 				E2D61318271B1BD700788B5A /* AuthProtocol.swift in Sources */,
+				E24817B92725B14400CB1A13 /* NewMatchTieBreakView.swift in Sources */,
 				E2D6130E271B115000788B5A /* RacketReelApp.swift in Sources */,
 				E22C288727244D5A00FFFE3B /* Resolver.swift in Sources */,
 				E2C7C759271F62E20076B84B /* TeamMembersWrapper.swift in Sources */,
@@ -881,6 +915,7 @@
 				E2D61310271B115000788B5A /* VideoEditor.swift in Sources */,
 				E2D61311271B115000788B5A /* CoreDataWCSessionDelegate.swift in Sources */,
 				E2D61328271B23A100788B5A /* ContentViewModel.swift in Sources */,
+				E25D81B22724723600527CBA /* NewMatchViewModel.swift in Sources */,
 				E2C7C75D272085740076B84B /* NewMatchView.swift in Sources */,
 				E2C7C720271C207D0076B84B /* TennisMatch+StateDescription.swift in Sources */,
 				E268560626C808B000DEF435 /* PointDescription.swift in Sources */,
@@ -889,6 +924,7 @@
 				E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
 				E22C288527244D5300FFFE3B /* PreviewContainer.swift in Sources */,
+				E24817BB2725C0D800CB1A13 /* LoggingDevice.swift in Sources */,
 				E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

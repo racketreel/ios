@@ -8,6 +8,14 @@
 import Foundation
 
 struct TeamMember: Codable {
+    
     var firstname: String
     var surname: String
+    
+    var fullname: String {
+        get {
+            return "\(firstname) \(surname)"
+        }
+    }
+    
 }
