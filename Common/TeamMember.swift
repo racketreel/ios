@@ -12,10 +12,8 @@ struct TeamMember: Codable {
     var firstname: String
     var surname: String
     
-    var fullname: String {
-        get {
-            return "\(firstname) \(surname)"
-        }
+    func fullname() -> String {
+        return "\(firstname) \(surname)"
     }
     
 }

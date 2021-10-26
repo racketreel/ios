@@ -45,9 +45,9 @@ class TennisMatch: Codable {
     lazy var initialState: TennisState = {
         let initialScore = TennisScore(points: 0, games: 0, sets: 0)
         
-        var scores = Dictionary<Team, TennisScore>()
-        scores[Team.One] = initialScore
-        scores[Team.Two] = initialScore
+        var scores = Dictionary<TeamNumber, TennisScore>()
+        scores[TeamNumber.One] = initialScore
+        scores[TeamNumber.Two] = initialScore
         
         return TennisState(
             scores: scores,

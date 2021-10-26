@@ -9,9 +9,9 @@ import Foundation
 
 class TennisState: Equatable {
     
-    let scores: Dictionary<Team, TennisScore>
+    let scores: Dictionary<TeamNumber, TennisScore>
     
-    let serving: Team
+    let serving: TeamNumber
     let isSecondServe: Bool
     
     // Use alternate point scoring when set in a tie break.
@@ -24,9 +24,9 @@ class TennisState: Equatable {
     }
     
     // Keep track of who is due to serve after the tie break.
-    let toServePostTieBreak: Team?
+    let toServePostTieBreak: TeamNumber?
     
-    init(scores: Dictionary<Team, TennisScore>, serving: Team, isSecondServe: Bool, tieBreakPointCounter: Int?, toServePostTieBreak: Team?) {
+    init(scores: Dictionary<TeamNumber, TennisScore>, serving: TeamNumber, isSecondServe: Bool, tieBreakPointCounter: Int?, toServePostTieBreak: TeamNumber?) {
         self.scores = scores
         self.serving = serving
         self.isSecondServe = isSecondServe

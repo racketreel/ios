@@ -55,11 +55,11 @@ extension TennisMatch {
         }
         
         // All other possible events checked but TeamOnePoint and TeamTwoPoint.
-        var pointWonBy: Team
+        var pointWonBy: TeamNumber
         if (when == TennisEventType.TeamOnePoint) {
-            pointWonBy = Team.One
+            pointWonBy = TeamNumber.One
         } else {
-            pointWonBy = Team.Two
+            pointWonBy = TeamNumber.Two
         }
         
         // If Team wins a point when on match point then match over.
@@ -115,8 +115,8 @@ extension TennisMatch {
         return newState
     }
     
-    func newScores(after: TennisState, whenWonBy: Team) -> Dictionary<Team, TennisScore> {
-        var newScores = Dictionary<Team, TennisScore>();
+    func newScores(after: TennisState, whenWonBy: TeamNumber) -> Dictionary<TeamNumber, TennisScore> {
+        var newScores = Dictionary<TeamNumber, TennisScore>();
         
         let currentSets = after.scores[whenWonBy]!.sets
         let currentSetsOpponent = after.scores[whenWonBy.opponent]!.sets

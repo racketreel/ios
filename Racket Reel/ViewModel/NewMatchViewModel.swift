@@ -10,7 +10,7 @@ import Foundation
 class NewMatchViewModel: ObservableObject {
     
     // Tennis match preferences...
-    @Published var teamType = TeamType.Singles
+    @Published var teamType = TeamMembershipType.Singles
     @Published var teamOnePlayerOne = TeamMember(firstname: "", surname: "")
     @Published var teamOnePlayerTwo = TeamMember(firstname: "", surname: "")
     @Published var teamTwoPlayerOne = TeamMember(firstname: "", surname: "")
@@ -22,7 +22,7 @@ class NewMatchViewModel: ObservableObject {
     // Tie break
     @Published var finalSetTieBreak = true
     @Published var pointsForTieBreak = 7
-    @Published var initalServe = Team.One
+    @Published var initalServe = TeamNumber.One
     
     @Published var showSelectLoggingDeviceSheet = false
     
@@ -31,7 +31,7 @@ class NewMatchViewModel: ObservableObject {
     @Published var matchStartAlertMessage = ""
     
     private func resetFieldsToDefaults() {
-        teamType = TeamType.Singles
+        teamType = TeamMembershipType.Singles
         teamOnePlayerOne = TeamMember(firstname: "", surname: "")
         teamOnePlayerTwo = TeamMember(firstname: "", surname: "")
         teamTwoPlayerOne = TeamMember(firstname: "", surname: "")
@@ -40,7 +40,7 @@ class NewMatchViewModel: ObservableObject {
         games = 6
         finalSetTieBreak = true
         pointsForTieBreak = 7
-        initalServe = Team.One
+        initalServe = TeamNumber.One
     }
 
     private func connectedAppleWatch() -> Bool {
@@ -69,14 +69,17 @@ class NewMatchViewModel: ObservableObject {
                 initialServe: self.initalServe,
                 finalSetTieBreak: self.finalSetTieBreak,
                 pointsForTieBreak: self.pointsForTieBreak,
-                teamType: self.teamType,
-                teamMembers: TeamMembersWrapper(dict: [
-                    Team.One: [
-                        // Todo
-                    ],
-                    Team.Two: [
-                        // Todo
-                    ]
+                teams: TeamMembersWrapper(dict: [
+                    TeamNumber.One: Team(
+                        number: TeamNumber.One,
+                        membership: TeamMembershipType.Singles,
+                        members: []
+                    ),
+                    TeamNumber.Two: Team(
+                        number: TeamNumber.Two,
+                        membership: TeamMembershipType.Singles,
+                        members: []
+                    )
                 ])
             )
         )

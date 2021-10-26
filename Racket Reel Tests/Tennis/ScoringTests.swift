@@ -16,11 +16,11 @@ class ScoringTests: XCTestCase {
         let state = match.initialState
         
         let expectedScores = [
-            Team.One: TennisScore(points: 1, games: 0, sets: 0),
-            Team.Two: TennisScore(points: 0, games: 0, sets: 0)
+            TeamNumber.One: TennisScore(points: 1, games: 0, sets: 0),
+            TeamNumber.Two: TennisScore(points: 0, games: 0, sets: 0)
         ]
         
-        let newScores = match.newScores(after: state, whenWonBy: Team.One)
+        let newScores = match.newScores(after: state, whenWonBy: TeamNumber.One)
         
         XCTAssert(newScores == expectedScores, "Team which wins has their points incremented.")
     }
@@ -30,21 +30,21 @@ class ScoringTests: XCTestCase {
         
         let state = TennisState(
             scores: [
-                Team.One: TennisScore(points: TennisPoint.Advantage.rawValue, games: 0, sets: 0),
-                Team.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
+                TeamNumber.One: TennisScore(points: TennisPoint.Advantage.rawValue, games: 0, sets: 0),
+                TeamNumber.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
             ],
-            serving: Team.One,
+            serving: TeamNumber.One,
             isSecondServe: false,
             tieBreakPointCounter: nil,
             toServePostTieBreak: nil
         )
         
         let expectedScores = [
-            Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0),
-            Team.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
+            TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0),
+            TeamNumber.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
         ]
         
-        let newScores = match.newScores(after: state, whenWonBy: Team.Two)
+        let newScores = match.newScores(after: state, whenWonBy: TeamNumber.Two)
         
         XCTAssert(newScores == expectedScores, "Back to deuce after losing on advantage.")
     }
@@ -54,21 +54,21 @@ class ScoringTests: XCTestCase {
         
         let state = TennisState(
             scores: [
-                Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0),
-                Team.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
+                TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0),
+                TeamNumber.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
             ],
-            serving: Team.One,
+            serving: TeamNumber.One,
             isSecondServe: false,
             tieBreakPointCounter: nil,
             toServePostTieBreak: nil
         )
         
         let expectedScores = [
-            Team.One: TennisScore(points: 0, games: 1, sets: 0),
-            Team.Two: TennisScore(points: 0, games: 0, sets: 0)
+            TeamNumber.One: TennisScore(points: 0, games: 1, sets: 0),
+            TeamNumber.Two: TennisScore(points: 0, games: 0, sets: 0)
         ]
         
-        let newScores = match.newScores(after: state, whenWonBy: Team.One)
+        let newScores = match.newScores(after: state, whenWonBy: TeamNumber.One)
         
         XCTAssert(newScores == expectedScores, "Team which wins a game has their games incremented.")
     }
@@ -78,21 +78,21 @@ class ScoringTests: XCTestCase {
         
         let state = TennisState(
             scores: [
-                Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 0),
-                Team.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
+                TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 0),
+                TeamNumber.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
             ],
-            serving: Team.One,
+            serving: TeamNumber.One,
             isSecondServe: false,
             tieBreakPointCounter: nil,
             toServePostTieBreak: nil
         )
         
         let expectedScores = [
-            Team.One: TennisScore(points: 0, games: 0, sets: 1),
-            Team.Two: TennisScore(points: 0, games: 0, sets: 0)
+            TeamNumber.One: TennisScore(points: 0, games: 0, sets: 1),
+            TeamNumber.Two: TennisScore(points: 0, games: 0, sets: 0)
         ]
         
-        let newScores = match.newScores(after: state, whenWonBy: Team.One)
+        let newScores = match.newScores(after: state, whenWonBy: TeamNumber.One)
         
         XCTAssert(newScores == expectedScores, "Team which wins a set has their sets incremented.")
     }

@@ -17,10 +17,10 @@ class StateDescriptionTests: XCTestCase {
             // Simple win
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 0),
-                    Team.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
+                    TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 0),
+                    TeamNumber.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: nil,
                 toServePostTieBreak: nil
@@ -28,10 +28,10 @@ class StateDescriptionTests: XCTestCase {
             // Win from deuce
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: TennisPoint.Advantage.rawValue, games: 0, sets: 0),
-                    Team.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
+                    TeamNumber.One: TennisScore(points: TennisPoint.Advantage.rawValue, games: 0, sets: 0),
+                    TeamNumber.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: nil,
                 toServePostTieBreak: nil
@@ -39,29 +39,29 @@ class StateDescriptionTests: XCTestCase {
             // Win min points in tie break
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: 6, games: 6, sets: 0),
-                    Team.Two: TennisScore(points: 5, games: 6, sets: 0)
+                    TeamNumber.One: TennisScore(points: 6, games: 6, sets: 0),
+                    TeamNumber.Two: TennisScore(points: 5, games: 6, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: 11,
-                toServePostTieBreak: Team.One
+                toServePostTieBreak: TeamNumber.One
             ),
             // Win more than min points in tie break (at least two ahead)
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: 20, games: 6, sets: 0),
-                    Team.Two: TennisScore(points: 19, games: 6, sets: 0)
+                    TeamNumber.One: TennisScore(points: 20, games: 6, sets: 0),
+                    TeamNumber.Two: TennisScore(points: 19, games: 6, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: 49,
-                toServePostTieBreak: Team.One
+                toServePostTieBreak: TeamNumber.One
             )
         ]
         
         for state in gamePointToTeamOneStates {
-            XCTAssert(match.isGamePoint(to: Team.One, when: state), "Should be game point when state is \(state).")
+            XCTAssert(match.isGamePoint(to: TeamNumber.One, when: state), "Should be game point when state is \(state).")
         }
     }
     
@@ -72,10 +72,10 @@ class StateDescriptionTests: XCTestCase {
             // Deuce
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0),
-                    Team.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
+                    TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0),
+                    TeamNumber.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: nil,
                 toServePostTieBreak: nil
@@ -83,10 +83,10 @@ class StateDescriptionTests: XCTestCase {
             // Game point to opponent
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: TennisPoint.Thirty.rawValue, games: 0, sets: 0),
-                    Team.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
+                    TeamNumber.One: TennisScore(points: TennisPoint.Thirty.rawValue, games: 0, sets: 0),
+                    TeamNumber.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: nil,
                 toServePostTieBreak: nil
@@ -94,18 +94,18 @@ class StateDescriptionTests: XCTestCase {
             // Both have min points for tie break
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: 7, games: 6, sets: 0),
-                    Team.Two: TennisScore(points: 7, games: 6, sets: 0)
+                    TeamNumber.One: TennisScore(points: 7, games: 6, sets: 0),
+                    TeamNumber.Two: TennisScore(points: 7, games: 6, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: 14,
-                toServePostTieBreak: Team.One
+                toServePostTieBreak: TeamNumber.One
             )
         ]
         
         for state in notGamePointToTeamOneStates {
-            XCTAssert(!match.isGamePoint(to: Team.One, when: state), "Should not be game point when state is \(state).")
+            XCTAssert(!match.isGamePoint(to: TeamNumber.One, when: state), "Should not be game point when state is \(state).")
         }
     }
     
@@ -123,10 +123,10 @@ class StateDescriptionTests: XCTestCase {
         let states = [
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 0),
-                    Team.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
+                    TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 0),
+                    TeamNumber.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: nil,
                 toServePostTieBreak: nil
@@ -134,7 +134,7 @@ class StateDescriptionTests: XCTestCase {
         ]
         
         for state in states {
-            XCTAssert(match.isSetPoint(to: Team.One, when: state), "Should be set point when state \(state).")
+            XCTAssert(match.isSetPoint(to: TeamNumber.One, when: state), "Should be set point when state \(state).")
         }
     }
     
@@ -148,10 +148,10 @@ class StateDescriptionTests: XCTestCase {
         let states = [
             TennisState(
                 scores: [
-                    Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 1),
-                    Team.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
+                    TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 1),
+                    TeamNumber.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
                 ],
-                serving: Team.One,
+                serving: TeamNumber.One,
                 isSecondServe: false,
                 tieBreakPointCounter: nil,
                 toServePostTieBreak: nil
@@ -159,7 +159,7 @@ class StateDescriptionTests: XCTestCase {
         ]
         
         for state in states {
-            XCTAssert(match.isMatchPoint(to: Team.One, when: state), "Should be match point when state \(state).")
+            XCTAssert(match.isMatchPoint(to: TeamNumber.One, when: state), "Should be match point when state \(state).")
         }
     }
     

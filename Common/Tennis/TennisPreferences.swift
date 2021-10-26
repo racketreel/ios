@@ -13,12 +13,11 @@ struct TennisPreferences: Codable {
     let sets: Int // Sets needed to win the match
     let games: Int // Games needed to win the set without any ties
     let timestamp: Date // Start time of the match
-    let initialServe: Team
+    let initialServe: TeamNumber
     let finalSetTieBreak: Bool
     let pointsForTieBreak: Int
-    let teamType: TeamType
     
     // No harm in changing team members after the match so var.
-    var teamMembers: TeamMembersWrapper
+    var teams: TeamMembersWrapper
     
 }
