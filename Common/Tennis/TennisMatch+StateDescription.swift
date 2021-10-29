@@ -45,8 +45,8 @@ extension TennisMatch {
         
         // Todo: Is this different for final set tiebreak enabled/disabled?
         
-        // Different conditions when in tie break.
-        if when.isTieBreak {
+        // Different conditions when in tie break or just one game per set.
+        if when.isTieBreak || preferences.games == 1 {
             return isGamePointTo
         } else {
             return (

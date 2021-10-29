@@ -62,6 +62,9 @@ extension TennisMatch {
             pointWonBy = TeamNumber.Two
         }
         
+        // Must be a first serve again.
+        isSecondServe = false
+        
         // If Team wins a point when on match point then match over.
         if (isMatchPoint(to: pointWonBy, when: after)) {
             // No next state.

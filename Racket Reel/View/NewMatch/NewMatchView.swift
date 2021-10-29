@@ -73,10 +73,15 @@ struct NewMatchView: View {
                 ]
             )
         }
+        .sheet(
+            isPresented: $viewModel.showLoggingView,
+            onDismiss: viewModel.matchExited,
+            content: { LoggingView(match: $viewModel.match) }
+        )
     }
 }
 
-struct LoggingView_Previews: PreviewProvider {
+struct NewMatchView_Previews: PreviewProvider {
     static var previews: some View {
         NewMatchView()
     }

@@ -24,8 +24,7 @@ class TennisMatch: Codable {
     
     private var _inProgress = false
     
-    // You must not change the preferences after the match so let.
-    let preferences: TennisPreferences
+    var preferences: TennisPreferences
     
     // This can be changed after the match to enable editing videos.
     // TennisEvent objects cannot be modified directly but they can be removed and new ones added.
@@ -170,6 +169,41 @@ extension TennisMatch {
         } else {
             throw TennisLoggingError.noEventsToUndo
         }
+    }
+    
+}
+
+// Functions for displaying information about the TennisMatch
+extension TennisMatch {
+    
+    // Non-optional as there must always be at east one state.
+    var lastState: TennisState {
+        get {
+            self.states.last!
+        }
+    }
+    
+    var lastEvent: TennisEvent? {
+        get {
+            self.events.last
+        }
+    }
+    
+    func display(event: TennisEventType) -> String {
+        switch event {
+            case .FirstServe:
+                return "first serve"
+            case .SecondServe:
+                return "second serve"
+            case .Fault:
+                return "fault"
+            case .Let:
+                return "let"
+            case .TeamOnePoint:
+                return "point to \(self.preferences.teams.dict[TeamNumber.One]!.name)"
+            case .TeamTwoPoint:
+                return "point to \(self.preferences.teams.dict[TeamNumber.Two]!.name)"
+         }
     }
     
 }

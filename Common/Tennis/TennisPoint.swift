@@ -31,9 +31,4 @@ enum TennisPoint: Int, Codable {
          }
     }
     
-    // When in a tiebreak just interpolate as a String.
-    var forTieScoreboard: String {
-        return "\(self)"
-    }
-    
 }

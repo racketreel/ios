@@ -163,6 +163,61 @@ class StateDescriptionTests: XCTestCase {
         }
     }
     
+    func testIsMatchPointTrueForOneGameMatch() {
+        let oneGameMatch = TennisMatch(
+            preferences: TennisPreferences(
+                sets: 1,
+                games: 1,
+                timestamp: Date(),
+                initialServe: TeamNumber.One,
+                finalSetTieBreak: false,
+                pointsForTieBreak: 7,
+                teams: TeamMembersWrapper(dict: [
+                    TeamNumber.One: Team(
+                        number: TeamNumber.One,
+                        membership: TeamMembershipType.Singles,
+                        members: [
+                            TeamMember(firstname: "", surname: "")
+                        ]
+                    ),
+                    TeamNumber.Two: Team(
+                        number: TeamNumber.Two,
+                        membership: TeamMembershipType.Singles,
+                        members: [
+                            TeamMember(firstname: "", surname: "")
+                        ]
+                    )
+                ])
+            ),
+            events: [
+                TennisEvent(timestamp: Date(), type: TennisEventType.FirstServe),
+                TennisEvent(timestamp: Date(), type: TennisEventType.Fault),
+                TennisEvent(timestamp: Date(), type: TennisEventType.FirstServe),
+                TennisEvent(timestamp: Date(), type: TennisEventType.Fault),
+                TennisEvent(timestamp: Date(), type: TennisEventType.FirstServe),
+                TennisEvent(timestamp: Date(), type: TennisEventType.Fault),
+                TennisEvent(timestamp: Date(), type: TennisEventType.FirstServe)
+            ]
+        )
+        
+        let state = TennisState(
+            scores: [
+                TeamNumber.One: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0),
+                TeamNumber.Two: TennisScore(points: TennisPoint.Forty.rawValue, games: 0, sets: 0)
+            ],
+            serving: TeamNumber.One,
+            isSecondServe: false,
+            tieBreakPointCounter: nil,
+            toServePostTieBreak: nil
+        )
+        
+        XCTAssert(oneGameMatch.isGamePoint(to: TeamNumber.Two, when: state), "Should be match point when state \(state).")
+        
+        XCTAssert(oneGameMatch.isSetPoint(to: TeamNumber.Two, when: state), "Should be match point when state \(state).")
+    
+        XCTAssert(oneGameMatch.isMatchPoint(to: TeamNumber.Two, when: state), "Should be match point when state \(state).")
+    }
+    
     func testIsMatchPointFalse() {
         
     }

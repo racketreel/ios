@@ -11,6 +11,7 @@ class ContentViewModel: ObservableObject {
     
     @Published var isSignedIn: Bool
     @Published var user: User?
+    @Published var tabSelected = 2 // Default to MainView.
     
     @Inject var auth: AuthProtocol
     

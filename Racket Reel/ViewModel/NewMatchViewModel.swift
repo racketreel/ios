@@ -30,6 +30,9 @@ class NewMatchViewModel: ObservableObject {
     @Published var matchStartAlertTitle = ""
     @Published var matchStartAlertMessage = ""
     
+    @Published var showLoggingView = false
+    @Published var match: TennisMatch? // To pass to LoggingView
+    
     private func resetFieldsToDefaults() {
         teamType = TeamMembershipType.Singles
         teamOnePlayerOne = TeamMember(firstname: "", surname: "")
@@ -48,8 +51,39 @@ class NewMatchViewModel: ObservableObject {
         return true
     }
     
+    private func requiredNamesAreEmpty() -> Bool {
+        if ((self.teamOnePlayerOne.firstname == "")
+            || (self.teamOnePlayerOne.surname == "")
+            || (self.teamTwoPlayerOne.surname == "")
+            || (self.teamTwoPlayerOne.surname == "")) {
+            return true
+        } else {
+            // When doubles also check player two in each time.
+            if ((self.teamType == TeamMembershipType.Doubles)
+                && (
+                    (self.teamOnePlayerTwo.firstname == "")
+                    || (self.teamOnePlayerTwo.surname == "")
+                    || (self.teamTwoPlayerTwo.surname == "")
+                    || (self.teamTwoPlayerTwo.surname == "")
+                )) {
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+    
     func start() {
+        // Ensure all names have been entered.
+        if requiredNamesAreEmpty() {
+            self.matchStartAlertTitle = "Cannot Start Match"
+            self.matchStartAlertMessage = "One or more of the player names are empty."
+            self.showMatchStartAlert = true
+            return
+        }
+        
         // Todo: If user not subscribed and has a connected apple watch then alert about subscribing.
+        
         // Multiple device options, so let the user choose.
         if connectedAppleWatch() {
             self.showSelectLoggingDeviceSheet = true
@@ -72,17 +106,22 @@ class NewMatchViewModel: ObservableObject {
                 teams: TeamMembersWrapper(dict: [
                     TeamNumber.One: Team(
                         number: TeamNumber.One,
-                        membership: TeamMembershipType.Singles,
-                        members: []
+                        membership: self.teamType,
+                        members: [self.teamOnePlayerOne]
                     ),
                     TeamNumber.Two: Team(
                         number: TeamNumber.Two,
-                        membership: TeamMembershipType.Singles,
-                        members: []
+                        membership: self.teamType,
+                        members: [self.teamTwoPlayerOne]
                     )
                 ])
             )
         )
+        // Add second players if Doubles.
+        if (self.teamType == TeamMembershipType.Doubles) {
+            match.preferences.teams.dict[TeamNumber.One]!.members.append(teamOnePlayerTwo)
+            match.preferences.teams.dict[TeamNumber.Two]!.members.append(teamTwoPlayerTwo)
+        }
         
         // Todo: Validate match is OK.
         
@@ -100,7 +139,8 @@ class NewMatchViewModel: ObservableObject {
         }
         
         if (device == LoggingDevice.this) {
-            // Todo: Add LoggingView to navigation view stack.
+            self.match = match
+            self.showLoggingView = true
         } else { // device == LoggingDevice.appleWatch
             // Todo: Send match to Apple Watch.
             
@@ -120,6 +160,11 @@ class NewMatchViewModel: ObservableObject {
         
         // Match was successfull started.
         self.resetFieldsToDefaults()
+    }
+    
+    func matchExited() {
+        // Discard the match.
+        self.match = nil
     }
     
 }

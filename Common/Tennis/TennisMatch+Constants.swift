@@ -44,4 +44,36 @@ extension TennisMatch {
         events: []
     )
     
+    static var inProgress =  TennisMatch(
+        preferences: TennisPreferences(
+            sets: 2,
+            games: 6,
+            timestamp: Date(),
+            initialServe: TeamNumber.One,
+            finalSetTieBreak: false,
+            pointsForTieBreak: 7,
+            teams: TeamMembersWrapper(dict: [
+                TeamNumber.One: Team(
+                    number: TeamNumber.One,
+                    membership: TeamMembershipType.Singles,
+                    members: [
+                        TeamMember(firstname: "Tom", surname: "Elvidge")
+                    ]
+                ),
+                TeamNumber.Two: Team(
+                    number: TeamNumber.Two,
+                    membership: TeamMembershipType.Singles,
+                    members: [
+                        TeamMember(firstname: "Andy", surname: "Murray")
+                    ]
+                )
+            ])
+        ),
+        events: [
+            TennisEvent(timestamp: Date(), type: TennisEventType.FirstServe),
+            TennisEvent(timestamp: Date(), type: TennisEventType.SecondServe),
+            TennisEvent(timestamp: Date(), type: TennisEventType.TeamTwoPoint)
+        ]
+    )
+    
 }
