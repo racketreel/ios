@@ -9,7 +9,18 @@
 /* Begin PBXBuildFile section */
 		6A7E5F80B78163C4E87900FF /* Pods_Racket_Reel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */; };
 		BB79C2F7B977FF0198530BB6 /* Pods_Racket_Reel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */; };
-		E212F2232736CA950070B0B7 /* ErasureMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2222736CA950070B0B7 /* ErasureMethod.swift */; };
+		E212F2252736F0820070B0B7 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2242736F0820070B0B7 /* DataProvider.swift */; };
+		E212F2272736F0920070B0B7 /* AnyDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2262736F0920070B0B7 /* AnyDataProvider.swift */; };
+		E212F2292736F0D20070B0B7 /* FirestoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2282736F0D20070B0B7 /* FirestoreDataProvider.swift */; };
+		E212F22B2736F2860070B0B7 /* NoPersistDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F22A2736F2860070B0B7 /* NoPersistDataProvider.swift */; };
+		E212F22F2736F2C40070B0B7 /* NoPersistDataProvider+UserInfoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F22E2736F2C40070B0B7 /* NoPersistDataProvider+UserInfoPreview.swift */; };
+		E212F2312736F5990070B0B7 /* NoPersistDataProvider+MatchesPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2302736F5990070B0B7 /* NoPersistDataProvider+MatchesPreview.swift */; };
+		E212F2372736F7700070B0B7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2362736F7700070B0B7 /* UserInfo.swift */; };
+		E212F2392737047A0070B0B7 /* AuthenticationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2382737047A0070B0B7 /* AuthenticationUser.swift */; };
+		E212F23B2737049B0070B0B7 /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F23A2737049B0070B0B7 /* AuthenticationProvider.swift */; };
+		E212F23D273705410070B0B7 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F23C273705410070B0B7 /* AuthenticationError.swift */; };
+		E212F23F273705600070B0B7 /* FirebaseAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F23E273705600070B0B7 /* FirebaseAuthenticationProvider.swift */; };
+		E212F241273705890070B0B7 /* PreviewAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F240273705890070B0B7 /* PreviewAuthenticationProvider.swift */; };
 		E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C287E27244B1E00FFFE3B /* UserViewModel.swift */; };
 		E22C288127244D4000FFFE3B /* ContainerDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288027244D4000FFFE3B /* ContainerDefinition.swift */; };
 		E22C288327244D4800FFFE3B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288227244D4800FFFE3B /* MainContainer.swift */; };
@@ -213,7 +224,18 @@
 		BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racket_Reel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2942E2EBD7199D25F021C7 /* Pods-Racket Reel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racket Reel.release.xcconfig"; path = "Target Support Files/Pods-Racket Reel/Pods-Racket Reel.release.xcconfig"; sourceTree = "<group>"; };
 		D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racket_Reel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E212F2222736CA950070B0B7 /* ErasureMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErasureMethod.swift; sourceTree = "<group>"; };
+		E212F2242736F0820070B0B7 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		E212F2262736F0920070B0B7 /* AnyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataProvider.swift; sourceTree = "<group>"; };
+		E212F2282736F0D20070B0B7 /* FirestoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDataProvider.swift; sourceTree = "<group>"; };
+		E212F22A2736F2860070B0B7 /* NoPersistDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPersistDataProvider.swift; sourceTree = "<group>"; };
+		E212F22E2736F2C40070B0B7 /* NoPersistDataProvider+UserInfoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoPersistDataProvider+UserInfoPreview.swift"; sourceTree = "<group>"; };
+		E212F2302736F5990070B0B7 /* NoPersistDataProvider+MatchesPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoPersistDataProvider+MatchesPreview.swift"; sourceTree = "<group>"; };
+		E212F2362736F7700070B0B7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		E212F2382737047A0070B0B7 /* AuthenticationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUser.swift; sourceTree = "<group>"; };
+		E212F23A2737049B0070B0B7 /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		E212F23C273705410070B0B7 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		E212F23E273705600070B0B7 /* FirebaseAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationProvider.swift; sourceTree = "<group>"; };
+		E212F240273705890070B0B7 /* PreviewAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAuthenticationProvider.swift; sourceTree = "<group>"; };
 		E22C287E27244B1E00FFFE3B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E22C288027244D4000FFFE3B /* ContainerDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDefinition.swift; sourceTree = "<group>"; };
 		E22C288227244D4800FFFE3B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
@@ -361,6 +383,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E212F242273705A60070B0B7 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E212F2242736F0820070B0B7 /* DataProvider.swift */,
+				E212F2262736F0920070B0B7 /* AnyDataProvider.swift */,
+				E212F2282736F0D20070B0B7 /* FirestoreDataProvider.swift */,
+				E212F22A2736F2860070B0B7 /* NoPersistDataProvider.swift */,
+				E212F22E2736F2C40070B0B7 /* NoPersistDataProvider+UserInfoPreview.swift */,
+				E212F2302736F5990070B0B7 /* NoPersistDataProvider+MatchesPreview.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		E212F243273705B10070B0B7 /* AuthenticationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E212F23A2737049B0070B0B7 /* AuthenticationProvider.swift */,
+				E212F23C273705410070B0B7 /* AuthenticationError.swift */,
+				E212F23E273705600070B0B7 /* FirebaseAuthenticationProvider.swift */,
+				E212F240273705890070B0B7 /* PreviewAuthenticationProvider.swift */,
+			);
+			path = AuthenticationProvider;
+			sourceTree = "<group>";
+		};
 		E22C288A27244DED00FFFE3B /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +507,8 @@
 				E26855FF26C7F7F900DEF435 /* MatchState+Helper.swift */,
 				E2D61312271B1B9900788B5A /* User.swift */,
 				E24817BA2725C0D800CB1A13 /* LoggingDevice.swift */,
+				E212F2362736F7700070B0B7 /* UserInfo.swift */,
+				E212F2382737047A0070B0B7 /* AuthenticationUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,10 +568,11 @@
 		E2D61314271B1BB900788B5A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E212F243273705B10070B0B7 /* AuthenticationProvider */,
+				E212F242273705A60070B0B7 /* DataProvider */,
 				E2D61315271B1BD700788B5A /* AuthProtocol.swift */,
 				E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */,
 				E2D61316271B1BD700788B5A /* PreviewAuth.swift */,
-				E212F2222736CA950070B0B7 /* ErasureMethod.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -901,8 +950,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C7C746271E06D20076B84B /* TennisMatch+Constants.swift in Sources */,
-				E212F2232736CA950070B0B7 /* ErasureMethod.swift in Sources */,
 				E2D6132E271B23C700788B5A /* LogInView.swift in Sources */,
+				E212F23B2737049B0070B0B7 /* AuthenticationProvider.swift in Sources */,
 				E24817B52725AE7100CB1A13 /* NewMatchSetsView.swift in Sources */,
 				E24AFDB3272C073A0071D2EB /* LoggingScoreView.swift in Sources */,
 				E24AFDC3272C6C9B0071D2EB /* LoggingButton.swift in Sources */,
@@ -913,25 +962,31 @@
 				E2C7C736271C3B370076B84B /* TeamMember.swift in Sources */,
 				E24817B72725B02A00CB1A13 /* NewMatchGamesView.swift in Sources */,
 				E2D61302271B115000788B5A /* MainViewModel.swift in Sources */,
+				E212F23D273705410070B0B7 /* AuthenticationError.swift in Sources */,
 				E2D61322271B232B00788B5A /* SecondaryButtonStyle.swift in Sources */,
 				E2D61303271B115000788B5A /* MainView.swift in Sources */,
+				E212F2252736F0820070B0B7 /* DataProvider.swift in Sources */,
 				E2C7C738271C3B400076B84B /* TeamMembershipType.swift in Sources */,
 				E2D61304271B115000788B5A /* MatchListItemView.swift in Sources */,
 				E2D61305271B115000788B5A /* MatchView.swift in Sources */,
+				E212F2392737047A0070B0B7 /* AuthenticationUser.swift in Sources */,
 				E2C7C71E271C205C0076B84B /* TennisMatch+StateTransition.swift in Sources */,
 				E2C7C728271C21770076B84B /* TennisEvent.swift in Sources */,
 				E2D61306271B115000788B5A /* ScoreBoardView.swift in Sources */,
 				E2C7C726271C21590076B84B /* TennisScore.swift in Sources */,
 				E2D61307271B115000788B5A /* MatchStateView.swift in Sources */,
+				E212F22F2736F2C40070B0B7 /* NoPersistDataProvider+UserInfoPreview.swift in Sources */,
 				E2C7C724271C21430076B84B /* TennisState.swift in Sources */,
 				E24817B22725AA4B00CB1A13 /* NewMatchPlayersView.swift in Sources */,
 				E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */,
 				E2D61321271B232B00788B5A /* PrimaryButtonStyle.swift in Sources */,
 				E2D6132F271B23C700788B5A /* ContentView.swift in Sources */,
 				E2D61308271B115000788B5A /* Match+CoreDataClass.swift in Sources */,
+				E212F2292736F0D20070B0B7 /* FirestoreDataProvider.swift in Sources */,
 				E2D61330271B23C700788B5A /* RegisterView.swift in Sources */,
 				E2D61309271B115000788B5A /* Match+Helper.swift in Sources */,
 				E24AFDAF2728756D0071D2EB /* LoggingView.swift in Sources */,
+				E212F2272736F0920070B0B7 /* AnyDataProvider.swift in Sources */,
 				E24AFDAB2728664F0071D2EB /* Team.swift in Sources */,
 				E2D61313271B1B9900788B5A /* User.swift in Sources */,
 				E2D61331271B23C700788B5A /* ActivityIndicator.swift in Sources */,
@@ -950,11 +1005,13 @@
 				E2D61323271B232B00788B5A /* RRTextFieldStyle.swift in Sources */,
 				E2D6130C271B115000788B5A /* MatchState+CoreDataClass.swift in Sources */,
 				E24AFDB7272C131B0071D2EB /* LoggingButtonStyle.swift in Sources */,
+				E212F241273705890070B0B7 /* PreviewAuthenticationProvider.swift in Sources */,
 				E2D6130D271B115000788B5A /* MatchState+Helper.swift in Sources */,
 				E2C7C722271C212A0076B84B /* TennisPreferences.swift in Sources */,
 				E2D61318271B1BD700788B5A /* AuthProtocol.swift in Sources */,
 				E24817B92725B14400CB1A13 /* NewMatchTieBreakView.swift in Sources */,
 				E2D6130E271B115000788B5A /* RacketReelApp.swift in Sources */,
+				E212F23F273705600070B0B7 /* FirebaseAuthenticationProvider.swift in Sources */,
 				E22C288727244D5A00FFFE3B /* Resolver.swift in Sources */,
 				E2C7C759271F62E20076B84B /* TeamMembersWrapper.swift in Sources */,
 				E2D6130F271B115000788B5A /* PersistenceController.swift in Sources */,
@@ -963,14 +1020,17 @@
 				E2D61328271B23A100788B5A /* ContentViewModel.swift in Sources */,
 				E25D81B22724723600527CBA /* NewMatchViewModel.swift in Sources */,
 				E2C7C75D272085740076B84B /* NewMatchView.swift in Sources */,
+				E212F2372736F7700070B0B7 /* UserInfo.swift in Sources */,
 				E2C7C720271C207D0076B84B /* TennisMatch+StateDescription.swift in Sources */,
 				E268560626C808B000DEF435 /* PointDescription.swift in Sources */,
+				E212F2312736F5990070B0B7 /* NoPersistDataProvider+MatchesPreview.swift in Sources */,
 				E2C7C76127208E130076B84B /* AuthenticationView.swift in Sources */,
 				E22C288127244D4000FFFE3B /* ContainerDefinition.swift in Sources */,
 				E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,
 				E22C288527244D5300FFFE3B /* PreviewContainer.swift in Sources */,
 				E24817BB2725C0D800CB1A13 /* LoggingDevice.swift in Sources */,
+				E212F22B2736F2860070B0B7 /* NoPersistDataProvider.swift in Sources */,
 				E268560426C8082A00DEF435 /* GenerationEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
