@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A7E5F80B78163C4E87900FF /* Pods_Racket_Reel_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */; };
 		BB79C2F7B977FF0198530BB6 /* Pods_Racket_Reel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */; };
+		E212F2232736CA950070B0B7 /* ErasureMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2222736CA950070B0B7 /* ErasureMethod.swift */; };
 		E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C287E27244B1E00FFFE3B /* UserViewModel.swift */; };
 		E22C288127244D4000FFFE3B /* ContainerDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288027244D4000FFFE3B /* ContainerDefinition.swift */; };
 		E22C288327244D4800FFFE3B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288227244D4800FFFE3B /* MainContainer.swift */; };
@@ -212,6 +213,7 @@
 		BC9738C87E105B449985B043 /* Pods_Racket_Reel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racket_Reel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2942E2EBD7199D25F021C7 /* Pods-Racket Reel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Racket Reel.release.xcconfig"; path = "Target Support Files/Pods-Racket Reel/Pods-Racket Reel.release.xcconfig"; sourceTree = "<group>"; };
 		D446BF61ECF94C21A02CD7DF /* Pods_Racket_Reel_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Racket_Reel_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E212F2222736CA950070B0B7 /* ErasureMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErasureMethod.swift; sourceTree = "<group>"; };
 		E22C287E27244B1E00FFFE3B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E22C288027244D4000FFFE3B /* ContainerDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDefinition.swift; sourceTree = "<group>"; };
 		E22C288227244D4800FFFE3B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				E2D61315271B1BD700788B5A /* AuthProtocol.swift */,
 				E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */,
 				E2D61316271B1BD700788B5A /* PreviewAuth.swift */,
+				E212F2222736CA950070B0B7 /* ErasureMethod.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C7C746271E06D20076B84B /* TennisMatch+Constants.swift in Sources */,
+				E212F2232736CA950070B0B7 /* ErasureMethod.swift in Sources */,
 				E2D6132E271B23C700788B5A /* LogInView.swift in Sources */,
 				E24817B52725AE7100CB1A13 /* NewMatchSetsView.swift in Sources */,
 				E24AFDB3272C073A0071D2EB /* LoggingScoreView.swift in Sources */,
