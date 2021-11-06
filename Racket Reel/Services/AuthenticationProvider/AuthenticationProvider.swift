@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol AuthenticationProvider {
+public protocol AuthenticationProvider {
     
     typealias AuthenticationOperation = (_ error: Error?) -> Void
     typealias AuthenticationUserUpdate = (_ user: AuthenticationUser?) -> Void
     
     var user: AuthenticationUser? { get }
     
-    var userObservers: [AuthenticationUserUpdate] { get set }
+    var userObservers: [AuthenticationUserUpdate] { get }
     
     func addUserObserver(_ handler: @escaping AuthenticationUserUpdate)
     

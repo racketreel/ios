@@ -9,9 +9,9 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-class FirebaseAuthenticationProvider: AuthenticationProvider {
+public class FirebaseAuthenticationProvider: AuthenticationProvider {
     
-    var user: AuthenticationUser? {
+    public var user: AuthenticationUser? {
         didSet {
             for observer in userObservers {
                 observer(self.user)
@@ -19,7 +19,7 @@ class FirebaseAuthenticationProvider: AuthenticationProvider {
         }
     }
     
-    var userObservers: [AuthenticationUserUpdate] = []
+    public var userObservers: [AuthenticationUserUpdate] = []
     
     private let auth = Auth.auth()
     
@@ -38,17 +38,17 @@ class FirebaseAuthenticationProvider: AuthenticationProvider {
         })
     }
     
-    func addUserObserver(_ handler: @escaping AuthenticationUserUpdate) {
+    public func addUserObserver(_ handler: @escaping AuthenticationUserUpdate) {
         userObservers.append(handler)
     }
     
-    func logIn(email: String, password: String, completion: @escaping AuthenticationOperation) {
+    public func logIn(email: String, password: String, completion: @escaping AuthenticationOperation) {
         auth.signIn(withEmail: email, password: password) { authResult, error in
             completion(error)
         }
     }
     
-    func logOut(completion: @escaping AuthenticationOperation) {
+    public func logOut(completion: @escaping AuthenticationOperation) {
         do {
             try auth.signOut()
             completion(nil)
@@ -57,13 +57,13 @@ class FirebaseAuthenticationProvider: AuthenticationProvider {
         }
     }
     
-    func register(email: String, password: String, completion: @escaping AuthenticationOperation) {
+    public func register(email: String, password: String, completion: @escaping AuthenticationOperation) {
         auth.createUser(withEmail: email, password: password) { authResult, error in
             completion(error)
         }
     }
     
-    func sendEmailVerification(completion: @escaping AuthenticationOperation) {
+    public func sendEmailVerification(completion: @escaping AuthenticationOperation) {
         if (auth.currentUser != nil) {
             auth.currentUser!.sendEmailVerification(completion: completion)
         } else {
@@ -71,11 +71,11 @@ class FirebaseAuthenticationProvider: AuthenticationProvider {
         }
     }
     
-    func sendPasswordReset(to email: String, completion: @escaping AuthenticationOperation) {
+    public func sendPasswordReset(to email: String, completion: @escaping AuthenticationOperation) {
         auth.sendPasswordReset(withEmail: email, completion: completion)
     }
     
-    func updateEmail(to email: String, completion: @escaping AuthenticationOperation) {
+    public func updateEmail(to email: String, completion: @escaping AuthenticationOperation) {
         if (auth.currentUser != nil) {
             auth.currentUser!.updateEmail(to: email, completion: completion)
         } else {

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct AuthenticationUser: Identifiable {
-    let id: String
-    let email: String
-    let verified: Bool
+public struct AuthenticationUser: Identifiable {
+    public let id: String
+    public let email: String
+    public let verified: Bool
 }

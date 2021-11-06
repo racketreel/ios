@@ -23,11 +23,12 @@
 		E212F241273705890070B0B7 /* PreviewAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F240273705890070B0B7 /* PreviewAuthenticationProvider.swift */; };
 		E212F24B27372B640070B0B7 /* Racket_Reel_Integration_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F24A27372B640070B0B7 /* Racket_Reel_Integration_Tests.swift */; };
 		E212F25827372C8F0070B0B7 /* Racket_Reel_Unit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F25727372C8F0070B0B7 /* Racket_Reel_Unit_Tests.swift */; };
-		E212F25F27372D170070B0B7 /* AuthIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6133F271B2F0600788B5A /* AuthIntegrationTests.swift */; };
 		E212F26027372D2B0070B0B7 /* MiscTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C739271C3BFC0076B84B /* MiscTests.swift */; };
 		E212F26127372D2B0070B0B7 /* StateTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C73C271DF7DE0076B84B /* StateTransitionTests.swift */; };
 		E212F26227372D2B0070B0B7 /* ScoringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C73E271DF7EA0076B84B /* ScoringTests.swift */; };
 		E212F26327372D2B0070B0B7 /* StateDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C740271DF7FD0076B84B /* StateDescriptionTests.swift */; };
+		E212F265273730ED0070B0B7 /* FirebaseAuthenticationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F264273730ED0070B0B7 /* FirebaseAuthenticationProviderTests.swift */; };
+		E212F267273739A30070B0B7 /* FirestoreDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F266273739A30070B0B7 /* FirestoreDataProviderTests.swift */; };
 		E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C287E27244B1E00FFFE3B /* UserViewModel.swift */; };
 		E22C288127244D4000FFFE3B /* ContainerDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288027244D4000FFFE3B /* ContainerDefinition.swift */; };
 		E22C288327244D4800FFFE3B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288227244D4800FFFE3B /* MainContainer.swift */; };
@@ -225,6 +226,8 @@
 		E212F24A27372B640070B0B7 /* Racket_Reel_Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_Reel_Integration_Tests.swift; sourceTree = "<group>"; };
 		E212F25527372C8F0070B0B7 /* Racket Reel Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Racket Reel Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E212F25727372C8F0070B0B7 /* Racket_Reel_Unit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_Reel_Unit_Tests.swift; sourceTree = "<group>"; };
+		E212F264273730ED0070B0B7 /* FirebaseAuthenticationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationProviderTests.swift; sourceTree = "<group>"; };
+		E212F266273739A30070B0B7 /* FirestoreDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDataProviderTests.swift; sourceTree = "<group>"; };
 		E22C287E27244B1E00FFFE3B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E22C288027244D4000FFFE3B /* ContainerDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDefinition.swift; sourceTree = "<group>"; };
 		E22C288227244D4800FFFE3B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
@@ -309,7 +312,6 @@
 		E2D6132B271B23C700788B5A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E2D6132C271B23C700788B5A /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		E2D6132D271B23C700788B5A /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		E2D6133F271B2F0600788B5A /* AuthIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthIntegrationTests.swift; sourceTree = "<group>"; };
 		E2FF733526A33710002209CA /* Racket Reel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racket Reel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FF733826A33710002209CA /* RacketReelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacketReelApp.swift; sourceTree = "<group>"; };
 		E2FF733A26A33710002209CA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -406,8 +408,9 @@
 		E212F24927372B640070B0B7 /* Racket Reel Integration Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E2D6133F271B2F0600788B5A /* AuthIntegrationTests.swift */,
 				E212F24A27372B640070B0B7 /* Racket_Reel_Integration_Tests.swift */,
+				E212F264273730ED0070B0B7 /* FirebaseAuthenticationProviderTests.swift */,
+				E212F266273739A30070B0B7 /* FirestoreDataProviderTests.swift */,
 			);
 			path = "Racket Reel Integration Tests";
 			sourceTree = "<group>";
@@ -972,7 +975,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E212F25F27372D170070B0B7 /* AuthIntegrationTests.swift in Sources */,
+				E212F265273730ED0070B0B7 /* FirebaseAuthenticationProviderTests.swift in Sources */,
+				E212F267273739A30070B0B7 /* FirestoreDataProviderTests.swift in Sources */,
 				E212F24B27372B640070B0B7 /* Racket_Reel_Integration_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
