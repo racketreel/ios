@@ -11,6 +11,7 @@ extension TennisMatch {
     
     // Do not change, used for tests.
     static var empty = TennisMatch(
+        createdByUserId: UUID().uuidString,
         preferences: TennisPreferences(
             sets: 2, // 3 sets total, but only 2 to win.
             games: 6,
@@ -45,6 +46,7 @@ extension TennisMatch {
     )
     
     static var inProgress =  TennisMatch(
+        createdByUserId: UUID().uuidString,
         preferences: TennisPreferences(
             sets: 2,
             games: 6,

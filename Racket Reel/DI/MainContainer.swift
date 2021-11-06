@@ -27,6 +27,13 @@ class MainContainer: ContainerDefinition {
         }
         .inObjectScope(.container)
         
+        container.register(AnyDataProvider<TennisMatch>.self) { _ in
+            return AnyDataProvider(
+                wrappedConnector: FirestoreDataProvider<TennisMatch>(path: "matches")
+            )
+        }
+        .inObjectScope(.container)
+        
         return container
     }
     

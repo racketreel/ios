@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 // DataType, T, must be Identifiable and Codable with a String ID for use in Firestore.
 // This class assumes Firebase has already been configured.
@@ -34,6 +35,7 @@ class FirestoreDataProvider<T: Identifiable>: DataProvider where T.ID == String,
                 if let rawDocument = rawDocument {
                     do {
                         let document = try rawDocument.data(as: T.self)
+                        
                         completion(nil, document)
                     } catch {
                         completion(error, nil)

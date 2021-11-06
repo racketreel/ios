@@ -51,19 +51,15 @@
 		E24AFDAC2728664F0071D2EB /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDAA2728664F0071D2EB /* Team.swift */; };
 		E24AFDAD2728664F0071D2EB /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDAA2728664F0071D2EB /* Team.swift */; };
 		E24AFDAF2728756D0071D2EB /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDAE2728756D0071D2EB /* LoggingView.swift */; };
-		E24AFDB02728756D0071D2EB /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDAE2728756D0071D2EB /* LoggingView.swift */; };
 		E24AFDB12728756D0071D2EB /* LoggingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDAE2728756D0071D2EB /* LoggingView.swift */; };
 		E24AFDB3272C073A0071D2EB /* LoggingScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDB2272C07390071D2EB /* LoggingScoreView.swift */; };
 		E24AFDB4272C073A0071D2EB /* LoggingScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDB2272C07390071D2EB /* LoggingScoreView.swift */; };
 		E24AFDB5272C073A0071D2EB /* LoggingScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDB2272C07390071D2EB /* LoggingScoreView.swift */; };
 		E24AFDB7272C131B0071D2EB /* LoggingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDB6272C131B0071D2EB /* LoggingButtonStyle.swift */; };
-		E24AFDB8272C131B0071D2EB /* LoggingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDB6272C131B0071D2EB /* LoggingButtonStyle.swift */; };
 		E24AFDB9272C131B0071D2EB /* LoggingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDB6272C131B0071D2EB /* LoggingButtonStyle.swift */; };
 		E24AFDBF272C37420071D2EB /* LoggingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDBE272C37420071D2EB /* LoggingViewModel.swift */; };
-		E24AFDC0272C37420071D2EB /* LoggingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDBE272C37420071D2EB /* LoggingViewModel.swift */; };
 		E24AFDC1272C37420071D2EB /* LoggingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDBE272C37420071D2EB /* LoggingViewModel.swift */; };
 		E24AFDC3272C6C9B0071D2EB /* LoggingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDC2272C6C9B0071D2EB /* LoggingButton.swift */; };
-		E24AFDC4272C6C9B0071D2EB /* LoggingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDC2272C6C9B0071D2EB /* LoggingButton.swift */; };
 		E24AFDC5272C6C9B0071D2EB /* LoggingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24AFDC2272C6C9B0071D2EB /* LoggingButton.swift */; };
 		E25D81B22724723600527CBA /* NewMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D81B12724723600527CBA /* NewMatchViewModel.swift */; };
 		E25D81B4272479BA00527CBA /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25D81B3272479BA00527CBA /* SelectableButtonStyle.swift */; };
@@ -142,10 +138,6 @@
 		E2D6130F271B115000788B5A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2537D0026D429FE000A277E /* PersistenceController.swift */; };
 		E2D61310271B115000788B5A /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27733EC26DEA75500321805 /* VideoEditor.swift */; };
 		E2D61311271B115000788B5A /* CoreDataWCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2537D0226D4372C000A277E /* CoreDataWCSessionDelegate.swift */; };
-		E2D61313271B1B9900788B5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61312271B1B9900788B5A /* User.swift */; };
-		E2D61318271B1BD700788B5A /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61315271B1BD700788B5A /* AuthProtocol.swift */; };
-		E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61316271B1BD700788B5A /* PreviewAuth.swift */; };
-		E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */; };
 		E2D6131C271B222500788B5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2D6131B271B222500788B5A /* GoogleService-Info.plist */; };
 		E2D61321271B232B00788B5A /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131E271B232B00788B5A /* PrimaryButtonStyle.swift */; };
 		E2D61322271B232B00788B5A /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6131F271B232B00788B5A /* SecondaryButtonStyle.swift */; };
@@ -309,10 +301,6 @@
 		E2C7C75E272085C40076B84B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		E2C7C76027208E130076B84B /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		E2C7C76227208E420076B84B /* AuthenticationSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSubview.swift; sourceTree = "<group>"; };
-		E2D61312271B1B9900788B5A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E2D61315271B1BD700788B5A /* AuthProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
-		E2D61316271B1BD700788B5A /* PreviewAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewAuth.swift; sourceTree = "<group>"; };
-		E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreAuth.swift; sourceTree = "<group>"; };
 		E2D6131B271B222500788B5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2D6131E271B232B00788B5A /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		E2D6131F271B232B00788B5A /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
@@ -505,7 +493,6 @@
 				E26855E326C7F18600DEF435 /* MatchPreferences+CoreDataClass.swift */,
 				E26855E526C7F18600DEF435 /* MatchState+CoreDataClass.swift */,
 				E26855FF26C7F7F900DEF435 /* MatchState+Helper.swift */,
-				E2D61312271B1B9900788B5A /* User.swift */,
 				E24817BA2725C0D800CB1A13 /* LoggingDevice.swift */,
 				E212F2362736F7700070B0B7 /* UserInfo.swift */,
 				E212F2382737047A0070B0B7 /* AuthenticationUser.swift */,
@@ -570,9 +557,6 @@
 			children = (
 				E212F243273705B10070B0B7 /* AuthenticationProvider */,
 				E212F242273705A60070B0B7 /* DataProvider */,
-				E2D61315271B1BD700788B5A /* AuthProtocol.swift */,
-				E2D61317271B1BD700788B5A /* FirebaseFirestoreAuth.swift */,
-				E2D61316271B1BD700788B5A /* PreviewAuth.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -955,7 +939,6 @@
 				E24817B52725AE7100CB1A13 /* NewMatchSetsView.swift in Sources */,
 				E24AFDB3272C073A0071D2EB /* LoggingScoreView.swift in Sources */,
 				E24AFDC3272C6C9B0071D2EB /* LoggingButton.swift in Sources */,
-				E2D61319271B1BD700788B5A /* PreviewAuth.swift in Sources */,
 				E25D81B4272479BA00527CBA /* SelectableButtonStyle.swift in Sources */,
 				E2C7C76327208E420076B84B /* AuthenticationSubview.swift in Sources */,
 				E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */,
@@ -978,7 +961,6 @@
 				E212F22F2736F2C40070B0B7 /* NoPersistDataProvider+UserInfoPreview.swift in Sources */,
 				E2C7C724271C21430076B84B /* TennisState.swift in Sources */,
 				E24817B22725AA4B00CB1A13 /* NewMatchPlayersView.swift in Sources */,
-				E2D6131A271B1BD700788B5A /* FirebaseFirestoreAuth.swift in Sources */,
 				E2D61321271B232B00788B5A /* PrimaryButtonStyle.swift in Sources */,
 				E2D6132F271B23C700788B5A /* ContentView.swift in Sources */,
 				E2D61308271B115000788B5A /* Match+CoreDataClass.swift in Sources */,
@@ -988,7 +970,6 @@
 				E24AFDAF2728756D0071D2EB /* LoggingView.swift in Sources */,
 				E212F2272736F0920070B0B7 /* AnyDataProvider.swift in Sources */,
 				E24AFDAB2728664F0071D2EB /* Team.swift in Sources */,
-				E2D61313271B1B9900788B5A /* User.swift in Sources */,
 				E2D61331271B23C700788B5A /* ActivityIndicator.swift in Sources */,
 				E22C288327244D4800FFFE3B /* MainContainer.swift in Sources */,
 				E2C7C72A271C21840076B84B /* TennisEventType.swift in Sources */,
@@ -1008,7 +989,6 @@
 				E212F241273705890070B0B7 /* PreviewAuthenticationProvider.swift in Sources */,
 				E2D6130D271B115000788B5A /* MatchState+Helper.swift in Sources */,
 				E2C7C722271C212A0076B84B /* TennisPreferences.swift in Sources */,
-				E2D61318271B1BD700788B5A /* AuthProtocol.swift in Sources */,
 				E24817B92725B14400CB1A13 /* NewMatchTieBreakView.swift in Sources */,
 				E2D6130E271B115000788B5A /* RacketReelApp.swift in Sources */,
 				E212F23F273705600070B0B7 /* FirebaseAuthenticationProvider.swift in Sources */,
@@ -1040,7 +1020,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C7C75B2720830D0076B84B /* TeamMembersWrapper.swift in Sources */,
-				E24AFDB8272C131B0071D2EB /* LoggingButtonStyle.swift in Sources */,
 				E2C7C757271F439C0076B84B /* TennisLoggingError.swift in Sources */,
 				E2C7C747271F33490076B84B /* TennisMatch.swift in Sources */,
 				E24AFDB4272C073A0071D2EB /* LoggingScoreView.swift in Sources */,
@@ -1051,17 +1030,14 @@
 				E2C7C74C271F33490076B84B /* TennisState.swift in Sources */,
 				E2C7C74D271F33490076B84B /* TennisScore.swift in Sources */,
 				E2C7C74E271F33490076B84B /* TennisEvent.swift in Sources */,
-				E24AFDC0272C37420071D2EB /* LoggingViewModel.swift in Sources */,
 				E2C7C74F271F33490076B84B /* TennisEventType.swift in Sources */,
 				E2C7C750271F33490076B84B /* TennisPoint.swift in Sources */,
-				E24AFDC4272C6C9B0071D2EB /* LoggingButton.swift in Sources */,
 				E2C7C751271F33490076B84B /* TeamNumber.swift in Sources */,
 				E2C7C752271F33490076B84B /* TeamMember.swift in Sources */,
 				E2C7C753271F33490076B84B /* TeamMembershipType.swift in Sources */,
 				E268560C26C818CE00DEF435 /* PointDescription.swift in Sources */,
 				E24AFDAC2728664F0071D2EB /* Team.swift in Sources */,
 				E268560D26C818CE00DEF435 /* GenerationEvent.swift in Sources */,
-				E24AFDB02728756D0071D2EB /* LoggingView.swift in Sources */,
 				E2B9264A26AC50C50075CBF6 /* MatchPreferences.swift in Sources */,
 				E273A0AF26AC16B000259066 /* Match.swift in Sources */,
 				E273A0B026AC16B000259066 /* MatchState.swift in Sources */,

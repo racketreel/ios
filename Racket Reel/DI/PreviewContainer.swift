@@ -27,6 +27,13 @@ class PreviewContainer: ContainerDefinition {
         }
         .inObjectScope(.container)
         
+        container.register(AnyDataProvider<TennisMatch>.self) { _ in
+            return AnyDataProvider(
+                wrappedConnector: NoPersistDataProvider<TennisMatch>()
+            )
+        }
+        .inObjectScope(.container)
+        
         return container
     }
     

@@ -116,7 +116,7 @@ class ViewModel : NSObject, ObservableObject, WCSessionDelegate {
     }
     
     func newtMatch(preferences: TennisPreferences) {
-        self.tMatch = TennisMatch(preferences: preferences)
+        self.tMatch = TennisMatch(createdByUserId: UUID().uuidString, preferences: preferences)
         do {
             try self.tMatch?.startMatch()
         } catch {

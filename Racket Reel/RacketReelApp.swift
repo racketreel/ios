@@ -8,6 +8,7 @@
 import SwiftUI
 import WatchConnectivity
 import Firebase
+import FirebaseFirestore
 import Swinject
 
 @main
@@ -45,6 +46,19 @@ struct RacketReelApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
+        
+        if (ProcessInfo.processInfo.environment["USE_FIREBASE_EMULATORS"] == "YES") {
+            // Authentication
+            Auth.auth().useEmulator(withHost:"localhost", port:9099)
+            
+            // Firestore
+            let settings = Firestore.firestore().settings
+            settings.host = "localhost:8080"
+            settings.isPersistenceEnabled = false
+            settings.isSSLEnabled = false
+            Firestore.firestore().settings = settings
+        }
+        
         return true
     }
 }

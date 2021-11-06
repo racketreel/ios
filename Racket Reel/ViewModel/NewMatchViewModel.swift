@@ -33,6 +33,8 @@ class NewMatchViewModel: ObservableObject {
     @Published var showLoggingView = false
     @Published var match: TennisMatch? // To pass to LoggingView
     
+    @Inject var auth: AuthenticationProvider
+    
     private func resetFieldsToDefaults() {
         teamType = TeamMembershipType.Singles
         teamOnePlayerOne = TeamMember(firstname: "", surname: "")
@@ -96,6 +98,7 @@ class NewMatchViewModel: ObservableObject {
     func startMatchOn(_ device: LoggingDevice) {
         // Construct a new TennisMatch object.
         let match = TennisMatch(
+            createdByUserId: auth.user!.id,
             preferences: TennisPreferences(
                 sets: self.sets,
                 games: self.games,
