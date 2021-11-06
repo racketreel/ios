@@ -165,6 +165,7 @@ class StateDescriptionTests: XCTestCase {
     
     func testIsMatchPointTrueForOneGameMatch() {
         let oneGameMatch = TennisMatch(
+            createdByUserId: UUID().uuidString,
             preferences: TennisPreferences(
                 sets: 1,
                 games: 1,

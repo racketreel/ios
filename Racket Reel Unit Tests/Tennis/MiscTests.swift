@@ -52,7 +52,7 @@ class MiscTests: XCTestCase {
                 teams: TeamMembersWrapper(dict: teams)
             )
             
-            let match = TennisMatch(preferences: preferences, events: [])
+            let match = TennisMatch(createdByUserId: UUID().uuidString, preferences: preferences, events: [])
             
             XCTAssert(match.initialState.serving == match.preferences.initialServe, "The initialState.serving team should be set from preferences.initialServe.")
         }

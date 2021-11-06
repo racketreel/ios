@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E212F24727372B640070B0B7"
+               BuildableName = "Racket Reel Integration Tests.xctest"
+               BlueprintName = "Racket Reel Integration Tests"
+               ReferencedContainer = "container:Racket Reel.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E212F25427372C8F0070B0B7"
+               BuildableName = "Racket Reel Unit Tests.xctest"
+               BlueprintName = "Racket Reel Unit Tests"
+               ReferencedContainer = "container:Racket Reel.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
