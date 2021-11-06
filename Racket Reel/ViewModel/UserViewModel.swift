@@ -9,7 +9,7 @@ import Foundation
 
 class UserViewModel: ObservableObject {
     
-    @Inject var auth: AuthProtocol
+    @Inject var auth: AuthenticationProvider
     
     func logOut() {
         self.auth.logOut { error in

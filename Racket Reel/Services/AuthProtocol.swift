@@ -52,38 +52,3 @@ extension AuthError: LocalizedError {
         }
     }
 }
-
-public enum RegistrationError: Error {
-    case passwordDoesNotMatch
-    case emptyFirstname
-    case emptySurname
-}
-
-extension RegistrationError: LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-            case .passwordDoesNotMatch:
-                return NSLocalizedString("The passwords do not match.", comment: "Passwords Does Not Match")
-            case .emptyFirstname:
-                return NSLocalizedString("Firstname cannot be empty.", comment: "Empty Firstname")
-            case .emptySurname:
-                return NSLocalizedString("Surname cannot be empty.", comment: "Empty Surname")
-        }
-    }
-}
-
-public enum LogInError: Error {
-    case emptyEmail
-    case emptyPassword
-}
-
-extension LogInError: LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-            case .emptyEmail:
-                return NSLocalizedString("Email cannot be empty.", comment: "Empty Email")
-            case .emptyPassword:
-                return NSLocalizedString("Password cannot be empty.", comment: "Empty Password")
-        }
-    }
-}
