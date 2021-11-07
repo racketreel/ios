@@ -19,34 +19,34 @@ struct ScoreBoardView: View {
                     Text("ME")
                     Image(systemName: "circle.fill")
                         .font(.system(size: 6))
-                        .opacity(tState.serving == Team.One ? 1 : 0)
+                        .opacity(tState.serving == TeamNumber.One ? 1 : 0)
                 }
                 HStack {
                     Text("OP")
                     Image(systemName: "circle.fill")
                         .font(.system(size: 6))
-                        .opacity(tState.serving == Team.Two ? 1 : 0)
+                        .opacity(tState.serving == TeamNumber.Two ? 1 : 0)
                 }
             }
             // Sets
             VStack {
-                Text(String(tState.scores[Team.One]!.sets))
-                Text(String(tState.scores[Team.Two]!.sets))
+                Text(String(tState.scores[TeamNumber.One]!.sets))
+                Text(String(tState.scores[TeamNumber.Two]!.sets))
             }
             // Games
             VStack {
-                Text(String(tState.scores[Team.One]!.games))
-                Text(String(tState.scores[Team.Two]!.games))
+                Text(String(tState.scores[TeamNumber.One]!.games))
+                Text(String(tState.scores[TeamNumber.Two]!.games))
             }
             // Points
             VStack {
-                Text(displayablePoint(team: Team.One))
-                Text(displayablePoint(team: Team.Two))
+                Text(displayablePoint(team: TeamNumber.One))
+                Text(displayablePoint(team: TeamNumber.Two))
             }
         }
     }
     
-    func displayablePoint(team: Team) -> String {
+    func displayablePoint(team: TeamNumber) -> String {
         let intPoints = self.tState.scores[team]!.points
         if tState.isTieBreak {
             return String(intPoints)

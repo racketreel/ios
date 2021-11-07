@@ -13,4 +13,8 @@ struct TennisScore: Equatable, Codable {
     let games: Int
     let sets: Int
     
+    func pointsToString(isTieBreak: Bool) -> String {
+        return isTieBreak ? String(points) : TennisPoint.init(rawValue: points)!.forScoreboard
+    }
+    
 }

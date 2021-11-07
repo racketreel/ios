@@ -32,12 +32,12 @@ struct AuthenticationView: View {
                     Button("Log In") {
                         self.currentSubview = AuthenticationSubview.LogIn
                     }
-                        .buttonStyle(GrowingPrimaryButtonStyle())
+                        .buttonStyle(PrimaryButtonStyle(fillWidth: true))
                     // Register
                     Button("Register") {
                         self.currentSubview = AuthenticationSubview.Register
                     }
-                        .buttonStyle(GrowingSecondaryButtonStyle())
+                        .buttonStyle(SecondaryButtonStyle(fillWidth: true))
                 }
             }
                 .padding()

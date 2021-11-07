@@ -15,8 +15,22 @@ class MainContainer: ContainerDefinition {
     static func build() -> Container {
         let container = Container()
         
-        container.register(AuthProtocol.self) { _ in
-            return FirebaseFirestoreAuth()
+        container.register(AuthenticationProvider.self) { _ in
+            return FirebaseAuthenticationProvider()
+        }
+        .inObjectScope(.container)
+        
+        container.register(AnyDataProvider<UserInfo>.self) { _ in
+            return AnyDataProvider(
+                wrappedConnector: FirestoreDataProvider<UserInfo>(path: "userInfo")
+            )
+        }
+        .inObjectScope(.container)
+        
+        container.register(AnyDataProvider<TennisMatch>.self) { _ in
+            return AnyDataProvider(
+                wrappedConnector: FirestoreDataProvider<TennisMatch>(path: "matches")
+            )
         }
         .inObjectScope(.container)
         

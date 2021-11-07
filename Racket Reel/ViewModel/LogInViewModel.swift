@@ -21,10 +21,19 @@ class LogInViewModel: ObservableObject {
     @Published var showPasswordResetEmailAlert = false
     @Published var passwordResetEmailAlertMessage = ""
     
-    @Inject var auth: AuthProtocol
+    @Inject var auth: AuthenticationProvider
     
     func logIn() {
-        // Show spinner while attempting to sign in
+        // Ensure fields are valid before attempting to log in
+        do {
+            try validate()
+        } catch {
+            self.showLogInFailedAlert = true
+            self.logInFailedAlertMessage = error.localizedDescription
+            return
+        }
+        
+        // Show spinner while attempting to log in
         self.showLoggingInSpinner = true
         
         auth.logIn(email: self.email, password: self.password, completion: { error in
@@ -40,7 +49,7 @@ class LogInViewModel: ObservableObject {
     }
     
     func forgotPassword() {
-        auth.sendPasswordReset(email: self.email, completion: { error in
+        auth.sendPasswordReset(to: self.email, completion: { error in
             if (error != nil) {
                 self.passwordResetEmailAlertMessage = error!.localizedDescription
             } else {
@@ -50,4 +59,30 @@ class LogInViewModel: ObservableObject {
         })
     }
     
+    func validate() throws {
+        if (password.isEmpty) {
+            throw LogInError.emptyPassword
+        }
+        
+        if (email.isEmpty) {
+            throw LogInError.emptyEmail
+        }
+    }
+    
+}
+
+public enum LogInError: Error {
+    case emptyEmail
+    case emptyPassword
+}
+
+extension LogInError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+            case .emptyEmail:
+                return NSLocalizedString("Email cannot be empty.", comment: "Empty Email")
+            case .emptyPassword:
+                return NSLocalizedString("Password cannot be empty.", comment: "Empty Password")
+        }
+    }
 }

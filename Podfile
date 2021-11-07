@@ -16,9 +16,12 @@ target 'Racket Reel' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift', '8.8.0-beta'
 
-  target 'Racket Reel Tests' do
+  target 'Racket Reel Integration Tests' do
     inherit! :search_paths
-    # Pods for testing
+  end
+
+  target 'Racket Reel Unit Tests' do
+    inherit! :search_paths
   end
 
 end

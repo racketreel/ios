@@ -1,22 +1,30 @@
 //
-//  Team.swift
+//  TeamC.swift
 //  Racket Reel
 //
-//  Created by Tom Elvidge on 17/10/2021.
+//  Created by Tom Elvidge on 26/10/2021.
 //
 
 import Foundation
+import SwiftUI
 
-enum Team: String, CaseIterable, Codable {
+struct Team: Codable {
     
-    case One = "TEAM_ONE"
-    case Two = "TEAM_TWO"
+    // Team number, only two possible teams in a match.
+    let number: TeamNumber
     
-    var opponent: Team {
-        if (self == Team.One) {
-            return Team.Two
+    // Either a Singles or Doubles team
+    let membership: TeamMembershipType
+    
+    // Count of 1 in singles and 2 in doubles.
+    var members: [TeamMember]
+    
+    var name: String {
+        if (membership == TeamMembershipType.Doubles) {
+            let surnames = members.map { $0.surname }
+            return surnames.joined(separator: " & ")
         } else {
-            return Team.One
+            return members.first!.fullname()
         }
     }
     

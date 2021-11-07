@@ -7,14 +7,19 @@
 
 import Foundation
 
-class TennisMatch: Codable {
+class TennisMatch: Identifiable, Codable {
     
     enum CodingKeys: String, CodingKey {
+        case id
+        case createdByUserId
         case preferences
         case events
     }
     
     // Todo: Validation?
+    
+    let id: String
+    let createdByUserId: String
     
     public var inProgress: Bool {
         get {
@@ -24,8 +29,7 @@ class TennisMatch: Codable {
     
     private var _inProgress = false
     
-    // You must not change the preferences after the match so let.
-    let preferences: TennisPreferences
+    var preferences: TennisPreferences
     
     // This can be changed after the match to enable editing videos.
     // TennisEvent objects cannot be modified directly but they can be removed and new ones added.
@@ -45,9 +49,9 @@ class TennisMatch: Codable {
     lazy var initialState: TennisState = {
         let initialScore = TennisScore(points: 0, games: 0, sets: 0)
         
-        var scores = Dictionary<Team, TennisScore>()
-        scores[Team.One] = initialScore
-        scores[Team.Two] = initialScore
+        var scores = Dictionary<TeamNumber, TennisScore>()
+        scores[TeamNumber.One] = initialScore
+        scores[TeamNumber.Two] = initialScore
         
         return TennisState(
             scores: scores,
@@ -85,23 +89,29 @@ class TennisMatch: Codable {
         self._states = states
     }
     
-    init(preferences: TennisPreferences, events: [TennisEvent]) {
+    init(createdByUserId: String, preferences: TennisPreferences, events: [TennisEvent]) {
+        self.id = UUID().uuidString
+        self.createdByUserId = createdByUserId
         self.preferences = preferences
         self.events = events
     }
     
-    convenience init(preferences: TennisPreferences) {
-        self.init(preferences: preferences, events: [])
+    convenience init(createdByUserId: String, preferences: TennisPreferences) {
+        self.init(createdByUserId: createdByUserId, preferences: preferences, events: [])
     }
     
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(String.self, forKey: .id)
+        createdByUserId = try values.decode(String.self, forKey: .createdByUserId)
         preferences = try values.decode(TennisPreferences.self, forKey: .preferences)
         events = try values.decode([TennisEvent].self, forKey: .events)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.id, forKey: .id)
+        try container.encode(self.createdByUserId, forKey: .createdByUserId)
         try container.encode(self.preferences, forKey: .preferences)
         try container.encode(self.events, forKey: .events)
     }
@@ -170,6 +180,41 @@ extension TennisMatch {
         } else {
             throw TennisLoggingError.noEventsToUndo
         }
+    }
+    
+}
+
+// Functions for displaying information about the TennisMatch
+extension TennisMatch {
+    
+    // Non-optional as there must always be at east one state.
+    var lastState: TennisState {
+        get {
+            self.states.last!
+        }
+    }
+    
+    var lastEvent: TennisEvent? {
+        get {
+            self.events.last
+        }
+    }
+    
+    func display(event: TennisEventType) -> String {
+        switch event {
+            case .FirstServe:
+                return "first serve"
+            case .SecondServe:
+                return "second serve"
+            case .Fault:
+                return "fault"
+            case .Let:
+                return "let"
+            case .TeamOnePoint:
+                return "point to \(self.preferences.teams.dict[TeamNumber.One]!.name)"
+            case .TeamTwoPoint:
+                return "point to \(self.preferences.teams.dict[TeamNumber.Two]!.name)"
+         }
     }
     
 }

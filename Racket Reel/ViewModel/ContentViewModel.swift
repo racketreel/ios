@@ -10,9 +10,10 @@ import Foundation
 class ContentViewModel: ObservableObject {
     
     @Published var isSignedIn: Bool
-    @Published var user: User?
+    @Published var user: AuthenticationUser?
+    @Published var tabSelected = 2 // Default to MainView.
     
-    @Inject var auth: AuthProtocol
+    @Inject var auth: AuthenticationProvider
     
     init() {
         self.isSignedIn = false

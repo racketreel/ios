@@ -1,3 +1,14 @@
-GoogleService-Info.plist
+# Cocoapods
 Podfile.lock
 Pods/*
+
+# Firebase
+GoogleService-Info.plist
+.idea
+**/node_modules/*
+**/.firebaserc
+.runtimeconfig.json
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log

@@ -34,10 +34,10 @@ class StateTransitionTests: XCTestCase {
         
         let startState = TennisState(
             scores: [
-                Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 1),
-                Team.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
+                TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 1),
+                TeamNumber.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 0, sets: 0)
             ],
-            serving: Team.One,
+            serving: TeamNumber.One,
             isSecondServe: false,
             tieBreakPointCounter: nil,
             toServePostTieBreak: nil
@@ -72,7 +72,7 @@ class StateTransitionTests: XCTestCase {
         let match = TennisMatch.empty
         
         // Create a state on a second serve with Team.One serving and no points scored.
-        let serving = Team.One
+        let serving = TeamNumber.One
         let startState = TennisState(
             scores: match.initialState.scores,
             serving: serving,
@@ -109,10 +109,10 @@ class StateTransitionTests: XCTestCase {
         
         let startState = TennisState(
             scores: [
-                Team.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 0),
-                Team.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 6, sets: 0)
+                TeamNumber.One: TennisScore(points: TennisPoint.Forty.rawValue, games: 5, sets: 0),
+                TeamNumber.Two: TennisScore(points: TennisPoint.Love.rawValue, games: 6, sets: 0)
             ],
-            serving: Team.One,
+            serving: TeamNumber.One,
             isSecondServe: false,
             tieBreakPointCounter: nil,
             toServePostTieBreak: nil
@@ -124,13 +124,13 @@ class StateTransitionTests: XCTestCase {
         // tieBreakPointCounter initialised
         let expectedState = TennisState(
             scores: [
-                Team.One: TennisScore(points: 0, games: 6, sets: 0),
-                Team.Two: TennisScore(points: 0, games: 6, sets: 0)
+                TeamNumber.One: TennisScore(points: 0, games: 6, sets: 0),
+                TeamNumber.Two: TennisScore(points: 0, games: 6, sets: 0)
             ],
-            serving: Team.Two,
+            serving: TeamNumber.Two,
             isSecondServe: false,
             tieBreakPointCounter: 0,
-            toServePostTieBreak: Team.Two
+            toServePostTieBreak: TeamNumber.Two
         )
         
         let nextState = match.state(after: startState, when: event)!

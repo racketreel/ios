@@ -8,10 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct GrowingSecondaryButtonStyle: ButtonStyle  {
+struct SecondaryButtonStyle: ButtonStyle  {
+    
+    let fillWidth: Bool
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(maxWidth: .infinity) // Fill width
+            .frame(maxWidth: fillWidth ? .infinity : .none) // Fill width
             .padding(12)
             .background(
                 Color("CustomGray") // Secondary fill

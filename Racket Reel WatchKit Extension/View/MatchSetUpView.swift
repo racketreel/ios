@@ -19,7 +19,7 @@ struct MatchSetUpView: View {
     // Defaults
     @State var setsToWin: Int = 2
     @State var gamesForSet: Int = 6
-    @State var servingFirst: Team = Team.One
+    @State var servingFirst: TeamNumber = TeamNumber.One
     
     @ObservedObject var model: ViewModel
     
@@ -50,12 +50,12 @@ struct MatchSetUpView: View {
             if (setUpStage == SetUpStage.firstServe) {
                 Text("Who is serving first?")
                 Button("Me", action: {
-                    self.servingFirst = Team.One
+                    self.servingFirst = TeamNumber.One
                     model.currentView = ViewType.matchInProgress
                     createMatch()
                 })
                 Button("Opponent", action: {
-                    self.servingFirst = Team.Two
+                    self.servingFirst = TeamNumber.Two
                     model.currentView = ViewType.matchInProgress
                     createMatch()
                 })
@@ -72,10 +72,9 @@ struct MatchSetUpView: View {
             initialServe: self.servingFirst,
             finalSetTieBreak: false,
             pointsForTieBreak: 7,
-            teamType: TeamType.Singles,
-            teamMembers: TeamMembersWrapper(dict: [
-                Team.One: [TeamMember(firstname: "Player 1 (me)", surname: "")],
-                Team.Two: [TeamMember(firstname: "Player 2", surname: "")]
+            teams: TeamMembersWrapper(dict: [
+                TeamNumber.One: Team(number: TeamNumber.One, membership: TeamMembershipType.Singles, members: []),
+                TeamNumber.Two: Team(number: TeamNumber.Two, membership: TeamMembershipType.Singles, members: [])
             ]))
         )
     }

@@ -15,20 +15,23 @@ struct ContentView: View {
 
     var body: some View {
         if (viewModel.isSignedIn) {
-            TabView {
+            TabView(selection: $viewModel.tabSelected) {
                 NewMatchView()
                     .tabItem {
                         Image(systemName: "plus")
                     }
+                    .tag(1)
                 MainView()
                     .environmentObject(videoEditor)
                     .tabItem {
                         Image(systemName: "house")
                     }
+                    .tag(2)
                 UserView()
                     .tabItem {
                         Image(systemName: "person")
                     }
+                    .tag(3)
             }
         } else {
             AuthenticationView()

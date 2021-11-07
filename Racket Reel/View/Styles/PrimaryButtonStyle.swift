@@ -8,10 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct GrowingPrimaryButtonStyle: ButtonStyle  {
+struct PrimaryButtonStyle: ButtonStyle  {
+    
+    let fillWidth: Bool
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(maxWidth: .infinity) // Fill width
+            .frame(maxWidth: fillWidth ? .infinity : .none) // Fill width
             .padding(12)
             .background(
                 Color("Primary") // Primary fill

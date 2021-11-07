@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1310"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -47,8 +47,28 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E2D61335271B2EBB00788B5A"
-               BuildableName = "Racket Reel Tests.xctest"
+               BuildableName = "Racket Reel Unit Tests.xctest"
                BlueprintName = "Racket Reel Tests"
+               ReferencedContainer = "container:Racket Reel.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E212F24727372B640070B0B7"
+               BuildableName = "Racket Reel Integration Tests.xctest"
+               BlueprintName = "Racket Reel Integration Tests"
+               ReferencedContainer = "container:Racket Reel.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E212F25427372C8F0070B0B7"
+               BuildableName = "Racket Reel Unit Tests.xctest"
+               BlueprintName = "Racket Reel Unit Tests"
                ReferencedContainer = "container:Racket Reel.xcodeproj">
             </BuildableReference>
          </TestableReference>

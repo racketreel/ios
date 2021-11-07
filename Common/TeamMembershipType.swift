@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TeamType: String, Codable {
+enum TeamMembershipType: String, Codable {
     case Singles = "SINGLES"
     case Doubles = "DOUBLES"
 }

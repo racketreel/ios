@@ -50,7 +50,8 @@ struct LogInView: View {
                 Button("Log In") {
                     viewModel.logIn()
                 }
-                    .buttonStyle(GrowingPrimaryButtonStyle())
+                    .frame(maxWidth: .infinity)
+                    .buttonStyle(PrimaryButtonStyle(fillWidth: true))
                     .alert(isPresented: $viewModel.showLogInFailedAlert) {
                         Alert(
                             title: Text("Cannot Log In"),
@@ -63,7 +64,7 @@ struct LogInView: View {
                 Button("Register") {
                     self.currentSubview = AuthenticationSubview.Register
                 }
-                    .buttonStyle(GrowingSecondaryButtonStyle())
+                    .buttonStyle(SecondaryButtonStyle(fillWidth: true))
             }
         }
     }
