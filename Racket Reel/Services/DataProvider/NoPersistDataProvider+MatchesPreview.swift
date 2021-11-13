@@ -12,7 +12,7 @@ extension NoPersistDataProvider where T == TennisMatch {
     convenience init() {
         // Create a test match.
         let testMatch = TennisMatch(
-            createdByUserId: UUID().uuidString,
+            createdByUserId: "1",
             preferences: TennisPreferences(
                 sets: 1,
                 games: 1,

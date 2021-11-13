@@ -9,19 +9,39 @@ import SwiftUI
 
 struct MatchListItemView: View {
     
-    @ObservedObject var match: Match
+    let match: TennisMatch
     
     var body: some View {
         NavigationLink(destination: MatchView(match: match)) {
-            HStack {
-                Text(String(match.name))
+            VStack(alignment: .leading) {
+                Text(dformat(match.preferences.timestamp))
+                    .fontWeight(.bold)
+                    .padding(.bottom, 2)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(match.preferences.teams.dict[TeamNumber.One]!.name)
+                        Text(match.preferences.teams.dict[TeamNumber.Two]!.name)
+                    }
+                    // Todo: Set scores
+                }
             }
+            .padding()
         }
+        
     }
+    
+    func dformat(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a 'on' dd MMMM yyyy"
+        formatter.amSymbol = "AM"
+        formatter.pmSymbol = "PM"
+        return formatter.string(from: date)
+    }
+    
 }
 
 struct MatchListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListItemView(match: Match.example)
+        MatchListItemView(match: TennisMatch.inProgress)
     }
 }

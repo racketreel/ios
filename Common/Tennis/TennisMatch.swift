@@ -7,7 +7,15 @@
 
 import Foundation
 
-class TennisMatch: Identifiable, Codable {
+class TennisMatch: Identifiable, Codable, Hashable {
+    
+    static func == (lhs: TennisMatch, rhs: TennisMatch) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
     
     enum CodingKeys: String, CodingKey {
         case id

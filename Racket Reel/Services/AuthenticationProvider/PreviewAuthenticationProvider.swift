@@ -25,7 +25,7 @@ class PreviewAuthenticationProvider: AuthenticationProvider {
     
     func logIn(email: String, password: String, completion: @escaping AuthenticationOperation) {
         self.user = AuthenticationUser(
-            id: UUID().uuidString,
+            id: "1",
             email: "tom@racketreel.com",
             verified: false
         )

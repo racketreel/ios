@@ -19,17 +19,20 @@ struct ContentView: View {
                 NewMatchView()
                     .tabItem {
                         Image(systemName: "plus")
+                        Text("New")
                     }
                     .tag(1)
                 MainView()
                     .environmentObject(videoEditor)
                     .tabItem {
                         Image(systemName: "house")
+                        Text("Matches")
                     }
                     .tag(2)
                 UserView()
                     .tabItem {
                         Image(systemName: "person")
+                        Text("Mera")
                     }
                     .tag(3)
             }
