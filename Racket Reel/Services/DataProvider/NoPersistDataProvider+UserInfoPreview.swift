@@ -12,7 +12,7 @@ extension NoPersistDataProvider where T == UserInfo {
     convenience init() {
         // Create a test user.
         let testUser = UserInfo(
-            id: UUID.init().uuidString,
+            id: "1",
             firstname: "Tom",
             surname: "Elvidge",
             matchIds: []

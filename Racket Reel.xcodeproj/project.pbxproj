@@ -29,6 +29,8 @@
 		E212F26327372D2B0070B0B7 /* StateDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C7C740271DF7FD0076B84B /* StateDescriptionTests.swift */; };
 		E212F265273730ED0070B0B7 /* FirebaseAuthenticationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F264273730ED0070B0B7 /* FirebaseAuthenticationProviderTests.swift */; };
 		E212F267273739A30070B0B7 /* FirestoreDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F266273739A30070B0B7 /* FirestoreDataProviderTests.swift */; };
+		E212F2692737F34C0070B0B7 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F2682737F34C0070B0B7 /* MainViewModelTests.swift */; };
+		E212F26B273B0A3E0070B0B7 /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212F26A273B0A3E0070B0B7 /* MatchViewModel.swift */; };
 		E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C287E27244B1E00FFFE3B /* UserViewModel.swift */; };
 		E22C288127244D4000FFFE3B /* ContainerDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288027244D4000FFFE3B /* ContainerDefinition.swift */; };
 		E22C288327244D4800FFFE3B /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C288227244D4800FFFE3B /* MainContainer.swift */; };
@@ -228,6 +230,8 @@
 		E212F25727372C8F0070B0B7 /* Racket_Reel_Unit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_Reel_Unit_Tests.swift; sourceTree = "<group>"; };
 		E212F264273730ED0070B0B7 /* FirebaseAuthenticationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationProviderTests.swift; sourceTree = "<group>"; };
 		E212F266273739A30070B0B7 /* FirestoreDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDataProviderTests.swift; sourceTree = "<group>"; };
+		E212F2682737F34C0070B0B7 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		E212F26A273B0A3E0070B0B7 /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
 		E22C287E27244B1E00FFFE3B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E22C288027244D4000FFFE3B /* ContainerDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDefinition.swift; sourceTree = "<group>"; };
 		E22C288227244D4800FFFE3B /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
@@ -420,6 +424,7 @@
 			children = (
 				E2C7C73B271DF7D40076B84B /* Tennis */,
 				E212F25727372C8F0070B0B7 /* Racket_Reel_Unit_Tests.swift */,
+				E212F2682737F34C0070B0B7 /* MainViewModelTests.swift */,
 			);
 			path = "Racket Reel Unit Tests";
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 				E2C7C76227208E420076B84B /* AuthenticationSubview.swift */,
 				E25D81B12724723600527CBA /* NewMatchViewModel.swift */,
 				E24AFDBE272C37420071D2EB /* LoggingViewModel.swift */,
+				E212F26A273B0A3E0070B0B7 /* MatchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -988,6 +994,7 @@
 				E212F26027372D2B0070B0B7 /* MiscTests.swift in Sources */,
 				E212F26127372D2B0070B0B7 /* StateTransitionTests.swift in Sources */,
 				E212F26227372D2B0070B0B7 /* ScoringTests.swift in Sources */,
+				E212F2692737F34C0070B0B7 /* MainViewModelTests.swift in Sources */,
 				E212F26327372D2B0070B0B7 /* StateDescriptionTests.swift in Sources */,
 				E212F25827372C8F0070B0B7 /* Racket_Reel_Unit_Tests.swift in Sources */,
 			);
@@ -1069,6 +1076,7 @@
 				E268560626C808B000DEF435 /* PointDescription.swift in Sources */,
 				E212F2312736F5990070B0B7 /* NoPersistDataProvider+MatchesPreview.swift in Sources */,
 				E2C7C76127208E130076B84B /* AuthenticationView.swift in Sources */,
+				E212F26B273B0A3E0070B0B7 /* MatchViewModel.swift in Sources */,
 				E22C288127244D4000FFFE3B /* ContainerDefinition.swift in Sources */,
 				E2D61329271B23A100788B5A /* RegisterViewModel.swift in Sources */,
 				E2B9269F26B350630075CBF6 /* Model.xcdatamodeld in Sources */,

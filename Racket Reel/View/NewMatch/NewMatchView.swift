@@ -41,8 +41,8 @@ struct NewMatchView: View {
                             pointsForTieBreak: $viewModel.pointsForTieBreak
                         )
                     }
+                    .padding()
                 }
-                .padding()
             }
             .navigationTitle("New Match")
             .navigationBarTitleDisplayMode(.inline)

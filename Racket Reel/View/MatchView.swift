@@ -11,49 +11,66 @@ import PhotosUI
 
 struct MatchView: View {
     
-    @EnvironmentObject var videoEditor: VideoEditor
-    @State var match: Match
-    @State var video: AVAsset?
-    @State var showVideoPicker: Bool
+//    @EnvironmentObject var videoEditor: VideoEditor
+//    @State var video: AVAsset?
+//    @State var showVideoPicker = false
     
-    init (match: Match) {
+    let match: TennisMatch
+    @ObservedObject var viewModel: MatchViewModel
+    
+    init(match: TennisMatch) {
+        // match is passed down from the parent view
         self.match = match
-        self.showVideoPicker = false
+        self.viewModel = MatchViewModel(match: match)
     }
     
     var body: some View {
-        List {
-            ForEach (match.history, id: \.self) { state in
-                MatchStateView(state: state)
+        ZStack(alignment: .leading) {
+            // Custom background color.
+            Color("Background")
+                .edgesIgnoringSafeArea(.all)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach (match.events, id: \.self) { event in
+                        HStack {
+                            Image(systemName: "exclamationmark.circle.fill")
+                            Text(self.viewModel.display(event: event))
+                                .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+                                .background(Color.white)
+                                .cornerRadius(30)
+                        }
+                    }
+                }
+                .padding()
             }
         }
-        .toolbar {
-            VStack {
-                Button("Process Video", action: {
-                    showVideoPicker = true
-                })
-                .disabled(videoEditor.progress != nil)
-            }
-        }
-        .navigationTitle(match.name)
+//        .toolbar {
+//            VStack {
+//                Button("Process Video", action: {
+//                    showVideoPicker = true
+//                })
+//                .disabled(videoEditor.progress != nil)
+//            }
+//        }
+        .navigationTitle("Match")
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $showVideoPicker, onDismiss: videoPickerDismiss) {
-            ImagePicker(video: $video)
-                .ignoresSafeArea()
-        }
+//        .sheet(isPresented: $showVideoPicker, onDismiss: videoPickerDismiss) {
+//            ImagePicker(video: $video)
+//                .ignoresSafeArea()
+//        }
     }
     
-    func videoPickerDismiss() {
-        if (video != nil) {
-            videoEditor.process(video: video!, match: match)
-        }
-    }
+//    func videoPickerDismiss() {
+//        if (video != nil) {
+//            videoEditor.process(video: video!, match: match)
+//        }
+//    }
     
 }
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView(match: Match.example)
+        MatchView(match: TennisMatch.inProgress)
     }
 }
 
