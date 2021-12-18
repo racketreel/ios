@@ -40,6 +40,8 @@ public class FirebaseAuthenticationProvider: AuthenticationProvider {
     
     public func addUserObserver(_ handler: @escaping AuthenticationUserUpdate) {
         userObservers.append(handler)
+        // Initial execution
+        handler(self.user)
     }
     
     public func logIn(email: String, password: String, completion: @escaping AuthenticationOperation) {

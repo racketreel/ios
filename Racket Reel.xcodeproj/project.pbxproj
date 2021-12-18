@@ -61,6 +61,7 @@
 		E273A0AF26AC16B000259066 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0A926AC144D00259066 /* Match.swift */; };
 		E273A0B026AC16B000259066 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273A0AB26AC14C500259066 /* MatchState.swift */; };
 		E27733EB26DBCF2900321805 /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = E27733EA26DBCF2900321805 /* matches.json */; };
+		E2A5874A276E89C800C4D4F9 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A58749276E89C800C4D4F9 /* Cache.swift */; };
 		E2B11E4B26AC23A00049A48F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E4A26AC23A00049A48F /* ViewModel.swift */; };
 		E2B11E5126AC435C0049A48F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5026AC435C0049A48F /* ContentView.swift */; };
 		E2B11E5526AC453B0049A48F /* MatchSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B11E5426AC453B0049A48F /* MatchSetUpView.swift */; };
@@ -269,6 +270,7 @@
 		E27733E826DBCF1F00321805 /* Match+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Match+Preview.swift"; sourceTree = "<group>"; };
 		E27733EA26DBCF2900321805 /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
 		E27733EC26DEA75500321805 /* VideoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
+		E2A58749276E89C800C4D4F9 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		E2B11E4A26AC23A00049A48F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E2B11E4E26AC2BA80049A48F /* MatchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListItemView.swift; sourceTree = "<group>"; };
 		E2B11E5026AC435C0049A48F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				E212F22A2736F2860070B0B7 /* NoPersistDataProvider.swift */,
 				E212F22E2736F2C40070B0B7 /* NoPersistDataProvider+UserInfoPreview.swift */,
 				E212F2302736F5990070B0B7 /* NoPersistDataProvider+MatchesPreview.swift */,
+				E2A58749276E89C800C4D4F9 /* Cache.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -1014,6 +1017,7 @@
 				E2C7C76327208E420076B84B /* AuthenticationSubview.swift in Sources */,
 				E22C287F27244B1E00FFFE3B /* UserViewModel.swift in Sources */,
 				E2C7C736271C3B370076B84B /* TeamMember.swift in Sources */,
+				E2A5874A276E89C800C4D4F9 /* Cache.swift in Sources */,
 				E24817B72725B02A00CB1A13 /* NewMatchGamesView.swift in Sources */,
 				E2D61302271B115000788B5A /* MainViewModel.swift in Sources */,
 				E212F23D273705410070B0B7 /* AuthenticationError.swift in Sources */,

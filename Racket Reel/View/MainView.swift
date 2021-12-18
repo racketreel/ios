@@ -12,6 +12,8 @@ struct MainView: View {
     
     @ObservedObject var viewModel = MainViewModel()
     
+    // Todo: display loading icon when getting from firestore
+    
     var body: some View {
         NavigationView {
             List {
