@@ -16,14 +16,26 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach (viewModel.matches, id: \.self) { match in
-                    MatchListItemView(match: match)
+            ZStack {
+                // Custom background color.
+                Color("Background")
+                    .edgesIgnoringSafeArea(.all)
+                ScrollView {
+                    VStack {
+                        ForEach (viewModel.matches, id: \.self) { match in
+                            MatchListItemView(match: match)
+                        }
+                        .onDelete(perform: viewModel.deleteMatches)
+                    }
+                    .padding()
                 }
-                .onDelete(perform: viewModel.deleteMatches)
             }
-            .navigationTitle("Matches")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Matches")
+                }
+            }
         }
     }
     

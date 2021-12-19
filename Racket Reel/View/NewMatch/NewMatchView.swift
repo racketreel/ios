@@ -44,11 +44,15 @@ struct NewMatchView: View {
                     .padding()
                 }
             }
-            .navigationTitle("New Match")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button("Start") {
-                    viewModel.start()
+                ToolbarItem(placement: .principal) {
+                    Text("New Match")
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Start") {
+                        viewModel.start()
+                    }
                 }
             }
         }

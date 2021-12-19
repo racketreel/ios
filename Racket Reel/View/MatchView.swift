@@ -39,6 +39,7 @@ struct MatchView: View {
                                 .background(Color.white)
                                 .cornerRadius(30)
                         }
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
                     }
                 }
                 .padding()

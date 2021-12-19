@@ -24,8 +24,11 @@ struct UserView: View {
                     }
                 }
             }
-            .navigationTitle("User")
-            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("User")
+                }
+            }
         }
     }
     

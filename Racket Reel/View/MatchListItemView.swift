@@ -26,8 +26,11 @@ struct MatchListItemView: View {
                 }
             }
             .padding()
+            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .background(Color.white)
+            .cornerRadius(15)
         }
-        
+        .buttonStyle(.plain)
     }
     
     func dformat(_ date: Date) -> String {
@@ -42,6 +45,10 @@ struct MatchListItemView: View {
 
 struct MatchListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListItemView(match: TennisMatch.inProgress)
+        ZStack {
+            // Custom background color.
+            Color("Background")
+            MatchListItemView(match: TennisMatch.inProgress)
+        }
     }
 }
